@@ -9,11 +9,14 @@ import {DataService} from '../data.service';
 export class ViewCardComponent implements OnInit {
 
 title:String;
+name:String;
+message:String;
   constructor(private dataservice:DataService) { }
 
   ngOnInit() {
     this.title=this.dataservice.title;
-
+    this.name=this.dataservice.name;
+    this.message=this.dataservice.message;
   }
 
 }
