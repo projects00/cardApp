@@ -6,11 +6,13 @@ import {DataService } from './data.service';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
