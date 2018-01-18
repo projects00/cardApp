@@ -6,3 +6,40 @@
 <small>18-01-2018</small>
 <small>16:31:27</small>
 </div>
+<a class="btn btn-default" href="#" data-toggle="modal" data-target="#myModal">Create</a>
+<a class="btn btn-default" href="#">Share</a>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form [formGroup]="rForm" >
+    <div class="form-group">
+        <label for="Theme">Theme</label>
+        <select class="form-control" id="Theme">
+            <option>Theme 01</option>
+            <option>Theme 02</option>
+            <option>Theme 03</option>
+        </select>
+        <img src="./assets/img/img-01.png" class="center-block pad15">
+    </div>
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input  formControlName="viewTitle" class="form-control" type="text" placeholder="Title" id="Title">
+    </div>
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input formControlName="viewName" class="form-control" type="text" placeholder="Name" id="Name">
+    </div>
+    <div class="form-group">
+        <label for="Message">Message</label>
+        <textarea  formControlName="viewMessage"  class="form-control" placeholder="Message" id="Message"></textarea>
+    </div>
+    <div class="form-group">
+        <a class="btn btn-default" (click)="clicked()">Preview</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
+    </div>
+</form>
+            </div>
+        </div>
+    </div>
+</div>

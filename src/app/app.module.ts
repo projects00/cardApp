@@ -18,8 +18,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
+      
       {
         path: 'View-Card',
+        component: ViewCardComponent
+      },
+      {
+        path: 'View-Card/123',
         component: ViewCardComponent
       },
       {
