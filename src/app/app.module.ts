@@ -4,15 +4,13 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import {DataService } from './data.service';
 import { AppComponent } from './app.component';
-import { ViewCardComponent } from './view-card/view-card.component';
-import { CreateCardComponent } from './create-card/create-card.component';
+import { CardComponent } from './card/card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ViewCardComponent,
-    CreateCardComponent
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -20,16 +18,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule.forRoot([
       
       {
-        path: 'View-Card',
-        component: ViewCardComponent
+        path: 'Card',
+        component: CardComponent
       },
       {
-        path: 'View-Card/123',
-        component: ViewCardComponent
-      },
-      {
-        path: 'Create-Card',
-        component: CreateCardComponent
+        path: 'Card/123',
+        component: CardComponent
       }
     ])
   ],

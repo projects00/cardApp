@@ -6,11 +6,11 @@ import 'rxjs/Rx';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-view-card',
-  templateUrl: './view-card.component.html',
-  styleUrls: ['./view-card.component.css']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css']
 })
-export class ViewCardComponent implements OnInit {
+export class CardComponent implements OnInit {
 
 title:String;
 name:String;
@@ -48,7 +48,7 @@ fb1: FormBuilder;
       this.dataservice.name=this.rForm.value.viewName;
        this.dataservice.message=this.rForm.value.viewMessage;
      $("#myModal").modal("toggle");
-      this.router.navigateByUrl('View-Card/123');
+      this.router.navigateByUrl('Card/123');
        this.title=this.dataservice.title;
     this.name=this.dataservice.name;
     this.message=this.dataservice.message;
