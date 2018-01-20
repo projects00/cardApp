@@ -18,7 +18,14 @@ import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      
+      {
+  path: 'app',
+  component: AppComponent,
+  children : [
+                { path: 'card', component: CardComponent },
+                { path: 'admin', component: AdminLoginComponent}
+                   ]
+},
       {
         path: 'Card',
         component: CardComponent

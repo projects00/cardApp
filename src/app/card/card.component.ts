@@ -18,6 +18,7 @@ export class CardComponent implements OnInit {
   message: String;
   today:String;
   theme: String;
+  viewtheme: String="./assets/img/img-01.png";
   chosenOption:String;
   dt: Date = new Date();
   rForm: FormGroup;
@@ -26,12 +27,14 @@ export class CardComponent implements OnInit {
     {name: "option1", value:1},
     {name: "option2", value:2},
      {name: "option2", value:2}
-  ]
+  ];
+  
   dtformat:String=`dd/MM/yyyy HH:mm`;
   constructor(private dataservice: DataService, fb: FormBuilder, private router: Router) {
+  
     this.fb1 = fb;
     this.initilizeFrom();
-    this.onChange();
+
 
   }
 
@@ -62,19 +65,32 @@ export class CardComponent implements OnInit {
     debugger;
 switch (this.rForm.value.viewTheme) {
     case "1":
+    {
       this.theme="./assets/img/img-01.png";
+       this.viewtheme="./assets/img/img-01.png";
+    
       break;
+    }
     case "2":
+    {
       this.theme="./assets/img/img-02.png";
+       this.viewtheme="./assets/img/img-02.png";
       break;
+}
     case "3":
+    {
       this.theme="./assets/img/img-03.png";
+       this.viewtheme="./assets/img/img-03.png";
       break;
+    }
 
     
   }
 
   }
+
+ 
+
   clicked() {
     debugger;
    // this.theme=this.rForm.value.viewTheme;
@@ -87,9 +103,11 @@ switch (this.rForm.value.viewTheme) {
     this.title = this.dataservice.title;
     this.name = this.dataservice.name;
     this.message = this.dataservice.message;
+      this.viewtheme=this.theme;
    //this.theme=this.dataservice.theme;
     const d: Date = new Date();
        this.dt =d;
+ 
     
   }
 
