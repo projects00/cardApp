@@ -3,4 +3,6 @@ h1 { font-size: 26px; margin: 10px 0}
 h2 { font-size: 22px; margin: 10px 0}
 p { font-size: 16px}
 .pad15 { padding: 15px}
+.mar0 { margin: 0}
 .card { text-align: center; background: #fff; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,.2); margin: 10% auto}
+.box {border: 1px solid #eee; margin: 10px;}
