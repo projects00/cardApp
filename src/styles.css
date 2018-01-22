@@ -105,7 +105,7 @@ label.hamburgermenu .hamburger{top:30px;right: 20px;}
 .btn-post.btn-post img {width:40px}
 }
 @media print {
-.btn-post.btn-post,.hamburgermenu,.postouter,.btn{display: none}
+
 .card{display: block; border: 3px double #000;color: #000}
 .cardright,.cardleft{width: 48%;float: left; padding: 1%; border: 0;}
 .card .cardouter .cardright h1{font-size:40px;margin:0 0 15px}

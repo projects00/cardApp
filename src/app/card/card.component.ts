@@ -18,6 +18,7 @@ export class CardComponent implements OnInit {
   message: String;
   today:String;
   cardclass:String="";
+  showbtn:String='none';
   theme: String;
   viewtheme: String="./assets/images/cardimage/card-img-001.png";
   chosenOption:String;
@@ -115,6 +116,7 @@ switch (this.rForm.value.viewTheme) {
   test(){
     debugger;
     this.cardclass="clicked";
+    this.showbtn="block";
    
   }
 
