@@ -18,7 +18,7 @@ export class CardComponent implements OnInit {
   message: String;
   today:String;
   theme: String;
-  viewtheme: String="./assets/img/img-01.png";
+  viewtheme: String="./assets/images/cardimage/card-img-001.png";
   chosenOption:String;
   dt: Date = new Date();
   rForm: FormGroup;
@@ -26,7 +26,7 @@ export class CardComponent implements OnInit {
   options = [
     {name: "option1", value:1},
     {name: "option2", value:2},
-     {name: "option2", value:2}
+     {name: "option3", value:3}
   ];
   
   dtformat:String=`dd/MM/yyyy HH:mm`;
@@ -43,7 +43,7 @@ export class CardComponent implements OnInit {
       'viewTitle': [null, Validators.required],
       'viewName': [null, Validators.required],
       'viewMessage': [null, Validators.required],
-      'viewTheme':["./assets/img/img-01.png"]
+      'viewTheme':["./assets/images/cardimage/card-img-001.png"]
 
     });
     this.rForm.controls['viewTitle'].setValue(this.dataservice.title);
@@ -66,21 +66,21 @@ export class CardComponent implements OnInit {
 switch (this.rForm.value.viewTheme) {
     case "1":
     {
-      this.theme="./assets/img/img-01.png";
-       this.viewtheme="./assets/img/img-01.png";
+      this.theme="./assets/images/cardimage/card-img-001.png";
+       this.viewtheme="./assets/images/cardimage/card-img-001.png";
     
       break;
     }
     case "2":
     {
-      this.theme="./assets/img/img-02.png";
-       this.viewtheme="./assets/img/img-02.png";
+      this.theme="./assets/images/cardimage/card-img-002.png";
+       this.viewtheme="./assets/images/cardimage/card-img-002.png";
       break;
 }
     case "3":
     {
-      this.theme="./assets/img/img-03.png";
-       this.viewtheme="./assets/img/img-03.png";
+      this.theme="./assets/images/cardimage/card-img-003.png";
+       this.viewtheme="./assets/images/cardimage/card-img-003.png";
       break;
     }
 

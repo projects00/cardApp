@@ -8,10 +8,11 @@ import { CardComponent } from './card/card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AdminComponent } from './admin/admin.component';
-import { AdmindashComponent } from './admindash/admindash.component';
-import { SettingComponent } from './setting/setting.component';
-import { ActivecardComponent } from './activecard/activecard.component';
-import { CardthemeComponent } from './cardtheme/cardtheme.component';
+import { AdmindashComponent } from './admin/admindash/admindash.component';
+import { SettingComponent } from './admin/setting/setting.component';
+import { ActivecardComponent } from './admin/activecard/activecard.component';
+import { CardthemeComponent } from './admin/cardtheme/cardtheme.component';
+import { PagesComponent } from './admin/pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CardthemeComponent } from './cardtheme/cardtheme.component';
     AdmindashComponent,
     SettingComponent,
     ActivecardComponent,
-    CardthemeComponent
+    CardthemeComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +36,12 @@ import { CardthemeComponent } from './cardtheme/cardtheme.component';
   children : [
                 { path: 'card', component: CardComponent },
                 { path: 'login', component: AdminLoginComponent},
-                  { path: 'admin', component: AdminComponent,children:[{path: 'dash', component: AdmindashComponent},{path: 'setting', component: SettingComponent} ,{path: 'activecard', component: ActivecardComponent},
-                  {path: 'activecard', component: ActivecardComponent},{path: 'cardtheme', component: CardthemeComponent} ]}
+                { path: 'admin', component: AdminComponent,children:[{path: 'dash', component: AdmindashComponent},
+                {path: 'setting', component: SettingComponent},
+                {path: 'activecard', component: ActivecardComponent},
+                {path: 'activecard', component: ActivecardComponent},
+                {path: 'cardtheme', component: CardthemeComponent},
+                {path: 'pages', component: PagesComponent} ]}
                    ]
 },
       {

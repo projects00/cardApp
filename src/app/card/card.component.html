@@ -1,46 +1,95 @@
-<div class="col-md-4 col-md-offset-4">
-    <div class="card">
-        
-        <img [src]="viewtheme" width="100">
-        <h1>{{title}}</h1>
-        <h2>{{name}}</h2>
-        <p>{{message}}</p>
-         <p><small>{{dt | date:dtformat}}</small></p>
-        <a class="btn btn-default" href="http://localhost:4200/app/card/12334546457" title="Facebook Share">Share</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrap">
+                <div class="card clicked " id="PostCard">
+                    <div class="cardouter">
+                        <div class="cardinner clearfix">
+                            <div class="cardleft">
+                                <img [src]="viewtheme" class="img-responsive">
+                            </div>
+                            <div class="cardright">
+                                <div class="stamp1">
+                                    <div class="rubberstamp1">{{dt | date:dtformat}}</div>
+                                </div>
+                                <h1 class="texteffect1">Hello, {{title}}</h1>
+                                <h2 class="texteffect1">{{name}} some text</h2>
+                                <p class="texteffect1">{{message}} </p>
+                                <a class="btn btn-primary" href="#">Share Now!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="postouter" id="OpenPost">
+                    <div class="pcover">
+                        <div class="postcardindicator">1</div>
+                        <img src="assets/images/card.svg" class="pcard">
+                        <img src="assets/images/postcard1.svg" class="pcardopener">
+                        <img src="assets/images/postcardopen.svg" class="pcardcower">
+                    </div>
+                </div>
+            </div>
+            <img src="assets/images/logo.svg" width="160" class="img-responsive center-block">
+            <!--<div>
+                <a href="#">
+                    <img src="images/Banner-FIS-2016-480x90.gif" class="center-block">
+                </a>
+            </div>-->
+        </div>
     </div>
-    <a class="btn btn-default" href="#" data-toggle="modal" data-target="#myModal">Create</a>
 </div>
+<label class="hamburgermenu">
+    <input type='checkbox'>
+    <span class='menu'>
+        <span class='hamburger'></span>
+    </span>
+    <ul>
+        <li><a href='index.html'><img src="assets/images/home.svg" class="menuicon"> Home</a></li>
+        <li><a href='about.html'><img src="assets/images/about-us.svg" class="menuicon"> About</a></li>
+        <li><a href='donate.html'><img src="assets/images/donate.svg" class="menuicon"> Donate</a></li>
+        <li><a href='contact.html'><img src="assets/images/contact.svg" class="menuicon"> Contact</a></li>
+        <li><a href='terms-and-conditions.html'><img src="assets/images/tac.svg" class="menuicon"> Terms and Conditions</a></li>
+    </ul>
+</label>
+<a class="btn-post" href="#" id="NewPost" data-toggle="modal" data-target="#myModal"><span>N</span><img src="assets/images/postcard.svg"></a>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-body">
-                <form [formGroup]="rForm">
-                    <div class="form-group">
-                        <label for="Theme">Theme</label>
-                        <select formControlName="viewTheme" (change)="onChange()" class="form-control" id="Theme" name="test" ngModel>
-                            <option value="1">Theme 01</option>
-                            <option value="2">Theme 02</option>
-                            <option value="3">Theme 03</option>
-                        </select>
-                       <img [src]="theme" width="100" class="center-block pad15">
+            <div class="createcardouter">
+                <div class="card">
+                    <div class="cardouter">
+                        <form [formGroup]="rForm">
+                            <div class="cardinner clearfix">
+                                <div class="cardleft">
+                                    <select formControlName="viewTheme" (change)="onChange()" class="form-control" id="Theme" name="test" ngModel>
+                                        <option value="1">Default Card</option>
+                                        <option value="2">Card - 2</option>
+                                        <option value="3">Card - 3</option>
+                                    </select>
+                                    <img [src]="theme" class="img-responsive">
+                                </div>
+                                <div class="cardright">
+                                    <div class="stamp1">
+                                        <div class="rubberstamp1">
+                                            {{dt | date:dtformat}}
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">Hello,</div>
+                                        <input formControlName="viewTitle" class="form-control" type="text" placeholder="Title" id="Title" maxlength="24">
+                                    </div>
+                                    <div class="input-group">
+                                        <input formControlName="viewName" class="form-control" type="text" placeholder="Name" id="Name" maxlength="18">
+                                        <div class="input-group-addon">some text</div>
+                                    </div>
+                                    <textarea formControlName="viewMessage" class="form-control" placeholder="Message" id="Message" maxlength="160"></textarea>
+                                    <a class="btn btn-primary" (click)="clicked()">Preview</a>
+                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal" aria-label="Close">Close</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="Title">Title</label>
-                        <input formControlName="viewTitle" class="form-control" type="text" placeholder="Title" id="Title">
-                    </div>
-                    <div class="form-group">
-                        <label for="Name">Name</label>
-                        <input formControlName="viewName" class="form-control" type="text" placeholder="Name" id="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="Message">Message</label>
-                        <textarea formControlName="viewMessage" class="form-control" placeholder="Message" id="Message"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <a class="btn btn-default" (click)="clicked()">Preview</a>
-                        <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
