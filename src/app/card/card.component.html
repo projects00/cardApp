@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="wrap">
-                <div class="card clicked " id="PostCard">
+                <div class="card " [ngClass]="cardclass" id="PostCard">
                     <div class="cardouter">
                         <div class="cardinner clearfix">
                             <div class="cardleft">
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="postouter" id="OpenPost">
+                <div class="postouter"  (clicked)="test()" id="OpenPost">
                     <div class="pcover">
                         <div class="postcardindicator">1</div>
                         <img src="assets/images/card.svg" class="pcard">
