@@ -17,7 +17,7 @@ body{background-image:radial-gradient(#fff,#eee);min-height:100%;overflow-x:hidd
 .box{border: 1px solid #eee; margin: 10px}
 #PostCard{transform:scale(0)}
 #PostCard.clicked{animation:zoom 3s 1 alternate;transform:scale(1)}
-.btn-post.btn-post{position:fixed;border-radius:5px;right:40px;bottom:40px;box-shadow:0 6px 15px rgba(0,0,0,0.3);animation:beat .25s infinite alternate;z-index:9}
+.btn-post.btn-post{position:fixed;display:none;border-radius:5px;right:40px;bottom:40px;box-shadow:0 6px 15px rgba(0,0,0,0.3);animation:beat .25s infinite alternate;z-index:9}
 .btn-post.btn-post img {width:65px}
 .texteffect{word-break:break-word}
 .createcardouter .input-group-addon{border-color:transparent;color:#ccc!important}
