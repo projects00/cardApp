@@ -115,6 +115,7 @@ switch (this.rForm.value.viewTheme) {
   test(){
     debugger;
     this.cardclass="clicked";
+   
   }
 
 }
