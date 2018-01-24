@@ -6,7 +6,7 @@ import {DataService } from './data.service';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AdminLoginComponent } from './admin/adminlogin/adminlogin.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdmindashComponent } from './admin/admindash/admindash.component';
 import { SettingComponent } from './admin/setting/setting.component';
@@ -35,8 +35,9 @@ import { PagesComponent } from './admin/pages/pages.component';
   component: AppComponent,
   children : [
                 { path: 'card', component: CardComponent },
+                { path: 'admin', component: AdminComponent,
+      children:[{path: 'dash', component: AdmindashComponent},
                 { path: 'login', component: AdminLoginComponent},
-                { path: 'admin', component: AdminComponent,children:[{path: 'dash', component: AdmindashComponent},
                 {path: 'setting', component: SettingComponent},
                 {path: 'activecard', component: ActivecardComponent},
                 {path: 'activecard', component: ActivecardComponent},

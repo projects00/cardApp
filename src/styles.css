@@ -16,7 +16,7 @@ body{min-height:100%;overflow-x:hidden;background:#eee;}
 .card .cardouter .cardright h2{font-size:19px;margin:0 0 10px;color: #e59677;}
 .card .cardouter .cardright p{font-size:16px; margin: 0 0 25px;color: #444;}
 .footer{font-size:12px;text-align:center;color:rgba(0,0,0,0.3)}
-.box{border: 1px solid #eee; margin: 10px;padding: 15px;background: #f9f9f9;}
+.box{border: 1px solid #eee; margin: 10px;padding: 15px;background: #fff;}
 .btn-post{position:fixed;outline:none;cursor: pointer;border-radius:5px;right:40px;bottom:40px;box-shadow:0 6px 15px rgba(0,0,0,0.3);animation:beat .5s infinite alternate;z-index:9;width: 60px;height: 42px;}
 .texteffect{word-break:break-word}
 .createcardouter .input-group-addon{border-color:transparent;color:#ccc!important}
