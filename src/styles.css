@@ -112,8 +112,8 @@ label.hamburgermenu a{font-size:1.6em;}
 label.hamburgermenu .hamburger{top:30px;right: 20px;}
 }
 @media print {
-.btn-post,.hamburgermenu,.postouter,.btn{display: none}
-.card{display: block; border: 3px double #000;color: #000}
+.btn-post,.hamburgermenu,.postouter,.btn{display: none;visibility:hidden}
+.card{display: block; border: 4px dashed #000;color: #000}
 .cardright,.cardleft{width: 48%;float: left; padding: 1%; border: 0;}
 .card .cardouter .cardright h1{font-size:40px;margin:0 0 15px}
 .card .cardouter .cardright h2{font-size:30px;margin:0 0 15px}

@@ -6,7 +6,7 @@
                     <div class="cardouter">
                         <div class="cardinner clearfix">
                             <div class="cardleft">
-                                <img [src]="viewtheme" class="img-responsive">
+                                <img [src]="viewtheme" class="img-responsive" alt="Card Photo" title="Card Image">
                             </div>
                             <div class="cardright">
                                 <div class="stamp">
@@ -15,24 +15,19 @@
                                 <h1 class="texteffect">Hi, {{recipient}}</h1>
                                 <h2 class="texteffect">{{name}} some text</h2>
                                 <p class="texteffect">{{message}} </p>
-                                <a class="btn btn-primary" href="#">Share Now!</a>
+                                <a class="btn btn-primary" href="#" title="Share Link">Share Now!</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="postouter"  (click)="test()" id="OpenPost">
-                        <div class="postcardindicator">1</div>
-                        <img src="assets/images/postcard.svg" class="postcard">
-                        <img src="assets/images/postcover1.svg" class="postcover1">
-                        <img src="assets/images/postcover2.svg" class="postcover2">
+                <div class="postouter" (click)="test()" id="OpenPost">
+                    <div class="postcardindicator">1</div>
+                    <img src="assets/images/postcard.svg" class="postcard" alt="postcard icon" title="postcard icon">
+                    <img src="assets/images/postcover1.svg" class="postcover1" alt="postcard top icon" title="postcard top">
+                    <img src="assets/images/postcover2.svg" class="postcover2" alt="postcard bottom icon" title="postcard bottom">
                 </div>
             </div>
-            <img src="assets/images/logo-home.svg" width="160" class="img-responsive center-block">
-            <!--<div>
-                <a href="#">
-                    <img src="images/Banner-FIS-2016-480x90.gif" class="center-block">
-                </a>
-            </div>-->
+            <img src="assets/images/logo-home.svg" width="160" alt="PostCardi Logo" title="PostCardi" class="img-responsive center-block">
         </div>
     </div>
 </div>
@@ -42,16 +37,16 @@
         <span class='hamburger'></span>
     </span>
     <ul>
-        <li><a href='index.html'><img src="assets/images/icon-home.svg" class="menuicon"> Home</a></li>
-        <li><a href='about.html'><img src="assets/images/icon-about.svg" class="menuicon"> About</a></li>
-        <li><a href='donate.html'><img src="assets/images/icon-donate.svg" class="menuicon"> Donate</a></li>
-        <li><a href='contact.html'><img src="assets/images/icon-contact.svg" class="menuicon"> Contact</a></li>
+        <li><a href='#' title="Click to Home"><img src="assets/images/icon-home.svg" class="menuicon" alt="Home icon" title="Home"> Home</a></li>
+        <li><a href='#' title="Click to About"><img src="assets/images/icon-about.svg" class="menuicon" alt="About icon" title="About"> About</a></li>
+        <li><a href='#' title="Click to Donate"><img src="assets/images/icon-donate.svg" class="menuicon" alt="Donate icon" title="Donate"> Donate</a></li>
+        <li><a href='#' title="Click to Contact"><img src="assets/images/icon-contact.svg" class="menuicon" alt="Contact icon" title="Contact"> Contact</a></li>
     </ul>
 </label>
 <div class="btn-post" [ngStyle]="{'display': showbtn}" id="NewPost" data-toggle="modal" data-target="#myModal">
     <span class="no">N</span>
     <span class="bubbles"></span>
-    <img src="assets/images/postcover.svg">
+    <img src="assets/images/postcover.svg" alt="New Card icon" title="Click to Create Card">
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
@@ -62,12 +57,13 @@
                         <form [formGroup]="rForm">
                             <div class="cardinner clearfix">
                                 <div class="cardleft">
-                                    <select formControlName="viewTheme" (change)="onChange()" class="form-control" id="Theme" name="test" ngModel>
+                                    <label for="Theme" class="hide">Theme</label>
+                                    <select formControlName="viewTheme" placeholder="Select" (change)="onChange()" class="form-control" id="Theme" name="test" ngModel>
                                         <option value="1">Default Card</option>
                                         <option value="2">Card - 2</option>
                                         <option value="3">Card - 3</option>
                                     </select>
-                                    <img [src]="theme" class="img-responsive">
+                                    <img [src]="theme" class="img-responsive" alt="Card Photo" title="Card Image">
                                 </div>
                                 <div class="cardright">
                                     <div class="stamp">
@@ -76,13 +72,16 @@
                                         </div>
                                     </div>
                                     <div class="input-group">
+                                        <label for="Recipient" class="hide">Recipient</label>
                                         <div class="input-group-addon">Hi,</div>
                                         <input formControlName="viewRecipient" class="form-control" type="text" placeholder="Recipient Name" id="Recipient" maxlength="24">
                                     </div>
                                     <div class="input-group">
+                                        <label for="Name" class="hide">Name</label>
                                         <input formControlName="viewName" class="form-control" type="text" placeholder="Name" id="Name" maxlength="18">
                                         <div class="input-group-addon">some text</div>
                                     </div>
+                                    <label for="Message" class="hide">Message</label>
                                     <textarea formControlName="viewMessage" class="form-control" placeholder="Message" id="Message" maxlength="160"></textarea>
                                     <a class="btn btn-primary" (click)="clicked()">Preview</a>
                                     <button type="button" class="btn btn-default pull-right" data-dismiss="modal" aria-label="Close">Close</button>
