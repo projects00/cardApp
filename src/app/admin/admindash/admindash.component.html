@@ -1,5 +1,21 @@
- <div class="panel-heading">Dashboard</div>
-                        <div class="panel-body">
-                            <p>Total Cards: 200</p>
-                            <p>Active Cards: 50393</p>
-                        </div>
+<div class="panel-heading">Dashboard</div>
+<div class="box">
+    <p>Total Cards: 200</p>
+    <p>Active Cards: 50393</p>
+</div>
+<div class="box">
+    <h3>Default Card Settings</h3>
+    <div class="form-group">
+        <p>
+            <label for="DefaultImage">Default Image</label>
+        </p>
+        <img src="assets/images/cardimage/card-img-001.png" width="200">
+        <input type="file" id="DefaultImage">
+        <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
+    </div>
+    <div class="form-group">
+        <label for="WebsiteDescription">Default Message</label>
+        <textarea class="form-control" id="WebsiteMessage" placeholder="Website Message"> </textarea>
+    </div>
+    <button type="submit" class="btn btn-default">EDIT</button>
+</div>

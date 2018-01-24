@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class CardComponent implements OnInit {
 
-  title: String;
+  recipient: String;
   name: String;
   message: String;
   today:String;
@@ -42,13 +42,13 @@ export class CardComponent implements OnInit {
 
   initilizeFrom() {
     this.rForm = this.fb1.group({
-      'viewTitle': [null, Validators.required],
+      'viewRecipient': [null, Validators.required],
       'viewName': [null, Validators.required],
       'viewMessage': [null, Validators.required],
       'viewTheme':["./assets/images/cardimage/card-img-001.png"]
 
     });
-    this.rForm.controls['viewTitle'].setValue(this.dataservice.title);
+    this.rForm.controls['viewRecipient'].setValue(this.dataservice.recipient);
     this.rForm.controls['viewName'].setValue(this.dataservice.name);
     this.rForm.controls['viewMessage'].setValue(this.dataservice.message);
     this.rForm.controls['viewTheme'].setValue(this.dataservice.theme);
@@ -57,7 +57,7 @@ export class CardComponent implements OnInit {
  
 
   ngOnInit() {
-     this.title = this.dataservice.title;
+     this.recipient = this.dataservice.recipient;
     this.name = this.dataservice.name;
     this.message = this.dataservice.message;
      this.theme = this.dataservice.theme;
@@ -96,13 +96,13 @@ switch (this.rForm.value.viewTheme) {
   clicked() {
     debugger;
    // this.theme=this.rForm.value.viewTheme;
-    this.dataservice.title = this.rForm.value.viewTitle;
+    this.dataservice.recipient = this.rForm.value.viewRecipient;
     this.dataservice.name = this.rForm.value.viewName;
     this.dataservice.message = this.rForm.value.viewMessage;
     this.dataservice.theme = this.rForm.value.viewTheme;
     $("#myModal").modal("toggle");
     this.router.navigateByUrl('Card/123');
-    this.title = this.dataservice.title;
+    this.recipient = this.dataservice.recipient;
     this.name = this.dataservice.name;
     this.message = this.dataservice.message;
       this.viewtheme=this.theme;

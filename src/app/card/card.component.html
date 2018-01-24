@@ -9,12 +9,12 @@
                                 <img [src]="viewtheme" class="img-responsive">
                             </div>
                             <div class="cardright">
-                                <div class="stamp1">
-                                    <div class="rubberstamp1">{{dt | date:dtformat}}</div>
+                                <div class="stamp">
+                                    <div class="rubberstamp">{{dt | date:dtformat}}</div>
                                 </div>
-                                <h1 class="texteffect1">Hello, {{title}}</h1>
-                                <h2 class="texteffect1">{{name}} some text</h2>
-                                <p class="texteffect1">{{message}} </p>
+                                <h1 class="texteffect">Hi, {{recipient}}</h1>
+                                <h2 class="texteffect">{{name}} some text</h2>
+                                <p class="texteffect">{{message}} </p>
                                 <a class="btn btn-primary" href="#">Share Now!</a>
                             </div>
                         </div>
@@ -23,13 +23,13 @@
                 <div class="postouter"  (click)="test()" id="OpenPost">
                     <div class="pcover">
                         <div class="postcardindicator">1</div>
-                        <img src="assets/images/card.svg" class="pcard">
-                        <img src="assets/images/postcard1.svg" class="pcardopener">
-                        <img src="assets/images/postcardopen.svg" class="pcardcower">
+                        <img src="assets/images/postcard.svg" class="pcard">
+                        <img src="assets/images/postcover1.svg" class="pcardopener">
+                        <img src="assets/images/postcover2.svg" class="pcardcower">
                     </div>
                 </div>
             </div>
-            <img src="assets/images/logo.svg" width="160" class="img-responsive center-block">
+            <img src="assets/images/logo-home.svg" width="160" class="img-responsive center-block">
             <!--<div>
                 <a href="#">
                     <img src="images/Banner-FIS-2016-480x90.gif" class="center-block">
@@ -44,14 +44,17 @@
         <span class='hamburger'></span>
     </span>
     <ul>
-        <li><a href='index.html'><img src="assets/images/home.svg" class="menuicon"> Home</a></li>
-        <li><a href='about.html'><img src="assets/images/about-us.svg" class="menuicon"> About</a></li>
-        <li><a href='donate.html'><img src="assets/images/donate.svg" class="menuicon"> Donate</a></li>
-        <li><a href='contact.html'><img src="assets/images/contact.svg" class="menuicon"> Contact</a></li>
-        <li><a href='terms-and-conditions.html'><img src="assets/images/tac.svg" class="menuicon"> Terms and Conditions</a></li>
+        <li><a href='index.html'><img src="assets/images/icon-home.svg" class="menuicon"> Home</a></li>
+        <li><a href='about.html'><img src="assets/images/icon-about.svg" class="menuicon"> About</a></li>
+        <li><a href='donate.html'><img src="assets/images/icon-donate.svg" class="menuicon"> Donate</a></li>
+        <li><a href='contact.html'><img src="assets/images/icon-contact.svg" class="menuicon"> Contact</a></li>
     </ul>
 </label>
-<a class="btn-post" [ngStyle]="{'display': showbtn}" href="#" id="NewPost" data-toggle="modal" data-target="#myModal"><span>N</span><img src="assets/images/postcard.svg"></a>
+<div class="btn-post" [ngStyle]="{'display': showbtn}" id="NewPost" data-toggle="modal" data-target="#myModal">
+    <span class="no">N</span>
+    <span class="bubbles"></span>
+    <img src="assets/images/postcover.svg">
+</div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -69,14 +72,14 @@
                                     <img [src]="theme" class="img-responsive">
                                 </div>
                                 <div class="cardright">
-                                    <div class="stamp1">
-                                        <div class="rubberstamp1">
+                                    <div class="stamp">
+                                        <div class="rubberstamp">
                                             {{dt | date:dtformat}}
                                         </div>
                                     </div>
                                     <div class="input-group">
-                                        <div class="input-group-addon">Hello,</div>
-                                        <input formControlName="viewTitle" class="form-control" type="text" placeholder="Title" id="Title" maxlength="24">
+                                        <div class="input-group-addon">Hi,</div>
+                                        <input formControlName="viewRecipient" class="form-control" type="text" placeholder="Recipient Name" id="Recipient" maxlength="24">
                                     </div>
                                     <div class="input-group">
                                         <input formControlName="viewName" class="form-control" type="text" placeholder="Name" id="Name" maxlength="18">

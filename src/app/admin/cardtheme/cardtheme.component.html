@@ -2,13 +2,12 @@
     <a class="pull-right" href="#" data-toggle="modal" data-target="#NewCard">
         <span class="glyphicon glyphicon-plus"></span> Add New Card</a>
 </div>
-<div class="panel-body">
+<div class="box">
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Active/Inactive</th>
-                <th>Card #</th>
-                <th>Card Name</th>
+                <th>Card Theme</th>
                 <th>Image</th>
                 <th>Message</th>
                 <th>Edit</th>
@@ -24,7 +23,6 @@
                         </label>
                     </div>
                 </td>
-                <td>1</td>
                 <td>Card 001</td>
                 <td>
                     <img src="assets/images/cardimage/card-img-001.png" width="80">
@@ -51,29 +49,29 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                        <label for="exampleInputEmail1">Card Name</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputFile">Card Image</label>
-                        <input type="file" id="exampleInputFile">
-                        <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Default Message</label>
-                        <textarea class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
-                        <p class="help-block">Max. 160 characters</p>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Card CSS Style</label>
-                        <textarea class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
-                        <p class="help-block">Add css for the card</p>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Active
-                        </label>
-                    </div>
+                    <label for="exampleInputEmail1">Card Theme Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Card Image</label>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Default Message</label>
+                    <textarea class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
+                    <p class="help-block">Max. 160 characters</p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Card CSS Style</label>
+                    <textarea class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
+                    <p class="help-block">Add css for the card</p>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Active
+                    </label>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -93,7 +91,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Card Name</label>
+                    <label for="exampleInputEmail1">Card Theme Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name">
                 </div>
                 <div class="form-group">
@@ -135,7 +133,7 @@
                 <h4 class="modal-title" id="myModalLabel">Delete Card?</h4>
             </div>
             <div class="modal-body">
-                Are you sure delete "Birthday" card permanently?
+                Are you sure delete "Card Theme Name" card permanently?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
