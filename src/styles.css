@@ -1,10 +1,10 @@
 html {background: radial-gradient(#fff,#444);height:100%}
 /*body{min-height:100%;overflow-x:hidden;font-family: 'Comfortaa', cursive;background: linear-gradient(-45deg,rgba(229, 150, 119, 0.7), rgba(217, 119, 229, 0.7), rgba(127, 177, 200, 0.7), rgba(184, 242, 169, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 15s ease infinite;-moz-animation: Gradient 15s ease infinite;animation: Gradient 15s ease infinite;}*/
-body{min-height:100%;overflow-x:hidden;background:#eee;}
+body{min-height:100%;overflow-x:hidden;background:#ccc;}
 .wrap{position:relative;margin:100px 180px}
-.cardleft,.cardright{width:50%;float:left}
-.card .cardright {font-family: 'Comfortaa', cursive;}
-.cardleft{border-right:2px dotted rgba(0,0,0,.2);padding:30px 25px 25px}
+/*.cardleft,.cardright{width:50%;float:left}*/
+/*.card .cardright {font-family: 'Comfortaa', cursive;}*/
+/*.cardleft{border-right:2px dotted rgba(0,0,0,.2);padding:30px 25px 25px}*/.cardleft{padding:5px 30%}
 .cardright{padding:0 0 10px 25px}
 .card{background:#fff;padding:10px;z-index:9;position:relative}
 /*.card{background:#fff url( assets/images/postcard-bg.png);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}*/
@@ -30,8 +30,8 @@ body{min-height:100%;overflow-x:hidden;background:#eee;}
 .btn-primary{color:#fff;background-color:#7fb1c8;border-color:#7fb1c8}
 .btn-primary:hover{color:#fff;background-color:#e59677;border-color:#e59677}
 .modal-content{box-shadow:none;border:0}
-#NewPost .no {background: #d06468; width: 20px; height: 20px; position: absolute;right: -8px;top: -8px;border-radius: 50%;box-shadow: 0 1px 5px rgba(51, 51, 51, 0.5);color: #fff;text-align: center;font-size: 8px;padding: 5px;}
-.bubbles {width: 30px; height: 30px; top:8px;left:18px; z-index: -1;position: absolute;background:rgba(255,255,255,.1);animation:blast .5s ease-in infinite;border-radius: 50%;}
+#NewPost .no {background: #7fc8b1; width: 20px; height: 20px; position: absolute;right: -8px;top: -8px;border-radius: 50%;box-shadow: 0 1px 5px rgba(51, 51, 51, 0.5);color: #fff;text-align: center;font-size: 8px;padding: 5px;}
+.bubbles {width: 30px; height: 30px; top:6px;left:14px; z-index: -1;position: absolute;background:rgba(255,255,255,.1);animation:blast .5s ease-in infinite;border-radius: 50%;}
 /*HAMBURGER*/
 label.hamburgermenu .menu{position:absolute;right:0;top:0;z-index:100;width:100px;height:100px;background:rgba(255,255,255,0);border-radius:50% 50% 50% 50%;-webkit-transition:.2s ease-in-out;transition:.2s ease-in-out;-webkit-box-shadow:0 0 0 0 rgba(255,255,255,0),0 0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 0 rgba(255,255,255,0),0 0 0 0 rgba(255,255,255,0);cursor:pointer}
 label.hamburgermenu .hamburger{position:absolute;top:40px;right: 30px;width:30px;height:1px;background:#ece7ea;display:block;-webkit-transform-origin:center;transform-origin:center;-webkit-transition:.5s ease-in-out;transition:.5s ease-in-out}
@@ -47,14 +47,15 @@ label.hamburgermenu input:checked + .menu + ul{opacity:1;display:block}
 label.hamburgermenu ul{z-index:200;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:100%;margin:0;padding:0;list-style:none;display:none}
 label.hamburgermenu a{margin-bottom:10px;display:block;color:#7fb1c8;text-decoration:none;padding:10px;text-align:center;font-size:2em;transition:.2s ease-in-out}
 label.hamburgermenu a:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-decoration:none}
-.menuicon { width: 36px}
+.menuicon { width: 30px; vertical-align: text-top}
 .pagecontent{ padding: 30px; margin: 10% 0; text-align: center; color: #333; background: #fff; box-shadow: 0 5px 10px rgba(0,0,0,.2)}
 .pagecontent h1 {color: #b7b9c0;font-size: 30px;}
 .pagecontent p {color: #b7b9c0}
 .mar300 { margin: 30px 0}
 /*POSTCARD ANIMATION*/
-#PostCard{transform:scale(0)}
-#PostCard.clicked{animation:zoom 3s 1 alternate;transform:scale(1)}
+#PostCard{transform:scale(0);}
+#PostCard.postpopup{animation:postpopupanim 3s 1 alternate;transform:scale(1)}
+#PostCard.postpopup.send{animation:postsendanim 3s 1;}
 .postouter{width:158px;height:112px;transform:scale(1);transition:.3s ease all;cursor:pointer;left:calc(50% - 80px);position:absolute;top:30%;background: #edeef0;border-radius: 11px;box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);}
 .postouter .postcardindicator{background:#fa8383;position:absolute;padding:5px;right:-10px;top:-10px;border-radius:50%;height:30px;width:30px;color:#fff;text-align:center;font-size:16px;box-shadow:0 5px 5px rgba(0,0,0,0.2);animation:beat .25s infinite alternate;z-index:5}
 .postouter .postcard,.postouter .postcover1,.postouter .postcover2{position:absolute;transform:translateY(0);transition:.5s ease all;width:100%;height:100%;top: 0;left: 0;}
@@ -68,11 +69,17 @@ label.hamburgermenu a:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-
 @keyframes beat {
 to{transform:scale(1.1)}
 }
-@keyframes zoom {
-0%{transform:scale(0)translateY(-100px)}
-10%{transform:scale(.2)translateY(-640px)}
+@keyframes postpopupanim {
+0%{transform:scale(0)translateY(-200px);opacity: 0}
+10%{transform:scale(.2)translateY(-640px);opacity: 1}
 30%{transform:scale(.2) translateY(0)}
 50%{transform:scale(1)translateY(0)}
+}
+@keyframes postsendanim {
+0%{transform:scale(1)translateY(0)}
+10%{transform:scale(.2)translateY(0)}
+30%{transform:scale(.2) translateY(-640px)}
+50%{transform:scale(0)translateY(-100px)}
 }
 @keyframes blast {
 0%{transform:scale(1);opacity:1}
@@ -92,9 +99,9 @@ to{transform:scale(1.1)}
 }
 @media (max-width: 767px) {
 .card{padding: 10px}
-.cardleft{border-right:0 dotted rgba(0,0,0,.2);border-bottom:2px dotted rgba(0,0,0,.2);padding:20px 70px 5px}
+/*.cardleft{border-right:0 dotted rgba(0,0,0,.2);border-bottom:2px dotted rgba(0,0,0,.2);padding:20px 70px 5px}
 .cardright{padding:10px}
-.cardleft,.cardright{width:100%}
+.cardleft,.cardright{width:100%}*/
 .card .cardouter .cardright h1{font-size:22px;margin:0 0 5px}
 .card .cardouter .cardright h2{font-size:20px;margin:0 0 5px}
 .card .cardouter .cardright p{font-size:16px;margin: 0 0 5px;}

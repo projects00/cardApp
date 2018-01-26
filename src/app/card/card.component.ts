@@ -114,8 +114,8 @@ switch (this.rForm.value.viewTheme) {
   }
 
   test(){
-    debugger;
-    this.cardclass="clicked";
+    //debugger;
+    this.cardclass="postpopup";
     this.showbtn="block";
    
   }
