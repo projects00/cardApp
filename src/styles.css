@@ -10,8 +10,8 @@ body{min-height:100%;overflow-x:hidden;background:#ccc;}
 /*.card{background:#fff url( assets/images/postcard-bg.png);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}*/
 .card .cardouter{background:#fff;padding:10px;position:relative}
 .card .cardouter .cardinner{padding:0 0 20px}
-.card .cardouter:before{content:'Card';position:absolute;left:0;top:0;right:0;padding:10px;color:#ccc}
-.card .cardouter:after{content:'Copyrights';text-align:center;position:absolute;left:0;bottom:0;right:0;padding:10px;color:#ccc;font-size:10px}
+/*.card .cardouter:before{content:'Card';position:absolute;left:0;top:0;right:0;padding:10px;color:#ccc}*/
+/*.card .cardouter:after{content:'Copyrights';text-align:center;position:absolute;left:0;bottom:0;right:0;padding:10px;color:#ccc;font-size:10px}*/
 .card .cardouter .cardright h1{font-size:30px;margin:0 0 10px;text-transform:capitalize;color: #6899af;}
 .card .cardouter .cardright h2{font-size:19px;margin:0 0 10px;color: #e59677;}
 .card .cardouter .cardright p{font-size:16px; margin: 0 0 25px;color: #444;}
