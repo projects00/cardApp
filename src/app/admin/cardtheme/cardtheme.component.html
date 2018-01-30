@@ -40,6 +40,7 @@
 </div>
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
+        <form [formGroup]="cForm">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -50,34 +51,35 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Card Theme Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name">
+                    <input formControlName="cardName" type="text" class="form-control" id="cardName" placeholder="Card name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputFile">Card Image</label>
-                    <input type="file" id="exampleInputFile">
+                    <input formControlName="cardImage" type="file" id="cardImage">
                     <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Default Message</label>
-                    <textarea class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
+                    <textarea formControlName="cardMessage" class="form-control" id="cardMessage1" placeholder="Message"> </textarea>
                     <p class="help-block">Max. 160 characters</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Card CSS Style</label>
-                    <textarea class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
+                    <textarea formControlName="cardCss" class="form-control" id="cardCss1" placeholder="Css"> </textarea>
                     <p class="help-block">Add css for the card</p>
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox"> Active
+                        <input formControlName="cardIsActive" type="checkbox"> Active
                     </label>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Publish Card</button>
+                <button type="button" [disabled]="!cForm.valid" class="btn btn-primary">Publish Card</button>
             </div>
         </div>
+        </form>
     </div>
 </div>
 <div class="modal fade" id="EditCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
