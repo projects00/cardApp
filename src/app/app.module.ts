@@ -28,6 +28,7 @@ import { PagesComponent } from './admin/pages/pages.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       {
