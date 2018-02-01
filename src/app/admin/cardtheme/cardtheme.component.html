@@ -29,10 +29,10 @@
                 </td>
                 <td>{{sb.message}}</td>
                 <td>
-                    <span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#EditCard"></span>
+                    <span class="glyphicon glyphicon-pencil" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"></span>
                 </td>
                 <td>
-                    <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#DeleteCard"></span>
+                    <span class="glyphicon glyphicon-trash" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"></span>
                 </td>
             </tr>
         </tbody>
@@ -84,6 +84,7 @@
 </div>
 <div class="modal fade" id="EditCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
+         <form [formGroup]="cardEditForm">
         <div  class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -94,7 +95,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Card Theme Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name">
+                    <input formControlName="ecardname" type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputFile">Card Image</label>
@@ -104,25 +105,26 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Default Message</label>
-                    <textarea class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
+                    <textarea formControlName="emessage"  class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
                     <p class="help-block">Max. 160 characters</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Card CSS Style</label>
-                    <textarea class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
+                    <textarea formControlName="ecardcss"  class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
                     <p class="help-block">Add css for the card</p>
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox"> Active
+                        <input formControlName="eisactive"   type="checkbox"> Active
                     </label>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save Card</button>
+                <button type="button" (click)="updatecard()" class="btn btn-primary">Update Card</button>
             </div>
         </div>
+        </form>
     </div>
 </div>
 <div class="modal fade" id="DeleteCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
@@ -139,7 +141,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Yes</button>
+                <button type="button" (click)="delete()" class="btn btn-primary">Yes</button>
             </div>
         </div>
     </div>

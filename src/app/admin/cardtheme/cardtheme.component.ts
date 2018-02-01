@@ -14,7 +14,9 @@ export class CardthemeComponent implements OnInit {
   cardtheme: any;
   dt: Date = new Date();
   cForm: FormGroup;
+  cardEditForm: FormGroup;
   fb1: FormBuilder;
+dId:Number;
 
   constructor(private dataservice: DataService, fb: FormBuilder, private router: Router) {
 
@@ -28,10 +30,16 @@ export class CardthemeComponent implements OnInit {
     this.cForm = this.fb1.group({
       'cardName': [null, Validators.required],
       'cardMessage': [null, Validators.required],
-      'cardIsActive': [null, Validators.required],
+      'cardIsActive': [null],
       'cardCss': [null, Validators.required]
     });
 
+        this.cardEditForm = this.fb1.group({
+      'ecardname': [null, Validators.required],
+      'emessage': [null, Validators.required],
+      'eisactive': [null],
+      'ecardcss': [null, Validators.required]
+    });
   }
 
   savecard() {
@@ -51,6 +59,47 @@ export class CardthemeComponent implements OnInit {
       });
   }
 
+
+  
+  updatecard() {
+    debugger;
+    const _cardtheme = new cardtheme();
+    _cardtheme.id=this.dId;
+    _cardtheme.name = this.cardEditForm.value.ecardname;
+    _cardtheme.message = this.cardEditForm.value.emessage;
+    _cardtheme.isactive = this.cardEditForm.value.eisactive;
+    _cardtheme.cardcss = this.cardEditForm.value.ecardcss;
+    this.dataservice.updateCardTheme(_cardtheme).subscribe(
+      (respose) => {
+        this.initilizeFrom();
+        $("#EditCard").modal("toggle");
+         this.getCardTheme();
+
+      });
+  }
+
+    editCard(card) {
+    this.dId = card.id;
+    this.cardEditForm.controls['ecardname'].setValue(card.name);
+    this.cardEditForm.controls['emessage'].setValue(card.message);
+    this.cardEditForm.controls['ecardcss'].setValue(card.cardcss);
+      this.cardEditForm.controls['eisactive'].setValue(card.isactive);
+  
+  }
+    deleteCard(card){
+       this.dId = card.id;
+    }
+
+    delete(){
+      debugger;
+         this.dataservice.deleteCardTheme(this.dId).subscribe(
+      (respose) => {
+        this.initilizeFrom();
+        $("#DeleteCard").modal("toggle");
+         this.getCardTheme();
+
+      });
+    }
   getCardTheme() {
     this.cardtheme = [];
     this.dataservice.getCardTheme().subscribe(
@@ -61,7 +110,7 @@ export class CardthemeComponent implements OnInit {
           card.id = element.id;
           card.name = element.name;
           card.message = element.message;
-          card.isactive=1;
+           card.isactive = element.isactive;
           this.cardtheme.push(card);
           
         });

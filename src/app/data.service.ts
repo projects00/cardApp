@@ -12,7 +12,8 @@ name:String="Test user name";
 message:String="Test Messages";
 theme:String="./assets/images/cardimage/card-img-001.png"
  dt: Date = new Date();
-  public baseApi = 'http://ec2-52-91-21-206.compute-1.amazonaws.com:5000/';
+public baseApi = 'http://ec2-52-91-21-206.compute-1.amazonaws.com:5000/';
+ //public baseApi = 'http://localhost:5000/';
  constructor(private http: Http) {
 
 
@@ -29,4 +30,12 @@ theme:String="./assets/images/cardimage/card-img-001.png"
     return this.http.get(this.baseApi + "get/cardtheme" ).map(response => response.json());
   }
   
+    updateCardTheme(cardimage){
+       return this.http.put(this.baseApi + "update/cardtheme/" + cardimage.id, cardimage).map(response => response.json());
+
+  }
+  deleteCardTheme(id){
+       return this.http.put(this.baseApi + "delete/cardtheme/"+id,null).map(response => response.json());
+
+  }
 }
