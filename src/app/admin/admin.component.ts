@@ -14,6 +14,9 @@ export class AdminComponent implements OnInit {
   navigation(menu){
         this.router.navigateByUrl('app/admin/'+menu);
   }
+  logout(menu){
+    this.router.navigateByUrl('app/'+menu);
+  }
   ngOnInit() {
   }
 
