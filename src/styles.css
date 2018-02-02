@@ -28,6 +28,7 @@ body{min-height:100%;overflow-x:hidden;background:#f1f1f1;}
 .btn-default{color:#9fa2af;background-color:#eee;border-color:#eee}
 .btn-primary{color:#fff;background-color:#7fb1c8;border-color:#7fb1c8}
 .btn-primary:hover{color:#fff;background-color:#e59677;border-color:#e59677}
+.btn-primary.btn-sm.pull-right {padding: 1px 5px;}
 .modal-content{box-shadow:none;border:0;border-radius: 0;}
 #NewPost .no {background: #7fc8b1; width: 20px; height: 20px; position: absolute;right: -8px;top: -8px;border-radius: 50%;box-shadow: 0 1px 5px rgba(51, 51, 51, 0.5);color: #fff;text-align: center;font-size: 8px;padding: 5px;}
 .bubbles {width: 30px; height: 30px; top:6px;left:14px; z-index: -1;position: absolute;background:rgba(255,255,255,.1);animation:blast .5s ease-in infinite;border-radius: 50%;}
