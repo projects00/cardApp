@@ -29,6 +29,13 @@ public baseApi = 'http://ec2-52-91-21-206.compute-1.amazonaws.com:5000/';
  getCardTheme() {
     return this.http.get(this.baseApi + "get/cardtheme" ).map(response => response.json());
   }
+
+
+  getImage(id) {
+    return this.http.get(this.baseApi + "get/img/" + id, { responseType: ResponseContentType.Blob })
+      .map((res: Response) => res.blob());
+
+  }
   
     updateCardTheme(cardimage){
        return this.http.put(this.baseApi + "update/cardtheme/" + cardimage.id, cardimage).map(response => response.json());
@@ -37,5 +44,18 @@ public baseApi = 'http://ec2-52-91-21-206.compute-1.amazonaws.com:5000/';
   deleteCardTheme(id){
        return this.http.put(this.baseApi + "delete/cardtheme/"+id,null).map(response => response.json());
 
+  }
+
+    saveImage(fileToUpload: File) {
+      debugger;
+    const _formData = new FormData();
+    _formData.append("Name", fileToUpload.name);
+    _formData.append("img", fileToUpload);
+    let body = _formData;
+    let headers = new Headers();
+    let options = new RequestOptions({
+      headers: headers
+    });
+    return this.http.post(this.baseApi + "post/img", body, options).map(response => response.json());
   }
 }

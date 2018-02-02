@@ -1,5 +1,5 @@
 <div class="panel-heading">Card Themes
-    <a class="pull-right" href="#" data-toggle="modal" data-target="#NewCard">
+    <a class="pull-right" href="#" data-toggle="modal" (click)="reset()" data-target="#NewCard">
         <span class="glyphicon glyphicon-plus"></span> Add New Card</a>
 </div>
 <div class="box">
@@ -25,7 +25,7 @@
                 </td>
                 <td>{{sb.name}}</td>
                 <td>
-                    <img src="assets/images/cardimage/card-img-001.png" width="80">
+                   <img [src]="sb.image" height="100px">
                 </td>
                 <td>{{sb.message}}</td>
                 <td>
@@ -55,8 +55,9 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputFile">Card Image</label>
-                    <input  type="file" id="cardImage">
-                    <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
+                     <input class="form-control"  id="avatar" #fileInput (change)="onFileChange($event)" type="file">
+                      <img [src]="imagePath" formControlName="cardImage" class="img-responsive">
+           <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Default Message</label>
@@ -99,8 +100,9 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputFile">Card Image</label>
-                    <input type="file" id="exampleInputFile">
-                    <img src="assets/images/cardimage/card-img-001.png" width="200">
+                              <input class="form-control"  id="avatar1" #fileInput (change)="onFileChange($event)" type="file">
+        
+                     <img [src]="imagePath"  formControlName="ecardImage" class="img-responsive">
                     <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
                 </div>
                 <div class="form-group">
