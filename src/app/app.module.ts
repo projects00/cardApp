@@ -36,15 +36,16 @@ import { PagesComponent } from './admin/pages/pages.component';
   component: AppComponent,
   children : [
                 { path: 'card', component: CardComponent },
-                { path: 'admin', component: AdminComponent,
-      children:[{path: 'dash', component: AdmindashComponent},
                 { path: 'login', component: AdminLoginComponent},
+                { path: 'admin', component: AdminComponent,   
+      children:[
+                {path: 'dash', component: AdmindashComponent},
                 {path: 'setting', component: SettingComponent},
                 {path: 'activecard', component: ActivecardComponent},
                 {path: 'activecard', component: ActivecardComponent},
                 {path: 'cardtheme', component: CardthemeComponent},
                 {path: 'pages', component: PagesComponent} ]}
-                   ]
+                ]
 },
       {
         path: 'Card',

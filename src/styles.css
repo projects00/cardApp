@@ -54,6 +54,7 @@ label.hamburgermenu a:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-
 .mar300 { margin: 30px 0}
 textarea.form-control{min-height: 140px;width: 100%;overflow-x: hidden;}
 .btn-default.btn-box{padding: 50px 10px; min-width: 125px;  margin: 0 15px 15px 0}
+.ellipsis{text-overflow: ellipsis;white-space: nowrap;width: 500px;overflow: hidden;margin: 0;}
 /*POSTCARD ANIMATION*/
 #PostCard{transform:scale(0);}
 #PostCard.postpopup{animation:postpopupanim 3s 1 alternate;transform:scale(1)}

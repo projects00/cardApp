@@ -11,7 +11,7 @@
                     <th>Active/Inactive</th>
                     <th>Card Theme</th>
                     <th>Card Image</th>
-                    <th style="width:40%">Card Message</th>
+                    <th style="width:500px">Card Message</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -27,9 +27,9 @@
                     </td>
                     <td>{{sb.name}}</td>
                     <td>
-                        <img src="assets/images/cardimage/card-img-001.png" width="80">
+                        <img src="assets/images/cardimage/card-img-001.png" width="20">
                     </td>
-                    <td>{{sb.message}}</td>
+                    <td><p class="ellipsis">{{sb.message}}</p></td>
                     <td>
                         <span class="glyphicon glyphicon-pencil" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"></span>
                     </td>
