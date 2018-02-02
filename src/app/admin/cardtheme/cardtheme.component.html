@@ -1,11 +1,11 @@
 <div class="panel-heading">Card Themes
-    <a class="pull-right" href="#" data-toggle="modal" data-target="#NewCard">
+    <a class="pull-right" href="#" (click)="reset()" data-toggle="modal" data-target="#NewCard">
         <span class="glyphicon glyphicon-plus"></span> Add New Card</a>
 </div>
 <div class="box">
     <table class="table table-bordered">
         <thead>
-            <tr >
+            <tr>
                 <th>Active/Inactive</th>
                 <th>Card Theme</th>
                 <th>Image</th>
@@ -25,7 +25,7 @@
                 </td>
                 <td>{{sb.name}}</td>
                 <td>
-                    <img src="assets/images/cardimage/card-img-001.png" width="80">
+                    <img [src]="sb.image" height="100px">
                 </td>
                 <td>{{sb.message}}</td>
                 <td>
@@ -41,89 +41,90 @@
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <form [formGroup]="cForm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">New Card</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Card Theme Name</label>
-                    <input formControlName="cardName" type="text" class="form-control" id="cardName" placeholder="Card name">
+                    <h4 class="modal-title" id="myModalLabel">New Card</h4>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">Card Image</label>
-                    <input  type="file" id="cardImage">
-                    <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Default Message</label>
-                    <textarea formControlName="cardMessage" class="form-control" id="cardMessage1" placeholder="Message"> </textarea>
-                    <p class="help-block">Max. 160 characters</p>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Card CSS Style</label>
-                    <textarea formControlName="cardCss" class="form-control" id="cardCss1" placeholder="Css"> </textarea>
-                    <p class="help-block">Add css for the card</p>
-                </div>
-                <div class="checkbox">
-                    <label>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Card Theme Name</label>
+                        <input formControlName="cardName" type="text" class="form-control" id="cardName" placeholder="Card name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Card Image</label>
+                        <input class="form-control" id="avatar" #fileInput (change)="onFileChange($event)" type="file">
+                        <img [src]="imagePath" formControlName="cardImage" class="img-responsive">
+                        <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Default Message</label>
+                        <textarea formControlName="cardMessage" class="form-control" id="cardMessage1" placeholder="Message"> </textarea>
+                        <p class="help-block">Max. 160 characters</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Card CSS Style</label>
+                        <textarea formControlName="cardCss" class="form-control" id="cardCss1" placeholder="Css"> </textarea>
+                        <p class="help-block">Add css for the card</p>
+                    </div>
+                    <div class="checkbox">
+                        <label>
                         <input formControlName="cardIsActive" type="checkbox"> Active
                     </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" (click)="savecard()" [disabled]="!cForm.valid" class="btn btn-primary">Publish Card</button>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" (click)="savecard()" [disabled]="!cForm.valid" class="btn btn-primary">Publish Card</button>
-            </div>
-        </div>
         </form>
     </div>
 </div>
 <div class="modal fade" id="EditCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
-         <form [formGroup]="cardEditForm">
-        <div  class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <form [formGroup]="cardEditForm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">New Card</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Card Theme Name</label>
-                    <input formControlName="ecardname" type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name">
+                    <h4 class="modal-title" id="myModalLabel">New Card</h4>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">Card Image</label>
-                    <input type="file" id="exampleInputFile">
-                    <img src="assets/images/cardimage/card-img-001.png" width="200">
-                    <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Default Message</label>
-                    <textarea formControlName="emessage"  class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
-                    <p class="help-block">Max. 160 characters</p>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Card CSS Style</label>
-                    <textarea formControlName="ecardcss"  class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
-                    <p class="help-block">Add css for the card</p>
-                </div>
-                <div class="checkbox">
-                    <label>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Card Theme Name</label>
+                        <input formControlName="ecardname" type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Card Image</label>
+                      <input class="form-control"  id="avatar1" #fileInput (change)="onFileChange($event)" type="file">
+        
+                     <img [src]="imagePath"  formControlName="ecardImage" class="img-responsive">
+                        </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Default Message</label>
+                        <textarea formControlName="emessage" class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
+                        <p class="help-block">Max. 160 characters</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Card CSS Style</label>
+                        <textarea formControlName="ecardcss" class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
+                        <p class="help-block">Add css for the card</p>
+                    </div>
+                    <div class="checkbox">
+                        <label>
                         <input formControlName="eisactive"   type="checkbox"> Active
                     </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" (click)="updatecard()" class="btn btn-primary">Update Card</button>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" (click)="updatecard()" class="btn btn-primary">Update Card</button>
-            </div>
-        </div>
         </form>
     </div>
 </div>
