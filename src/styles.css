@@ -1,6 +1,6 @@
 html {background: radial-gradient(#fff,#444);height:100%}
 /*body{min-height:100%;overflow-x:hidden;font-family: 'Comfortaa', cursive;background: linear-gradient(-45deg,rgba(229, 150, 119, 0.7), rgba(217, 119, 229, 0.7), rgba(127, 177, 200, 0.7), rgba(184, 242, 169, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 15s ease infinite;-moz-animation: Gradient 15s ease infinite;animation: Gradient 15s ease infinite;}*/
-body{min-height:100%;overflow-x:hidden;background:#ccc;}
+body{min-height:100%;overflow-x:hidden;background:#f1f1f1;}
 .wrap{position:relative;margin:100px 180px}
 /*.cardleft,.cardright{width:50%;float:left}*/
 /*.card .cardright {font-family: 'Comfortaa', cursive;}*/
@@ -16,7 +16,6 @@ body{min-height:100%;overflow-x:hidden;background:#ccc;}
 .card .cardouter .cardright h2{font-size:19px;margin:0 0 10px;color: #e59677;}
 .card .cardouter .cardright p{font-size:16px; margin: 0 0 25px;color: #444;}
 .footer{font-size:12px;text-align:center;color:rgba(0,0,0,0.3)}
-.box{border: 1px solid #eee; margin: 10px;padding: 15px;background: #fff;}
 .btn-post{position:fixed;outline:none;cursor: pointer;border-radius:5px;right:40px;bottom:40px;box-shadow:0 6px 15px rgba(0,0,0,0.3);animation:beat .5s infinite alternate;z-index:9;width: 60px;height: 42px;}
 .texteffect{word-break:break-word}
 .createcardouter .input-group-addon{border-color:transparent;color:#ccc!important}
@@ -29,7 +28,7 @@ body{min-height:100%;overflow-x:hidden;background:#ccc;}
 .btn-default{color:#9fa2af;background-color:#eee;border-color:#eee}
 .btn-primary{color:#fff;background-color:#7fb1c8;border-color:#7fb1c8}
 .btn-primary:hover{color:#fff;background-color:#e59677;border-color:#e59677}
-.modal-content{box-shadow:none;border:0}
+.modal-content{box-shadow:none;border:0;border-radius: 0;}
 #NewPost .no {background: #7fc8b1; width: 20px; height: 20px; position: absolute;right: -8px;top: -8px;border-radius: 50%;box-shadow: 0 1px 5px rgba(51, 51, 51, 0.5);color: #fff;text-align: center;font-size: 8px;padding: 5px;}
 .bubbles {width: 30px; height: 30px; top:6px;left:14px; z-index: -1;position: absolute;background:rgba(255,255,255,.1);animation:blast .5s ease-in infinite;border-radius: 50%;}
 /*HAMBURGER*/
@@ -52,6 +51,8 @@ label.hamburgermenu a:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-
 .pagecontent h1 {color: #b7b9c0;font-size: 30px;}
 .pagecontent p {color: #b7b9c0}
 .mar300 { margin: 30px 0}
+textarea.form-control{min-height: 140px;width: 100%;overflow-x: hidden;}
+.btn-default.btn-box{padding: 50px 10px; min-width: 125px;  margin: 0 15px 15px 0}
 /*POSTCARD ANIMATION*/
 #PostCard{transform:scale(0);}
 #PostCard.postpopup{animation:postpopupanim 3s 1 alternate;transform:scale(1)}
@@ -66,6 +67,11 @@ label.hamburgermenu a:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-
 .postouter:hover .postcard{z-index:3;transform:translateY(-50px);transition:.5s ease all; transition-delay: .3s}
 .stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 80px}
 /*.stamp .rubberstamp{ margin:0 120px 0 0;padding: 25px 6px; float: right;transform: rotate(-15deg); border: 3px double #9d8bbe; color: #9d8bbe; border-radius:50%;height: 80px;width: 80px; font-size: 10px; font-family: Courier New, Courier, monospace;text-align: center}*/
+.side-nav li{float: left}
+.box{border: 1px solid #eee; margin: 0 0 15px;padding: 15px;background: #fff;box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);}
+.box .boxheader h1{ font-size: 20px; margin: 0;float: left;color: #7fb1c8;}
+.box .boxheader {padding: 0 0 10px;margin-bottom: 10px; border-bottom: 1px solid #eee;height: 30px;}
+.required{color: #fa8383; font-size: 20px}
 @keyframes beat {
 to{transform:scale(1.1)}
 }

@@ -1,5 +1,5 @@
 <div id="wrapper">
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-fixed-top" role="navigation">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -9,12 +9,12 @@
             </button>
             <a class="navbar-brand" href="#">Card Admin</a>
         </div>
-        <ul class="nav navbar-right top-nav">
-            <li>
-                <a href="adminlogin.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-            </li>
-        </ul>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-right top-nav">
+                <li>
+                    <a href="adminlogin.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                </li>
+            </ul>
             <ul class="nav navbar-nav side-nav">
                 <li>
                     <a (click)="navigation('dash')" title="Dashboard"><span class="glyphicon glyphicon-dashboard"></span></a>
@@ -37,9 +37,7 @@
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <router-outlet></router-outlet>
-                </div>
+                <router-outlet></router-outlet>
             </div>
         </div>
     </div>

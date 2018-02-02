@@ -1,42 +1,46 @@
-<div class="panel-heading">Card Themes
-    <a class="pull-right" href="#" data-toggle="modal" data-target="#NewCard">
-        <span class="glyphicon glyphicon-plus"></span> Add New Card</a>
-</div>
-<div class="box">
-    <table class="table table-bordered">
-        <thead>
-            <tr >
-                <th>Active/Inactive</th>
-                <th>Card Theme</th>
-                <th>Image</th>
-                <th>Message</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let sb of cardtheme;let i =index">
-                <td>
-                    <div class="">
-                        <label>
-                            <input [checked]="sb.isactive" type="checkbox"> &nbsp;
-                        </label>
-                    </div>
-                </td>
-                <td>{{sb.name}}</td>
-                <td>
-                    <img src="assets/images/cardimage/card-img-001.png" width="80">
-                </td>
-                <td>{{sb.message}}</td>
-                <td>
-                    <span class="glyphicon glyphicon-pencil" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"></span>
-                </td>
-                <td>
-                    <span class="glyphicon glyphicon-trash" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"></span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="col-md-12">
+    <div class="box">
+        <div class="boxheader">
+            <h1>Active Cards</h1>
+            <button data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-sm pull-right" title="Edit Default"><span class="glyphicon glyphicon-plus"></span> Add New Card</button>
+        </div>
+        <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr >
+                    <th>Active/Inactive</th>
+                    <th>Card Theme</th>
+                    <th>Image</th>
+                    <th>Message</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sb of cardtheme;let i =index">
+                    <td>
+                        <div class="">
+                            <label>
+                                <input [checked]="sb.isactive" type="checkbox"> &nbsp;
+                            </label>
+                        </div>
+                    </td>
+                    <td>{{sb.name}}</td>
+                    <td>
+                        <img src="assets/images/cardimage/card-img-001.png" width="80">
+                    </td>
+                    <td>{{sb.message}}</td>
+                    <td>
+                        <span class="glyphicon glyphicon-pencil" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"></span>
+                    </td>
+                    <td>
+                        <span class="glyphicon glyphicon-trash" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
 </div>
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
@@ -50,22 +54,22 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Card Theme Name</label>
-                    <input formControlName="cardName" type="text" class="form-control" id="cardName" placeholder="Card name">
+                    <label for="exampleInputEmail1">Card Theme Name <span class="required">*</span></label>
+                    <input formControlName="cardName" type="text" class="form-control" id="cardName" placeholder="Card name" maxlength="20">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputFile">Card Image</label>
+                    <label for="exampleInputFile">Card Image <span class="required">*</span></label>
                     <input  type="file" id="cardImage">
                     <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Default Message</label>
-                    <textarea formControlName="cardMessage" class="form-control" id="cardMessage1" placeholder="Message"> </textarea>
+                    <label for="exampleInputEmail1">Default Message <span class="required">*</span></label>
+                    <textarea formControlName="cardMessage" class="form-control" id="cardMessage1" placeholder="Message" maxlength="160"> </textarea>
                     <p class="help-block">Max. 160 characters</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Card CSS Style</label>
-                    <textarea formControlName="cardCss" class="form-control" id="cardCss1" placeholder="Css"> </textarea>
+                    <textarea formControlName="cardCss" class="form-control" id="cardCss1" placeholder="CSS Style"> </textarea>
                     <p class="help-block">Add css for the card</p>
                 </div>
                 <div class="checkbox">
@@ -94,28 +98,28 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Card Theme Name</label>
-                    <input formControlName="ecardname" type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name">
+                    <label for="exampleInputEmail1">Card Theme Name <span class="required">*</span></label>
+                    <input formControlName="ecardname" type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name" maxlength="20">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputFile">Card Image</label>
+                    <label for="exampleInputFile">Card Image <span class="required">*</span></label>
                     <input type="file" id="exampleInputFile">
                     <img src="assets/images/cardimage/card-img-001.png" width="200">
                     <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Default Message</label>
-                    <textarea formControlName="emessage"  class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
+                    <label for="exampleInputEmail1">Default Message <span class="required">*</span></label>
+                    <textarea formControlName="emessage"  class="form-control" id="exampleInputEmail1" placeholder="Message" maxlength="160"> </textarea>
                     <p class="help-block">Max. 160 characters</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Card CSS Style</label>
-                    <textarea formControlName="ecardcss"  class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
+                    <textarea formControlName="ecardcss"  class="form-control" id="exampleInputEmail1" placeholder="CSS Style"> </textarea>
                     <p class="help-block">Add css for the card</p>
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input formControlName="eisactive"   type="checkbox"> Active
+                        <input formControlName="eisactive" type="checkbox"> Active
                     </label>
                 </div>
             </div>
@@ -137,7 +141,7 @@
                 <h4 class="modal-title" id="myModalLabel">Delete Card?</h4>
             </div>
             <div class="modal-body">
-                Are you sure delete "Card Theme Name" card permanently?
+                    Are you sure you want to permanently delete "CARDNAME" Card?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
