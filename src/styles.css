@@ -1,6 +1,6 @@
 html {background: radial-gradient(#fff,#444);height:100%}
 /*body{min-height:100%;overflow-x:hidden;font-family: 'Comfortaa', cursive;background: linear-gradient(-45deg,rgba(229, 150, 119, 0.7), rgba(217, 119, 229, 0.7), rgba(127, 177, 200, 0.7), rgba(184, 242, 169, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 15s ease infinite;-moz-animation: Gradient 15s ease infinite;animation: Gradient 15s ease infinite;}*/
-body{min-height:100%;overflow-x:hidden;background:#f1f1f1;}
+body{min-height:100%;overflow-x:hidden;background:#fff;}
 .wrap{position:relative;margin:100px 180px}
 /*.cardleft,.cardright{width:50%;float:left}*/
 /*.card .cardright {font-family: 'Comfortaa', cursive;}*/
@@ -28,8 +28,20 @@ body{min-height:100%;overflow-x:hidden;background:#f1f1f1;}
 .btn-default{color:#9fa2af;background-color:#eee;border-color:#eee}
 .btn-primary{color:#fff;background-color:#7fb1c8;border-color:#7fb1c8}
 .btn-primary:hover{color:#fff;background-color:#e59677;border-color:#e59677}
-.btn-primary.btn-sm.pull-right {padding: 1px 5px;}
+.btn.btn-sm {padding: 1px 5px;color: #7fb1c8;background-color: #fff;border-color: #fff;}
+.dropdown-menu{ border: 0;border-radius:0;padding: 0;margin: 0; }
+.dropdown-menu>li>button{padding: 10px; color: #7fb1c8;border: 0;background: #fff;width: 100%;text-align: left}
+.dropdown-menu>li>button:hover{background: #f7f9fa;}
+.dropdown-menu>li>button>.glyphicon{margin-right: 10px}
+.switch {position: relative; display: inline-block; width: 42px; height: 21px;margin: 0;}
+.switch input {display:none;}
+.slider {position: absolute;cursor: pointer; top: 0;left: 0;right: 0;bottom: 0;background-color: #ccc;transition: .4s;border-radius: 34px;}
+.slider:before {position: absolute;content: ""; height: 15px; width: 15px; left: 4px; bottom: 3px; background-color: white;transition: .4s;border-radius: 50%;}
+input:checked + .slider {background-color: #7fb1c8;}
+input:checked + .slider:before {-ms-transform: translateX(19px);transform: translateX(19px);}
 .modal-content{box-shadow:none;border:0;border-radius: 0;}
+.modal-backdrop.in {filter: alpha(opacity=30); opacity: .3;}
+.modal-backdrop{background-color: #7fb1c8;}
 #NewPost .no {background: #7fc8b1; width: 20px; height: 20px; position: absolute;right: -8px;top: -8px;border-radius: 50%;box-shadow: 0 1px 5px rgba(51, 51, 51, 0.5);color: #fff;text-align: center;font-size: 8px;padding: 5px;}
 .bubbles {width: 30px; height: 30px; top:6px;left:14px; z-index: -1;position: absolute;background:rgba(255,255,255,.1);animation:blast .5s ease-in infinite;border-radius: 50%;}
 /*HAMBURGER*/
@@ -53,7 +65,7 @@ label.hamburgermenu a:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-
 .pagecontent p {color: #b7b9c0}
 .mar300 { margin: 30px 0}
 textarea.form-control{min-height: 140px;width: 100%;overflow-x: hidden;}
-.btn-default.btn-box{padding: 50px 10px; min-width: 125px;  margin: 0 15px 15px 0}
+.btn-default.btn-box{padding: 50px 10px; min-width: 125px;  margin: 0 15px 15px 0;background: #eaf1f5;}
 .ellipsis{text-overflow: ellipsis;white-space: nowrap;width: 500px;overflow: hidden;margin: 0;}
 /*POSTCARD ANIMATION*/
 #PostCard{transform:scale(0);}
@@ -70,10 +82,12 @@ textarea.form-control{min-height: 140px;width: 100%;overflow-x: hidden;}
 .stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 80px}
 /*.stamp .rubberstamp{ margin:0 120px 0 0;padding: 25px 6px; float: right;transform: rotate(-15deg); border: 3px double #9d8bbe; color: #9d8bbe; border-radius:50%;height: 80px;width: 80px; font-size: 10px; font-family: Courier New, Courier, monospace;text-align: center}*/
 .side-nav li{float: left}
-.box{ margin: 0 0 15px;padding: 15px;background: #fff;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);}
-.box .boxheader h1{ font-size: 20px; margin: 0;float: left;color: #7fb1c8;}
+.box{ margin: 0 0 20px;padding: 15px;background: #fff;border: 1px solid #eaf1f5;}
+.box .boxheader h1{ font-size: 18px; margin: 0;float: left;color: #7fb1c8;}
 .box .boxheader {padding: 0 0 10px;margin-bottom: 10px; border-bottom: 1px solid #eee;height: 30px;}
 .required{color: #fa8383; font-size: 20px}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {border-top: 1px solid #f7f9fa;}
+.table-hover>tbody>tr:hover {background-color: #f7f9fa;}
 @keyframes beat {
 to{transform:scale(1.1)}
 }

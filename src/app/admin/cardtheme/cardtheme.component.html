@@ -4,25 +4,24 @@
             <h1>Card Themes</h1>
             <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-sm pull-right"><span class="glyphicon glyphicon-plus"></span> Add New Card</Button>
         </div>
-        <table class="table table-bordered">
+        <div class="table-responsive">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Active/Inactive</th>
                     <th>Card Theme</th>
                     <th>Image</th>
                     <th>Message</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Options</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let sb of cardtheme;let i =index">
                     <td>
-                        <div class="">
-                            <label>
-                                <input [checked]="sb.isactive" type="checkbox"> &nbsp;
-                            </label>
-                        </div>
+                        <label class="switch">
+                            <input type="checkbox" [checked]="sb.isactive">
+                            <span class="slider"></span>
+                        </label>
                     </td>
                     <td>{{sb.name}}</td>
                     <td>
@@ -30,14 +29,18 @@
                     </td>
                     <td><p class="ellipsis">{{sb.message}}</p></td>
                     <td>
-                        <span class="glyphicon glyphicon-pencil" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"></span>
-                    </td>
-                    <td>
-                        <span class="glyphicon glyphicon-trash" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"></span>
+                        <div class="btn-group">
+                            <button type="button" style="width:160px" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-option-horizontal"></span></button>
+                            <ul class="dropdown-menu">
+                              <li><button (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"><span class="glyphicon glyphicon-pencil"></span> Edit</button></li>
+                              <li><button data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"><span class="glyphicon glyphicon-trash"></span> Delete</button> </li>
+                            </ul>
+                          </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
     </div>
 </div>
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
