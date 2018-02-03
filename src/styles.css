@@ -70,7 +70,7 @@ textarea.form-control{min-height: 140px;width: 100%;overflow-x: hidden;}
 .stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 80px}
 /*.stamp .rubberstamp{ margin:0 120px 0 0;padding: 25px 6px; float: right;transform: rotate(-15deg); border: 3px double #9d8bbe; color: #9d8bbe; border-radius:50%;height: 80px;width: 80px; font-size: 10px; font-family: Courier New, Courier, monospace;text-align: center}*/
 .side-nav li{float: left}
-.box{border: 1px solid #eee; margin: 0 0 15px;padding: 15px;background: #fff;box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);}
+.box{ margin: 0 0 15px;padding: 15px;background: #fff;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);}
 .box .boxheader h1{ font-size: 20px; margin: 0;float: left;color: #7fb1c8;}
 .box .boxheader {padding: 0 0 10px;margin-bottom: 10px; border-bottom: 1px solid #eee;height: 30px;}
 .required{color: #fa8383; font-size: 20px}

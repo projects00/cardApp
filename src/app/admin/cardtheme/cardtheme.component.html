@@ -1,42 +1,44 @@
-<div class="panel-heading">Card Themes
-    <a class="pull-right" href="#" (click)="reset()" data-toggle="modal" data-target="#NewCard">
-        <span class="glyphicon glyphicon-plus"></span> Add New Card</a>
-</div>
-<div class="box">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Active/Inactive</th>
-                <th>Card Theme</th>
-                <th>Image</th>
-                <th>Message</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let sb of cardtheme;let i =index">
-                <td>
-                    <div class="">
-                        <label>
-                            <input [checked]="sb.isactive" type="checkbox"> &nbsp;
-                        </label>
-                    </div>
-                </td>
-                <td>{{sb.name}}</td>
-                <td>
-                    <img [src]="sb.image" height="100px">
-                </td>
-                <td>{{sb.message}}</td>
-                <td>
-                    <span class="glyphicon glyphicon-pencil" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"></span>
-                </td>
-                <td>
-                    <span class="glyphicon glyphicon-trash" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"></span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="col-md-12">
+    <div class="box">
+        <div class="boxheader">
+            <h1>Card Themes</h1>
+            <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-sm pull-right"><span class="glyphicon glyphicon-plus"></span> Add New Card</Button>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Active/Inactive</th>
+                    <th>Card Theme</th>
+                    <th>Image</th>
+                    <th>Message</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sb of cardtheme;let i =index">
+                    <td>
+                        <div class="">
+                            <label>
+                                <input [checked]="sb.isactive" type="checkbox"> &nbsp;
+                            </label>
+                        </div>
+                    </td>
+                    <td>{{sb.name}}</td>
+                    <td>
+                        <img [src]="sb.image" height="20px">
+                    </td>
+                    <td><p class="ellipsis">{{sb.message}}</p></td>
+                    <td>
+                        <span class="glyphicon glyphicon-pencil" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"></span>
+                    </td>
+                    <td>
+                        <span class="glyphicon glyphicon-trash" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
