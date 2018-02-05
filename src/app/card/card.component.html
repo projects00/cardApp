@@ -15,7 +15,7 @@
                                 <h1 class="texteffect">Hi, {{recipient}}</h1>
                                 <h2 class="texteffect">{{name}} some text</h2>
                                 <p class="texteffect">{{message}} </p>
-                                <a class="btn btn-primary" href="#" title="Share Link">Share Now!</a>
+                                <button type="button" class="btn btn-primary" title="Share Link"  data-toggle="modal" data-target="#ShareLink">Share Now!</button>
                             </div>
                         </div>
                     </div>
@@ -90,6 +90,36 @@
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ShareLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="mar0">Share link</h3>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="url" class="form-control" id="Unique-url" placeholder="Unique url" value="http://localhost:4200/card/Us8ho93bhoe51jX" readonly>
+                        <div class="input-group-addon">Copy URL</div>
+                    </div>
+                </div>
+                <div class="text-center"><br>
+                    <img src="assets/images/qrcode.png" alt="QR Code" title="QR Code"><br><br>
+                </div>
+                <div class="buttongroup">
+                    <a href="https://www.facebook.com/sharer.php?u={url}" class="btn btn-default">Facebook</a>
+                    <a href="https://plus.google.com/share?url={url}" class="btn btn-default">Google +</a>
+                    <a href="https://twitter.com/intent/tweet?url={url}&text={title}&via={via}&hashtags={hashtags}" class="btn btn-default">Twitter</a>
+                    <a href="whatsapp://send?text={url}" class="btn btn-default">WhatsApp</a>
+                    <a href="http://vk.com/share.php?url={url}" class="btn btn-default">VK</a>
+                    <a href="https://web.skype.com/share?url={url}" class="btn btn-default">Skype</a>
+                    <a href="sendto" class="btn btn-default">Email</a>
+                    <a href="#" class="btn btn-default">SMS</a>
+                </div>
+                <div class="cardfooter">8652 Shares</div>
             </div>
         </div>
     </div>
