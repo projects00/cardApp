@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="wrap">
-                <div class="card " [ngClass]="cardclass" id="PostCard">
+                <div class="card" [ngClass]="cardclass" id="PostCard">
                     <div class="cardouter">
                         <div class="cardinner clearfix">
                             <div class="cardleft">
@@ -15,7 +15,7 @@
                                 <h1 class="cardtext">Hi, {{recipient}}</h1>
                                 <p class="cardtext">{{message}} </p>
                                 <h2 class="cardtext text-right">- {{name}}</h2>
-                                <button class="btn btn-primary" title="Share Link" data-toggle="modal" data-target="#ShareLink">Share Now!</button>
+                                <img src="assets/images/newpostcard.svg" class="newcard" [ngStyle]="{'display': sharebtn}" data-toggle="modal" data-target="#ShareLink" alt="new postcard icon" title="Click to Share Your PostCard!">
                             </div>
                         </div>
                     </div>
