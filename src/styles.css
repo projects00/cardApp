@@ -7,19 +7,19 @@ body{min-height:100%;overflow-x:hidden;background: #ccc}
 .cardleft{border-right:2px dotted rgba(0,0,0,.2);padding:30px 25px 25px}
 .cardright{padding:0 0 10px 25px}
 .card{background:#fff url( assets/images/postcard-bg.png);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}
+.cardtext{word-break:break-word}
 .card .cardouter{background:#fff;padding:10px;position:relative}
 .card .cardouter .cardinner{padding:0 0 20px}
-.card .cardouter:before{content:'Card';position:absolute;left:0;top:0;right:0;padding:10px;color:#ccc}
+.card .cardouter:before{content:'Card';position:absolute;left:8px;top:5px;color:#ccc}
 .card .cardouter:after{content:'Copyrights';text-align:center;position:absolute;left:0;bottom:0;right:0;padding:10px;color:#ccc;font-size:10px}
 .card .cardouter .cardright h1{font-size:30px;margin:0 0 10px;text-transform:capitalize;color: #6899af;}
-.card .cardouter .cardright h2{font-size:19px;margin:0 0 10px;color: #e59677;}
-.card .cardouter .cardright p{font-size:16px; margin: 0 0 25px;color: #444;}
+.card .cardouter .cardright h2{font-size:16px;margin:0 0 10px;color: #888;}
+.card .cardouter .cardright p{font-size:16px; margin: 0 0 25px;color: #e59677;}
 .footer{font-size:12px;text-align:center;color:rgba(0,0,0,0.3)}
 .btn-post{position:fixed;outline:none;cursor: pointer;border-radius:5px;right:40px;bottom:40px;box-shadow:0 6px 15px rgba(0,0,0,0.3);animation:beat .5s infinite alternate;z-index:9;width: 60px;height: 42px;}
-.texteffect{word-break:break-word}
 .createcardouter .input-group-addon{border-color:transparent;color:#ccc!important}
 .createcardouter .form-control,.createcardouter .input-group-addon{background:transparent;border-width:0 0 1px;border-color:#ddd;border-radius:0;padding:16px 2px 0;font-size:16px;height:40px;color:#333}
-.createcardouter textarea.form-control{height:180px;margin-bottom:15px}
+.createcardouter textarea.form-control{height:140px;margin-bottom:15px}
 .createcardouter select.form-control {padding: 2px;height: 25px;margin-bottom: 10px;}
 .form-control{height:40px;border-radius:0;border:1px solid #999;box-shadow:none}
 .form-control:focus{box-shadow:none}
@@ -64,7 +64,10 @@ label.hamburgermenu a:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-
 .pagecontent{ padding: 30px; margin: 10% 0; text-align: center; color: #333; background: #fff; box-shadow: 0 5px 10px rgba(0,0,0,.2)}
 .pagecontent h1 {color: #b7b9c0;font-size: 30px;}
 .pagecontent p {color: #b7b9c0}
+.mar0 { margin: 0}
+.mar150 { margin: 15px 0}
 .mar300 { margin: 30px 0}
+.marbot10{margin: 0 0 10px 0}
 textarea.form-control{min-height: 140px;width: 100%;overflow-x: hidden;}
 .btn-default.btn-box{padding: 50px 10px; min-width: 125px;  margin: 0 15px 15px 0;background: #eaf1f5;}
 .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover,.btn-group.open .dropdown-toggle,.btn-primary:active:focus,.btn-default:active:focus {background-image: none;color: #7fb1c8;background-color: #eaf1f5;border-color: #eaf1f5;box-shadow: none}
@@ -91,6 +94,9 @@ textarea.form-control{min-height: 140px;width: 100%;overflow-x: hidden;}
 .table {margin-bottom: 110px;}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {border-top: 1px solid #f7f9fa;}
 .table-hover>tbody>tr:hover {background-color: #f7f9fa;}
+.qrcodewrapper{text-align: center; margin: 25px 0}
+.qrcodewrapper img{ width: 160px; margin: 0 auto 15px;}
+.qrcodewrapper p{ font-size: 12px; color: #888 }
 @keyframes beat {
 to{transform:scale(1.1)}
 }
@@ -115,12 +121,15 @@ to{transform:scale(1.1)}
 50% {background-position: 100% 50%}
 100% {background-position: 0% 50%}
 }
-@media (max-width: 992px) {
-.wrap{margin:60px}
-}
 @media (min-width: 1200px) {
 .modal-dialog {width: 780px;margin: 61px auto;}
 .modal-dialog.modal-sm{width: 300px;}
+}
+@media (max-width: 1200px) {
+.wrap{margin:100px}
+}
+@media (max-width: 992px) {
+.wrap{margin:100px 0}
 }
 @media (max-width: 767px) {
 .card{padding: 10px}
@@ -130,14 +139,14 @@ to{transform:scale(1.1)}
 .card .cardouter .cardright h1{font-size:22px;margin:0 0 5px}
 .card .cardouter .cardright h2{font-size:20px;margin:0 0 5px}
 .card .cardouter .cardright p{font-size:16px;margin: 0 0 5px;}
-.createcardouter textarea.form-control{height:140px}
-.wrap{margin:60px 0 10px}
+.wrap{margin:100px 60px}
 .stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 50px}
 .stamp .rubberstamp{ margin:0 100px 0 0; padding: 15px 0; height: 50px; width: 50px;font-size: 6px; }
 .modal-dialog {margin: 15px;}
 }
 @media (max-width: 480px) {
 body{background: radial-gradient(#fff,#7fb1c8);}
+.wrap{margin:60px 0 10px}
 .postouter{width:98px;height:69px;left:calc(50% - 49px);border-radius: 7px;}
 .postouter:hover .postcard{transform:translateY(-30px);}
 label.hamburgermenu a{font-size:1.6em;}
