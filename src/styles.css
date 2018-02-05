@@ -1,5 +1,6 @@
 html {background: radial-gradient(#fff,#444);height:100%}
-body{min-height:100%;overflow-x:hidden;font-family: 'Comfortaa', cursive;background: linear-gradient(-45deg,rgba(229, 150, 119, 0.7), rgba(217, 119, 229, 0.7), rgba(127, 177, 200, 0.7), rgba(184, 242, 169, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 15s ease infinite;-moz-animation: Gradient 15s ease infinite;animation: Gradient 15s ease infinite;}
+body{min-height:100%;overflow-x:hidden;background: #ccc}
+/*body{min-height:100%;overflow-x:hidden;font-family: 'Comfortaa', cursive;background: linear-gradient(-45deg,rgba(229, 150, 119, 0.7), rgba(217, 119, 229, 0.7), rgba(127, 177, 200, 0.7), rgba(184, 242, 169, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 15s ease infinite;-moz-animation: Gradient 15s ease infinite;animation: Gradient 15s ease infinite;}*/
 .wrap{position:relative;margin:100px 180px}
 .cardleft,.cardright{width:50%;float:left}
 .card .cardright {font-family: 'Comfortaa', cursive;}
@@ -27,6 +28,7 @@ body{min-height:100%;overflow-x:hidden;font-family: 'Comfortaa', cursive;backgro
 .btn-primary{color:#fff;background-color:#7fb1c8;border-color:#7fb1c8}
 .btn-primary:hover{color:#fff;background-color:#e59677;border-color:#e59677}
 .btn.btn-sm {padding: 1px 5px;color: #7fb1c8;background-color: #fff;border-color: #fff;}
+.buttongroup .btn{margin: 0 10px 10px 0;}
 .input-group-addon {border: 1px solid #999; border-radius: 0;}
 .dropdown-menu{ border: 0;border-radius:0;padding: 0;margin: 0; }
 .dropdown-menu>li>button{padding: 10px; color: #7fb1c8;border: 0;background: #fff;width: 100%;text-align: left}
