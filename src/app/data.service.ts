@@ -30,6 +30,11 @@ public baseApi = 'http://ec2-52-91-21-206.compute-1.amazonaws.com:5000/';
     return this.http.get(this.baseApi + "get/cardtheme" ).map(response => response.json());
   }
 
+getdefaultSetting()
+{
+     return this.http.get(this.baseApi + "get/defaultsetting" ).map(response => response.json());
+
+}
 
   getImage(id) {
     return this.http.get(this.baseApi + "get/img/" + id, { responseType: ResponseContentType.Blob })

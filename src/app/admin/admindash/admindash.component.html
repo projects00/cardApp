@@ -47,11 +47,10 @@
         <div>
             <div class="row">
                 <div class="col-md-4">
-                    <img src="assets/images/cardimage/card-img-001.png" class="img-responsive">
+                    <img [src]="imagePath" class="img-responsive">
                 </div>
                 <div class="col-md-4">
-                    <p class="lead">Default message is the Message will display the main page message section. Max charecter lenth is 160
-                        character and it can edit with below button.</p>
+                    <p class="lead">{{message}}</p>
                 </div>
             </div>
         </div>
