@@ -22,14 +22,14 @@ export class AdmindashComponent implements OnInit {
 
     getDefaultSetting() {
  
-    this.dataservice.getCardTheme().subscribe(
+    this.dataservice.getdefaultSetting().subscribe(
       (respose) => {
         debugger;
         respose.forEach(element => {
  
           this.message= element.message;
          this.imageid = element.imageid;
-          this.getImage(element.imgageid, null);
+          this.getImage(element.imageid, null);
         
 
         });
