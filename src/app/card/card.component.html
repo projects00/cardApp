@@ -6,18 +6,22 @@
                     <div class="cardouter">
                         <div class="cardinner clearfix">
                             <div class="cardleft">
+                                <p>Post Card!</p>
                                 <img [src]="viewtheme" class="img-responsive" alt="Card Photo" title="Card Image">
                             </div>
                             <div class="cardright">
                                 <div class="stamp">
                                     <div class="rubberstamp">{{dt | date:dtformat}}</div>
                                 </div>
-                                <h1 class="cardtext">Hi, {{recipient}}</h1>
-                                <p class="cardtext">{{message}} </p>
-                                <h2 class="cardtext text-right">- {{name}}</h2>
-                                <img src="assets/images/newpostcard.svg" class="newcard" [ngStyle]="{'display': sharebtn}" data-toggle="modal" data-target="#ShareLink" alt="new postcard icon" title="Click to Share Your PostCard!">
+                                <div class="pad015">
+                                    <h1 class="cardtext">Hi, {{recipient}}</h1>
+                                    <p class="cardtext">{{message}} </p>
+                                    <h2 class="cardtext text-right">- {{name}}</h2>
+                                    <button class="btn btn-primary" [ngStyle]="{'display': sharebtn}" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!">Share this card</button>
+                                </div>
                             </div>
                         </div>
+                        <div class="cardfooter">Made with <span>❤</span></div>
                     </div>
                 </div>
                 <div class="postouter" (click)="test()" id="OpenPost">
@@ -37,10 +41,10 @@
         <span class='hamburger'></span>
     </span>
     <ul>
-        <li><a href='#' title="Click to Home"><img src="assets/images/icon-home.svg" class="menuicon" alt="Home icon" title="Home"> Home</a></li>
-        <li><a href='#' title="Click to About"><img src="assets/images/icon-about.svg" class="menuicon" alt="About icon" title="About"> About</a></li>
-        <li><a href='#' title="Click to Donate"><img src="assets/images/icon-donate.svg" class="menuicon" alt="Donate icon" title="Donate"> Donate</a></li>
-        <li><a href='#' title="Click to Contact"><img src="assets/images/icon-contact.svg" class="menuicon" alt="Contact icon" title="Contact"> Contact</a></li>
+        <li><a href='#' title="Click to Home"> Home</a></li>
+        <li><a href='#' title="Click to About"> About</a></li>
+        <li><a href='#' title="Click to Donate"> Donate</a></li>
+        <li><a href='#' title="Click to Contact"> Contact</a></li>
     </ul>
 </label>
 <div class="btn-post" [ngStyle]="{'display': showbtn}" id="NewPost" data-toggle="modal" data-target="#myModal">
@@ -57,37 +61,41 @@
                         <form [formGroup]="rForm">
                             <div class="cardinner clearfix">
                                 <div class="cardleft">
-                                    <label for="Theme" class="hide">Theme</label>
-                                    <select formControlName="viewTheme" placeholder="Select" (change)="onChange()" class="form-control" id="Theme" name="test" ngModel>
-                                        <option value="1">Default Card</option>
-                                        <option value="2">Card - 2</option>
-                                        <option value="3">Card - 3</option>
-                                    </select>
+                                    <div class="select">
+                                        <label for="Theme" class="hide">Select card theme</label>
+                                        <select formControlName="viewTheme" placeholder="Select" (change)="onChange()" class="form-control" id="Theme" name="test" ngModel>
+                                            <option value="1">Default Card</option>
+                                            <option value="2">Card - 2</option>
+                                            <option value="3">Card - 3</option>
+                                        </select>
+                                    </div>
                                     <img [src]="theme" class="img-responsive" alt="Card Photo" title="Card Image">
                                 </div>
                                 <div class="cardright">
-                                    <p class="text-right"><small>{{dt | date:dtformat}}</small></p>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <label for="Recipient" class="hide">Recipient</label>
-                                            <div class="input-group-addon">Hi,</div>
-                                            <input formControlName="viewRecipient" class="form-control" type="text" placeholder="Recipient Name" id="Recipient" maxlength="20">
+                                    <div class="pad015">
+                                        <p class="text-right"><small>Post Date/Time: {{dt | date:dtformat}}</small></p>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <label for="Recipient" class="hide">Recipient</label>
+                                                <div class="input-group-addon">Hi,</div>
+                                                <input formControlName="viewRecipient" class="form-control" type="text" placeholder="Recipient Name" id="Recipient" maxlength="20">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Message" class="hide">Message</label>
-                                        <textarea formControlName="viewMessage" class="form-control" placeholder="Message" id="Message" maxlength="160"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <label for="Name" class="hide">Name</label>
-                                            <div class="input-group-addon">-</div>
-                                            <input formControlName="viewName" class="form-control text-right" type="text" placeholder="Your name" id="Name" maxlength="20">
+                                        <div class="form-group">
+                                            <label for="Message" class="hide">Message</label>
+                                            <textarea formControlName="viewMessage" class="form-control" placeholder="Message" id="Message" maxlength="160"></textarea>
                                         </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <label for="Name" class="hide">Name</label>
+                                                <div class="input-group-addon">-</div>
+                                                <input formControlName="viewName" class="form-control text-right" type="text" placeholder="Your name" id="Name" maxlength="20">
+                                            </div>
+                                        </div>
+                                        <div class="g-recaptcha marbot10" data-sitekey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></div>
+                                        <button type="button" class="btn btn-primary" (click)="clicked()">Preview</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
                                     </div>
-                                    <div class="g-recaptcha marbot10" data-sitekey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></div>
-                                    <button type="button" class="btn btn-primary" (click)="clicked()">Preview</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
                                 </div>
                             </div>
                         </form>
@@ -113,15 +121,15 @@
                     <p>Use mobile QR scaner to copy card URL.</p>
                 </div>
                 <div class="buttongroup">
-                    <a href="https://www.facebook.com/sharer.php?u={url}" class="btn btn-default">Facebook</a>
-                    <a href="https://plus.google.com/share?url={url}" class="btn btn-default">Google +</a>
-                    <a href="https://twitter.com/intent/tweet?url={url}&text={title}&via={via}&hashtags={hashtags}" class="btn btn-default">Twitter</a>
-                    <a href="whatsapp://send?text={url}" class="btn btn-default">WhatsApp</a>
-                    <a href="http://vk.com/share.php?url={url}" class="btn btn-default">VK</a>
-                    <a href="https://web.skype.com/share?url={url}" class="btn btn-default">Skype</a>
-                    <a href="sendto" class="btn btn-default">Email</a>
-                    <a href="#" class="btn btn-default">SMS</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
+                    <a href="https://www.facebook.com/sharer.php?u={url}" class="btn btn-default">F</a>
+                    <a href="https://plus.google.com/share?url={url}" class="btn btn-default">G+</a>
+                    <a href="https://twitter.com/intent/tweet?url={url}&text={title}&via={via}&hashtags={hashtags}" class="btn btn-default">T</a>
+                    <a href="whatsapp://send?text={url}" class="btn btn-default">W</a>
+                    <a href="http://vk.com/share.php?url={url}" class="btn btn-default">V</a>
+                    <a href="https://web.skype.com/share?url={url}" class="btn btn-default">S</a>
+                    <a href="sendto" class="btn btn-default">E</a>
+                    <a href="#" class="btn btn-default">S</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">X</button>
                 </div>
                 <div class="cardfooter">8652 Shares</div>
             </div>
