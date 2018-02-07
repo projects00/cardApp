@@ -17,19 +17,19 @@
             </ul>
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a (click)="navigation('dash')" title="Dashboard"><span class="glyphicon glyphicon-dashboard"></span></a>
+                    <a (click)="navigation('dash')" title="Dashboard"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
                 </li>
                 <li>
-                    <a (click)="navigation('cardtheme')" title="Card Themes"><span class="glyphicon glyphicon-picture"></span></a>
+                    <a (click)="navigation('cardtheme')" title="Card Themes"><span class="glyphicon glyphicon-picture"></span> Card Themes</a>
                 </li>
                 <li>
-                    <a (click)="navigation('activecard')" title="Active Cards"><span class="glyphicon glyphicon-envelope"></span></a>
+                    <a (click)="navigation('activecard')" title="Active Cards"><span class="glyphicon glyphicon-envelope"></span> Active Cards</a>
                 </li>
                 <li>
-                    <a (click)="navigation('pages')" title="Pages"><span class="glyphicon glyphicon-file"></span></a>
+                    <a (click)="navigation('pages')" title="Pages"><span class="glyphicon glyphicon-file"></span> Pages</a>
                 </li>
                 <li>
-                    <a (click)="navigation('setting')" title="Settings"><span class="glyphicon glyphicon-cog"></span></a>
+                    <a (click)="navigation('setting')" title="Settings"><span class="glyphicon glyphicon-cog"></span> Settings</a>
                 </li>
             </ul>
         </div>
@@ -37,9 +37,9 @@
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <router-outlet></router-outlet>
-                <p class="text-center">&copy; Website Slag - 2018</p>
+                <router-outlet></router-outlet>    
             </div>
+            <p class="text-center">&copy; Website Slag - 2018</p>
         </div>
     </div>
 </div>

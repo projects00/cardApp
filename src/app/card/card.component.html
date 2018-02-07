@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="wrap">
-                <div class="card " [ngClass]="cardclass" id="PostCard">
+                <div class="card" [ngClass]="cardclass" id="PostCard">
                     <div class="cardouter">
                         <div class="cardinner clearfix">
                             <div class="cardleft">
@@ -12,10 +12,10 @@
                                 <div class="stamp">
                                     <div class="rubberstamp">{{dt | date:dtformat}}</div>
                                 </div>
-                                <h1 class="texteffect">Hi, {{recipient}}</h1>
-                                <h2 class="texteffect">{{name}} some text</h2>
-                                <p class="texteffect">{{message}} </p>
-                                <a class="btn btn-primary" href="#" title="Share Link">Share Now!</a>
+                                <h1 class="cardtext">Hi, {{recipient}}</h1>
+                                <p class="cardtext">{{message}} </p>
+                                <h2 class="cardtext text-right">- {{name}}</h2>
+                                <img src="assets/images/newpostcard.svg" class="newcard" [ngStyle]="{'display': sharebtn}" data-toggle="modal" data-target="#ShareLink" alt="new postcard icon" title="Click to Share Your PostCard!">
                             </div>
                         </div>
                     </div>
@@ -66,30 +66,64 @@
                                     <img [src]="theme" class="img-responsive" alt="Card Photo" title="Card Image">
                                 </div>
                                 <div class="cardright">
-                                    <div class="stamp">
-                                        <div class="rubberstamp">
-                                            {{dt | date:dtformat}}
+                                    <p class="text-right"><small>{{dt | date:dtformat}}</small></p>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label for="Recipient" class="hide">Recipient</label>
+                                            <div class="input-group-addon">Hi,</div>
+                                            <input formControlName="viewRecipient" class="form-control" type="text" placeholder="Recipient Name" id="Recipient" maxlength="20">
                                         </div>
                                     </div>
-                                    <div class="input-group">
-                                        <label for="Recipient" class="hide">Recipient</label>
-                                        <div class="input-group-addon">Hi,</div>
-                                        <input formControlName="viewRecipient" class="form-control" type="text" placeholder="Recipient Name" id="Recipient" maxlength="24">
+                                    <div class="form-group">
+                                        <label for="Message" class="hide">Message</label>
+                                        <textarea formControlName="viewMessage" class="form-control" placeholder="Message" id="Message" maxlength="160"></textarea>
                                     </div>
-                                    <div class="input-group">
-                                        <label for="Name" class="hide">Name</label>
-                                        <input formControlName="viewName" class="form-control" type="text" placeholder="Name" id="Name" maxlength="18">
-                                        <div class="input-group-addon">some text</div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label for="Name" class="hide">Name</label>
+                                            <div class="input-group-addon">-</div>
+                                            <input formControlName="viewName" class="form-control text-right" type="text" placeholder="Your name" id="Name" maxlength="20">
+                                        </div>
                                     </div>
-                                    <label for="Message" class="hide">Message</label>
-                                    <textarea formControlName="viewMessage" class="form-control" placeholder="Message" id="Message" maxlength="160"></textarea>
-                                    <a class="btn btn-primary" (click)="clicked()">Preview</a>
-                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal" aria-label="Close">Close</button>
+                                    <div class="g-recaptcha marbot10" data-sitekey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></div>
+                                    <button type="button" class="btn btn-primary" (click)="clicked()">Preview</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ShareLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3 class="marbot10">Share Card</h3>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="url" class="form-control" id="Unique-url" placeholder="Unique url" value="http://localhost:4200/card/Us8ho93bhoe51jX" readonly>
+                        <div class="input-group-addon">Copy URL</div>
+                    </div>
+                </div>
+                <div class="qrcodewrapper">
+                    <img src="assets/images/qrcode.png" alt="QR Code" title="QR Code">
+                    <p>Use mobile QR scaner to copy card URL.</p>
+                </div>
+                <div class="buttongroup">
+                    <a href="https://www.facebook.com/sharer.php?u={url}" class="btn btn-default">Facebook</a>
+                    <a href="https://plus.google.com/share?url={url}" class="btn btn-default">Google +</a>
+                    <a href="https://twitter.com/intent/tweet?url={url}&text={title}&via={via}&hashtags={hashtags}" class="btn btn-default">Twitter</a>
+                    <a href="whatsapp://send?text={url}" class="btn btn-default">WhatsApp</a>
+                    <a href="http://vk.com/share.php?url={url}" class="btn btn-default">VK</a>
+                    <a href="https://web.skype.com/share?url={url}" class="btn btn-default">Skype</a>
+                    <a href="sendto" class="btn btn-default">Email</a>
+                    <a href="#" class="btn btn-default">SMS</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
+                </div>
+                <div class="cardfooter">8652 Shares</div>
             </div>
         </div>
     </div>

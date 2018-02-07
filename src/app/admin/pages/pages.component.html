@@ -5,7 +5,7 @@
             <button data-toggle="modal" data-target="#NewPage" class="btn btn-primary btn-sm pull-right" title="Edit Default"><span class="glyphicon glyphicon-plus"></span> Add New Page</button>
         </div>
         <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Active/Inactive</th>
@@ -18,8 +18,9 @@
                 <tr>
                     <td>
                         <div class="">
-                            <label>
-                                <input type="checkbox"> &nbsp;
+                            <label class="switch">
+                                <input type="checkbox" [checked]="sb.isactive">
+                                <span class="slider"></span>
                             </label>
                         </div>
                     </td>

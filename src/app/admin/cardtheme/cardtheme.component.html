@@ -1,42 +1,59 @@
-<div class="panel-heading">Card Themes
-    <a class="pull-right" href="#" (click)="reset()" data-toggle="modal" data-target="#NewCard">
-        <span class="glyphicon glyphicon-plus"></span> Add New Card</a>
-</div>
-<div class="box">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Active/Inactive</th>
-                <th>Card Theme</th>
-                <th>Image</th>
-                <th>Message</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let sb of cardtheme;let i =index">
-                <td>
-                    <div class="">
-                        <label>
-                            <input [checked]="sb.isactive" type="checkbox"> &nbsp;
-                        </label>
-                    </div>
-                </td>
-                <td>{{sb.name}}</td>
-                <td>
-                    <img [src]="sb.image" height="100px">
-                </td>
-                <td>{{sb.message}}</td>
-                <td>
-                    <span class="glyphicon glyphicon-pencil" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"></span>
-                </td>
-                <td>
-                    <span class="glyphicon glyphicon-trash" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"></span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="col-md-12">
+    <div class="box">
+        <div class="boxheader">
+            <h1>Card Themes</h1>
+            <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-sm pull-right">
+                <span class="glyphicon glyphicon-plus"></span> Add New Card</Button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Active/Inactive</th>
+                        <th>Card Theme</th>
+                        <th>Message</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sb of cardtheme;let i =index">
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" [checked]="sb.isactive">
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                        <td>{{sb.name}}</td>
+                        <td>
+                            <p class="ellipsis">{{sb.message}}</p>
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" style="width:160px" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <span class="glyphicon glyphicon-option-horizontal"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <button data-toggle="modal" data-target="#ViewCard">
+                                            <span class="glyphicon glyphicon-picture"></span> View</button>
+                                    </li>
+                                    <li>
+                                        <button (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard">
+                                            <span class="glyphicon glyphicon-pencil"></span> Edit</button>
+                                    </li>
+                                    <li>
+                                        <button data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard">
+                                            <span class="glyphicon glyphicon-trash"></span> Delete</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
@@ -44,8 +61,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <h4 class="modal-title" id="myModalLabel">New Card</h4>
                 </div>
                 <div class="modal-body">
@@ -71,8 +88,8 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                        <input formControlName="cardIsActive" type="checkbox"> Active
-                    </label>
+                            <input formControlName="cardIsActive" type="checkbox"> Active
+                        </label>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -89,9 +106,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                    <h4 class="modal-title" id="myModalLabel">New Card</h4>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Card</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -100,10 +117,9 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputFile">Card Image</label>
-                      <input class="form-control"  id="avatar1" #fileInput (change)="onFileChange($event)" type="file">
-        
-                     <img [src]="imagePath"  formControlName="ecardImage" class="img-responsive">
-                        </div>
+                        <input class="form-control" id="avatar1" #fileInput (change)="onFileChange($event)" type="file">
+                        <img [src]="imagePath" formControlName="ecardImage" class="img-responsive">
+                    </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Default Message</label>
                         <textarea formControlName="emessage" class="form-control" id="exampleInputEmail1" placeholder="Message"> </textarea>
@@ -116,8 +132,8 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                        <input formControlName="eisactive"   type="checkbox"> Active
-                    </label>
+                            <input formControlName="eisactive" type="checkbox"> Active
+                        </label>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -143,6 +159,30 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" (click)="delete()" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ViewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="card">
+                <div class="cardouter">
+                    <div class="cardinner clearfix">
+                        <div class="cardleft">
+                            <img src="../assets/images/cardimage/card-img-001.png" class="img-responsive" alt="Card Photo" title="Card Image">
+                        </div>
+                        <div class="cardright">
+                            <div class="stamp">
+                                <div class="rubberstamp">Date</div>
+                            </div>
+                            <h1 class="texteffect">Hi, User</h1>
+                            <h2 class="texteffect">some text</h2>
+                            <p class="texteffect">message</p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
