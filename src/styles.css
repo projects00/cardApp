@@ -21,11 +21,13 @@ body{min-height:100%;overflow-x:hidden;background: #ccc}
 .createcardouter .select {padding: 0 15px;margin-bottom: 5px;}
 .form-control{height:40px;border-radius:0;border:1px solid #999;box-shadow:none}
 .form-control:focus{box-shadow:none}
-.btn{border-radius:0}
-.btn-default{color:#9fa2af;background-color:#eee;border-color:#eee}
-.btn-primary{color:#fff;background-color:#7fb1c8;border-color:#7fb1c8}
-.btn-primary:hover{color:#fff;background-color:#e59677;border-color:#e59677}
-.btn.btn-sm {padding: 1px 5px;color: #7fb1c8;background-color: #fff;border-color: #fff;}
+.btn{border-radius:0;border: 0}
+.btn-default{color:#9fa2af;background-color:#eee;}
+.btn-primary{color:#fff;background-color:#7fb1c8;}
+.btn-danger{color:#fff;background-color:#e59677;}
+.btn-primary:hover{color:#fff;background-color:#5f90a7;}
+.btn.btn-optionbar {padding: 1px 5px;color: #7fb1c8;background-color: #fff;}
+.btn.btn-sm {padding: 1px 5px;}
 .buttongroup .btn{margin: 0 10px 10px 0;}
 .input-group-addon {border: 1px solid #999; border-radius: 0;}
 .dropdown-menu{ border: 0;border-radius:0;padding: 0;margin: 0; }
@@ -34,9 +36,9 @@ body{min-height:100%;overflow-x:hidden;background: #ccc}
 .dropdown-menu>li>button>.glyphicon{margin-right: 10px}
 .switch {position: relative; display: inline-block; width: 42px; height: 21px;margin: 0;}
 .switch input {display:none;}
-.slider {position: absolute;cursor: pointer; top: 0;left: 0;right: 0;bottom: 0;background-color: #ccc;transition: .4s;border-radius: 34px;}
-.slider:before {position: absolute;content: ""; height: 15px; width: 15px; left: 4px; bottom: 3px; background-color: white;transition: .4s;border-radius: 50%;}
-input:checked + .slider {background-color: #7fb1c8;}
+.slider {position: absolute;cursor: pointer; top: 0;left: 0;right: 0;bottom: 0;background-color: #eee;transition: .4s;border-radius: 34px;}
+.slider:before {position: absolute;content: ""; height: 15px; width: 15px; left: 4px; bottom: 3px; background-color: #fff;transition: .4s;border-radius: 50%;}
+input:checked + .slider {background-color: #a5e199;}
 input:checked + .slider:before {-ms-transform: translateX(19px);transform: translateX(19px);}
 .modal-content{box-shadow:none;border:0;border-radius: 0;}
 .modal-backdrop.in {filter: alpha(opacity=30); opacity: .3;}
@@ -94,7 +96,6 @@ textarea.form-control{min-height: 140px;width: 100%;overflow-x: hidden;}
 .box .boxheader h1{ font-size: 18px; margin: 0;float: left;color: #7fb1c8;}
 .box .boxheader {padding: 0 0 10px;margin-bottom: 10px; border-bottom: 1px solid #eee;height: 30px;}
 .required{color: #fa8383; font-size: 20px}
-.table {margin-bottom: 110px;}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {border-top: 1px solid #f7f9fa;}
 .table-hover>tbody>tr:hover {background-color: #f7f9fa;}
 .qrcodewrapper{text-align: center; margin: 25px 0}

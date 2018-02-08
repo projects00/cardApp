@@ -2,7 +2,7 @@
     <div class="box">
         <div class="boxheader">
             <h1>Card Themes</h1>
-            <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-sm pull-right">
+            <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-optionbar pull-right">
                 <span class="glyphicon glyphicon-plus"></span> Add New Card</Button>
         </div>
         <div class="table-responsive">
@@ -25,29 +25,13 @@
                         </td>
                         <td>{{sb.name}}</td>
                         <td>
-                            <p class="ellipsis">{{sb.message}}</p>
+                            <p class="ellipsis" title="{{sb.message}}">{{sb.message}}</p>
                         </td>
                         <td>
-                            <div class="btn-group">
-                                <button type="button" style="width:160px" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <span class="glyphicon glyphicon-option-horizontal"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <button data-toggle="modal" data-target="#ViewCard">
-                                            <span class="glyphicon glyphicon-picture"></span> View</button>
-                                    </li>
-                                    <li>
-                                        <button (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard">
-                                            <span class="glyphicon glyphicon-pencil"></span> Edit</button>
-                                    </li>
-                                    <li>
-                                        <button data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard">
-                                            <span class="glyphicon glyphicon-trash"></span> Delete</button>
-                                    </li>
-                                </ul>
-                            </div>
+                            <button class="btn btn-sm btn-primary" title="View Card" data-toggle="modal" data-target="#ViewCard"><span class="glyphicon glyphicon-picture"></span></button>
+                            <button class="btn btn-sm btn-primary" title="Edit Card" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"><span class="glyphicon glyphicon-pencil"></span></button>
+                            <button class="btn btn-sm btn-danger" title="Delete Card" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"><span class="glyphicon glyphicon-trash"></span></button>
+                            
                         </td>
                     </tr>
                 </tbody>
@@ -170,16 +154,16 @@
                 <div class="cardouter">
                     <div class="cardinner clearfix">
                         <div class="cardleft">
-                            <img src="../assets/images/cardimage/card-img-001.png" class="img-responsive" alt="Card Photo" title="Card Image">
+                            <p>Card #237846</p>
+                            <img src="assets/images/cardimage/card-img-001.png" class="img-responsive" alt="Card Photo" title="Card Image">
                         </div>
                         <div class="cardright">
-                            <div class="stamp">
-                                <div class="rubberstamp">Date</div>
+                            <div class="pad015">
+                                <h1 class="cardtext">Hi, User</h1>
+                                <p class="cardtext">{{message}} </p>
+                                <h2 class="cardtext text-right">- Pc</h2>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
-                            <h1 class="texteffect">Hi, User</h1>
-                            <h2 class="texteffect">some text</h2>
-                            <p class="texteffect">message</p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
