@@ -42,7 +42,7 @@
     <div class="box">
         <div class="boxheader">
             <h1>Default Card</h1>
-            <button data-toggle="modal" data-target="#EditDefault" class="btn btn-primary btn-sm pull-right" title="Edit Default">Edit Default</button>
+            <button data-toggle="modal" data-target="#EditDefault" class="btn btn-primary btn-optionbar pull-right" title="Edit Default"><span class="glyphicon glyphicon-pencil"></span> Edit Default</button>
         </div>
         <div>
             <div class="row">
@@ -79,14 +79,15 @@
                 <h4 class="modal-title" id="myModalLabel">Change default card and message</h4>
             </div>
             <div class="modal-body">
+                <div class="box">
+                    <img [src]="imagePath" width="200">
+                </div>
                 <div class="form-group">
-                    <p><label for="DefaultImage">Default Image</label></p>
-                    <img [src]="imagePath" width="200"><br><br>
-                    <input type="file" id="DefaultImage">
+                    <input type="file" id="DefaultImage"class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="WebsiteDescription">Default Message</label>
-                    <textarea class="form-control" id="WebsiteMessage" placeholder="Website Message"> </textarea>
+                    <textarea class="form-control" id="WebsiteMessage" placeholder="Website Message" maxlength="160">{{message}}</textarea>
                 </div>
             </div>
             <div class="modal-footer">

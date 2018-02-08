@@ -2,7 +2,7 @@
     <div class="box">
         <div class="boxheader">
             <h1>Card Themes</h1>
-            <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-sm pull-right">
+            <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-optionbar pull-right">
                 <span class="glyphicon glyphicon-plus"></span> Add New Card</Button>
         </div>
         <div class="table-responsive">
@@ -25,29 +25,13 @@
                         </td>
                         <td>{{sb.name}}</td>
                         <td>
-                            <p class="ellipsis">{{sb.message}}</p>
+                            <p class="ellipsis" title="{{sb.message}}">{{sb.message}}</p>
                         </td>
                         <td>
-                            <div class="btn-group">
-                                <button type="button" style="width:160px" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <span class="glyphicon glyphicon-option-horizontal"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <button data-toggle="modal" data-target="#ViewCard">
-                                            <span class="glyphicon glyphicon-picture"></span> View</button>
-                                    </li>
-                                    <li>
-                                        <button (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard">
-                                            <span class="glyphicon glyphicon-pencil"></span> Edit</button>
-                                    </li>
-                                    <li>
-                                        <button data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard">
-                                            <span class="glyphicon glyphicon-trash"></span> Delete</button>
-                                    </li>
-                                </ul>
-                            </div>
+                            <button class="btn btn-sm btn-primary" title="View Card" data-toggle="modal" data-target="#ViewCard"><span class="glyphicon glyphicon-picture"></span></button>
+                            <button class="btn btn-sm btn-primary" title="Edit Card" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"><span class="glyphicon glyphicon-pencil"></span></button>
+                            <button class="btn btn-sm btn-danger" title="Delete Card" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"><span class="glyphicon glyphicon-trash"></span></button>
+                            
                         </td>
                     </tr>
                 </tbody>
