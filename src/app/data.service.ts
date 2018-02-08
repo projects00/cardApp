@@ -48,7 +48,7 @@ getdefaultSetting()
   }
 
      updatDashImage(message,imageid){
-       return this.http.put(this.baseApi + "update/dashimage", {message:message,imageid:imageid}).map(response => response.json());
+       return this.http.put(this.baseApi + "updatedash/dashimage", {message:message,imageid:imageid}).map(response => response.json());
 
   }
   deleteCardTheme(id){
