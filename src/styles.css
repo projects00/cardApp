@@ -28,7 +28,17 @@ body{min-height:100%;overflow-x:hidden;background: #ccc}
 .btn-primary:hover{color:#fff;background-color:#5f90a7;}
 .btn.btn-optionbar {padding: 1px 5px;color: #7fb1c8;background-color: #fff;}
 .btn.btn-sm {padding: 1px 5px;}
-.buttongroup .btn{margin: 0 10px 10px 0;}
+.btn.btn-social {background:url( assets/images/social-share-icons.svg); height: 40px; width: 40px;transition:.3s ease all}
+.btn.btn-social:hover{transform: translateY(-5px);transition:.3s ease all}
+.btn.btn-social.facebook {background-position:0 0}
+.btn.btn-social.google {background-position:-40px 0}
+.btn.btn-social.whatsapp {background-position:-80px 0}
+.btn.btn-social.messenger {background-position:-120px 0}
+.btn.btn-social.sms {background-position:-160px 0}
+.btn.btn-social.mail {background-position:-200px 0}
+.btn.btn-social.share {background-position:-240px 0}
+.buttongroup .btn{margin: 0 1px 4px 0;}
+.buttongroup .btn:last-child{margin: 0 0 4px 0;}
 .input-group-addon {border: 1px solid #999; border-radius: 0;}
 .dropdown-menu{ border: 0;border-radius:0;padding: 0;margin: 0; }
 .dropdown-menu>li>button{padding: 10px; color: #7fb1c8;border: 0;background: #fff;width: 100%;text-align: left}
@@ -128,6 +138,7 @@ to{transform:scale(1.1)}
 @media (min-width: 1200px) {
 .modal-dialog {width: 780px;margin: 61px auto;}
 .modal-dialog.modal-sm{width: 300px;}
+.modal-dialog.modal-sm { width: 340px; }
 }
 @media (max-width: 1200px) {
 .wrap{margin:100px}
@@ -153,6 +164,8 @@ body{background: radial-gradient(#fff,#7fb1c8);}
 .wrap{margin:60px 0 10px}
 .postouter{width:98px;height:69px;left:calc(50% - 49px);border-radius: 7px;}
 .postouter:hover .postcard{transform:translateY(-30px);}
+.cardleft{padding:0 10px}
+.pad015 { padding: 0;}
 label.hamburgermenu a{font-size:1.6em;}
 label.hamburgermenu .hamburger{top:30px;right: 20px;}
 }

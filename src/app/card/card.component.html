@@ -109,6 +109,7 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h3 class="marbot10">Share Card</h3>
                 <div class="form-group">
                     <div class="input-group">
@@ -121,15 +122,13 @@
                     <p>Use mobile QR scaner to copy card URL.</p>
                 </div>
                 <div class="buttongroup">
-                    <a href="https://www.facebook.com/sharer.php?u={url}" class="btn btn-default">F</a>
-                    <a href="https://plus.google.com/share?url={url}" class="btn btn-default">G+</a>
-                    <a href="https://twitter.com/intent/tweet?url={url}&text={title}&via={via}&hashtags={hashtags}" class="btn btn-default">T</a>
-                    <a href="whatsapp://send?text={url}" class="btn btn-default">W</a>
-                    <a href="http://vk.com/share.php?url={url}" class="btn btn-default">V</a>
-                    <a href="https://web.skype.com/share?url={url}" class="btn btn-default">S</a>
-                    <a href="sendto" class="btn btn-default">E</a>
-                    <a href="#" class="btn btn-default">S</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">X</button>
+                    <button type="button" class="btn btn-social facebook"></button>
+                    <button type="button" class="btn btn-social google"></button>
+                    <button type="button" class="btn btn-social whatsapp"></button>
+                    <button type="button" class="btn btn-social messenger"></button>
+                    <button type="button" class="btn btn-social sms"></button>
+                    <button type="button" class="btn btn-social mail"></button>
+                    <button type="button" class="btn btn-social share"></button> 
                 </div>
                 <div class="cardfooter">8652 Shares</div>
             </div>
