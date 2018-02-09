@@ -9,7 +9,7 @@ import 'rxjs/Rx';
 export class DataService {
 recipient:String="Recipient";
 name:String="Test user name";
-message:String="Test Messages";
+message:String="Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mock ups. Lorem Ipsum is place1";
 theme:String="./assets/images/cardimage/card-img-001.png"
  dt: Date = new Date();
 public baseApi = 'http://ec2-52-91-21-206.compute-1.amazonaws.com:5000/';
