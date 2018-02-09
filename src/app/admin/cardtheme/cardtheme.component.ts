@@ -12,6 +12,7 @@ import { cardtheme } from '../../model/cardtheme';
 })
 export class CardthemeComponent implements OnInit {
   cardtheme: any;
+ 
   insertid: number;
   file: File;
   imagePath: any;

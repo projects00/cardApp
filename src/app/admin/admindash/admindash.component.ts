@@ -12,40 +12,40 @@ import { Router } from '@angular/router';
   styleUrls: ['./admindash.component.css']
 })
 export class AdmindashComponent implements OnInit {
-  editImage:any;
-  editmessage:String;
-  imagePath:any;
-   file: File;
-  editImageId:string;
-  message:String;
-   adminEditForm: FormGroup;
-  imageid:Number;
-  insertid:Number;
-    fb1: FormBuilder;
+  editImage: any;
+  editmessage: String;
+  imagePath: any;
+  file: File;
+  editImageId: string;
+  message: String;
+  adminEditForm: FormGroup;
+  imageid: Number;
+  insertid: Number;
+  fb1: FormBuilder;
   constructor(private dataservice: DataService, fb: FormBuilder, private router: Router) {
-     this.fb1 = fb;
-      this.initilizeFrom();
+    this.fb1 = fb;
+    this.initilizeFrom();
   }
 
-   initilizeFrom() {
+  initilizeFrom() {
     this.adminEditForm = this.fb1.group({
-       'emessage': [null, Validators.required]
+      'emessage': [null, Validators.required]
     });
 
-  
+
   }
 
-    getDefaultSetting() {
- 
+  getDefaultSetting() {
+
     this.dataservice.getdefaultSetting().subscribe(
       (respose) => {
         debugger;
         respose.forEach(element => {
- 
-          this.message= element.message;
-         this.imageid = element.imageid;
+
+          this.message = element.message;
+          this.imageid = element.imageid;
           this.getImage(element.imageid, null);
-        
+
 
         });
 
@@ -57,7 +57,7 @@ export class AdmindashComponent implements OnInit {
     );
   }
 
-    createImageFromBlob(image: Blob, slide: any) {
+  createImageFromBlob(image: Blob, slide: any) {
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       if (slide == null) {
@@ -71,8 +71,8 @@ export class AdmindashComponent implements OnInit {
       reader.readAsDataURL(image);
     }
   }
-   getImage(id: string, slide: any) {
-     debugger;
+  getImage(id: string, slide: any) {
+    debugger;
     let imgid;
     if (id == null)
       imgid = slide.imageId;
@@ -87,7 +87,7 @@ export class AdmindashComponent implements OnInit {
     });
   }
 
-    onFileChange(event) {
+  onFileChange(event) {
     debugger;
     let reader = new FileReader();
     if (event.target.files && event.target.files.length > 0) {
@@ -96,36 +96,36 @@ export class AdmindashComponent implements OnInit {
       reader.onload = () => {
         debugger;
         this.editImage = reader.result;
-        
+
       };
     }
   }
 
-  editCard(){
-    this.editImage=this.imagePath;
-    this.editmessage=this.message;
-    this.editImageId=this.imageid.toString();
-     this.adminEditForm.controls['emessage'].setValue(this.message);
-     this.getImage(this.editImageId, null);
+  editCard() {
+    this.editImage = this.imagePath;
+    this.editmessage = this.message;
+    this.editImageId = this.imageid.toString();
+    this.adminEditForm.controls['emessage'].setValue(this.message);
+    this.getImage(this.editImageId, null);
   }
 
-  updateCard(){
-   debugger;
-     this.dataservice.saveImage(this.file).subscribe(
+  updateCard() {
+    debugger;
+    this.dataservice.saveImage(this.file).subscribe(
       (respose) => {
         this.insertid = respose.result.insertId;
-      
-        this.dataservice.updatDashImage( this.adminEditForm.value.emessage, this.insertid ).subscribe(
+
+        this.dataservice.updatDashImage(this.adminEditForm.value.emessage, this.insertid).subscribe(
           (respose) => {
             this.initilizeFrom();
             $("#EditDefault").modal("toggle");
-           this.getDefaultSetting();
+            this.getDefaultSetting();
 
           });
       });
   }
-   ngOnInit() {
-     this.getDefaultSetting();
+  ngOnInit() {
+    this.getDefaultSetting();
   }
 
 }

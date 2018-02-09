@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-
+  imagePath: any;
+  imageid: Number;
   recipient: String;
   name: String;
   message: String;
@@ -51,7 +52,7 @@ export class CardComponent implements OnInit {
     });
     this.rForm.controls['viewRecipient'].setValue(this.dataservice.recipient);
     this.rForm.controls['viewName'].setValue(this.dataservice.name);
-    this.rForm.controls['viewMessage'].setValue(this.dataservice.message);
+    this.rForm.controls['viewMessage'].setValue(this.message);
     this.rForm.controls['viewTheme'].setValue(this.dataservice.theme);
 
   }
@@ -62,6 +63,7 @@ export class CardComponent implements OnInit {
     this.name = this.dataservice.name;
     this.message = this.dataservice.message;
      this.theme = this.dataservice.theme;
+     this.getDefaultSetting();
   }
 
   onChange(){
@@ -113,6 +115,63 @@ switch (this.rForm.value.viewTheme) {
        this.sharebtn="block";
  
     
+  }
+
+
+  
+  getDefaultSetting() {
+
+    this.dataservice.getdefaultSetting().subscribe(
+      (respose) => {
+        debugger;
+        respose.forEach(element => {
+
+          this.message = element.message;
+          this.imageid = element.imageid;
+          this.getImage(element.imageid, null);
+          this.rForm.controls['viewMessage'].setValue(this.message);
+
+
+        });
+
+      },
+      (error) => {
+        console.log(error.json());
+      }
+
+    );
+  }
+
+  createImageFromBlob(image: Blob, slide: any) {
+    let reader = new FileReader();
+    reader.addEventListener("load", () => {
+      if (slide == null) {
+        this.imagePath = reader.result;
+        this.theme= this.imagePath;
+        this.viewtheme= this.imagePath;
+      }
+      else
+        slide.image = reader.result;
+    }, false);
+
+    if (image) {
+      reader.readAsDataURL(image);
+    }
+  }
+  getImage(id: string, slide: any) {
+    debugger;
+    let imgid;
+    if (id == null)
+      imgid = slide.imageId;
+    else
+      imgid = id;
+    this.dataservice.getImage(imgid).subscribe(data => {
+      let reader = new FileReader();
+      this.createImageFromBlob(data, slide);
+    }, error => {
+      return null
+
+    });
   }
 
   test(){
