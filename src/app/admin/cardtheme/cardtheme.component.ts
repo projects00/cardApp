@@ -35,7 +35,7 @@ export class CardthemeComponent implements OnInit {
       'cardMessage': [null, Validators.required],
       'cardIsActive': [null],
       'cardCss': [null],
-      'cardImage': [null, Validators.required],
+      'cardImage': [null],
     });
 
     this.cardEditForm = this.fb1.group({
@@ -43,7 +43,7 @@ export class CardthemeComponent implements OnInit {
       'emessage': [null, Validators.required],
       'eisactive': [null],
       'ecardcss': [null],
-      'ecardImage': [null, Validators.required],
+      'ecardImage': [null],
       'ecardImageid': [null]
 
     });

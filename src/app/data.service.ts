@@ -22,7 +22,7 @@ public baseApi = 'http://ec2-52-91-21-206.compute-1.amazonaws.com:5000/';
   }
  saveCardTheme(cardimage) {
    debugger;
-   cardimage.isactive=0;
+ 
     return this.http.post(this.baseApi + "add/cardtheme",  cardimage ).map(response => response.json());
   }
 
