@@ -111,6 +111,7 @@ textarea.form-control{min-height: 140px;width: 100%;overflow-x: hidden;}
 .qrcodewrapper{text-align: center; margin: 25px 0}
 .qrcodewrapper img{ width: 160px; margin: 0 auto 15px;}
 .qrcodewrapper p{ font-size: 12px; color: #888 }
+.noselect {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 @keyframes beat {
 to{transform:scale(1.1)}
 }
