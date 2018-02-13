@@ -57,7 +57,9 @@
                     <div class="form-group">
                         <label for="exampleInputFile">Card Image</label>
                         <input class="form-control" id="avatar" #fileInput (change)="onFileChange($event)" type="file">
-                        <img [src]="imagePath" formControlName="cardImage" class="img-responsive">
+                        <div class="imageouter">
+                            <img [src]="imagePath" formControlName="cardImage" class="img-responsive center-block">
+                        </div>
                         <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
                     </div>
                     <div class="form-group">
@@ -102,7 +104,9 @@
                     <div class="form-group">
                         <label for="exampleInputFile">Card Image</label>
                         <input class="form-control" id="avatar1" #fileInput (change)="onFileChange($event)" type="file">
-                        <img [src]="imagePath" formControlName="ecardImage" class="img-responsive">
+                        <div class="imageouter">
+                            <img [src]="imagePath" formControlName="ecardImage" class="img-responsive center-block">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Default Message</label>
@@ -155,7 +159,9 @@
                     <div class="cardinner clearfix">
                         <div class="cardleft">
                             <p>Card #237846</p>
-                            <img src="assets/images/cardimage/card-img-001.png" class="img-responsive" alt="Card Photo" title="Card Image">
+                            <div class="imageouter">
+                                <img src="assets/images/cardimage/card-img-001.png" class="img-responsive" alt="Card Photo" title="Card Image">
+                            </div>
                         </div>
                         <div class="cardright">
                             <div class="pad015">

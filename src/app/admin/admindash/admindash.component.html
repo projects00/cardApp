@@ -83,7 +83,9 @@
                     <div class="form-group">
                         <p><label for="DefaultImage">Default Image</label></p>
                         <input class="form-control" id="avatar" #fileInput (change)="onFileChange($event)" type="file">
-                        <img [src]="editImage" class="img-responsive">
+                        <div class="imageouter">
+                            <img [src]="editImage" class="img-responsive center-block">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="WebsiteDescription">Default Message</label>
