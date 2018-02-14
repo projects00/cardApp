@@ -41,16 +41,15 @@
 </div>
 </div>
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <form [formGroup]="cForm">
-            <div class="modal-content">
-                <div class="modal-header"> <h4 class="modal-title" id="myModalLabel">New Card</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                   
-                </div>
-                <div class="modal-body">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header"> <h4 class="modal-title" id="myModalLabel">New Card</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="cForm">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Card Theme Name</label>
                         <input formControlName="cardName" type="text" class="form-control" id="cardName" placeholder="Card name" maxlength="20">
@@ -78,27 +77,25 @@
                             <input formControlName="cardIsActive" type="checkbox"> Active
                         </label>
                     </div>
-                </div>
-                <div class="modal-footer">
-                        <button type="button" (click)="savecard()" [disabled]="!cForm.valid" class="btn btn-primary">Publish Card</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    
-                </div>
+                </form>
             </div>
-        </form>
+            <div class="modal-footer">
+                <button type="button" (click)="savecard()" [disabled]="!cForm.valid" class="btn btn-primary">Publish Card</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 <div class="modal fade" id="EditCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog" role="document">
-        <form [formGroup]="cardEditForm">
-            <div class="modal-content">
-                <div class="modal-header"><h4 class="modal-title" id="myModalLabel">Edit Card</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    
-                </div>
-                <div class="modal-body">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header"><h4 class="modal-title" id="myModalLabel">Edit Card</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="cardEditForm">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Card Theme Name</label>
                         <input formControlName="ecardname" type="text" class="form-control" id="exampleInputEmail1" placeholder="Card name" maxlength="20">
@@ -125,17 +122,17 @@
                             <input formControlName="eisactive" type="checkbox"> Active
                         </label>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" (click)="updatecard()" class="btn btn-primary">Update Card</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+                </form>
             </div>
-        </form>
+            <div class="modal-footer">
+                <button type="button" (click)="updatecard()" class="btn btn-primary">Update Card</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 <div class="modal fade" id="DeleteCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel">Delete Card?</h4>
@@ -154,7 +151,7 @@
     </div>
 </div>
 <div class="modal fade" id="ViewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="card">
                 <div class="cardouter">
