@@ -1,11 +1,11 @@
-html {background: radial-gradient(#fff,#444);height:100%}
-body{min-height:100%;overflow-x:hidden;background: #ccc}
-/*body{min-height:100%;overflow-x:hidden;font-family: 'Comfortaa', cursive;background: linear-gradient(-45deg,rgba(229, 150, 119, 0.7), rgba(217, 119, 229, 0.7), rgba(127, 177, 200, 0.7), rgba(184, 242, 169, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 15s ease infinite;-moz-animation: Gradient 15s ease infinite;animation: Gradient 15s ease infinite;}*/
+html {background: radial-gradient(#fff,#444);height:100%;}
+body{ min-height:100%;overflow-x:hidden;background:#ccc}
+/*body{font-family: 'Open Sans', sans-serif; min-height:100%;overflow-x:hidden;background: linear-gradient(-45deg,rgba(217, 255, 0, 0.7), rgba(225, 0, 255, 0.7), rgba(0, 174, 255, 0.7), rgba(50, 252, 0, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 30s ease infinite;-moz-animation: Gradient 30s ease infinite;animation: Gradient 30s ease infinite;}*/
 .wrap{position:relative;margin:100px 180px}
 .cardleft,.cardright{width:50%;float:left;padding:5px}
-.card .cardright {font-family: 'Comfortaa', cursive;}
+.card .cardright {font-family: 'Open Sans', sans-serif;}
 .cardleft{border-right:2px dotted rgba(0,0,0,.2);}
-.imageouter {padding: 15px;background:#fff url( assets/images/loading.gif) no-repeat center center; min-height:300px}
+.imageouter {padding: 15px;background:#fff url( assets/images/loading.gif) no-repeat center center; min-height:300px; position: relative}
 .cardleft p{color: #999;margin: 0 0 5px;}
 .card{background:#fff url( assets/images/postcard-bg.png);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}
 .cardtext{word-break:break-word}
@@ -15,19 +15,18 @@ body{min-height:100%;overflow-x:hidden;background: #ccc}
 .card .cardouter .cardright p{font-size:16px; margin: 0 0 25px;color: #e59677;}
 .footer{font-size:12px;text-align:center;color:rgba(0,0,0,0.3)}
 .btn-post{position:fixed;outline:none;cursor: pointer;border-radius:5px;right:40px;bottom:40px;box-shadow:0 6px 15px rgba(0,0,0,0.3);animation:beat .5s infinite alternate;z-index:9;width: 60px;height: 42px;}
-.createcardouter .input-group-addon{border-color:transparent;color:#ccc!important}
-.createcardouter .form-control,.createcardouter .input-group-addon{background:transparent;border-width:0 0 1px;border-color:#ddd;border-radius:0;padding:16px 2px 0;font-size:16px;height:40px;color:#333}
+.createcardouter .input-group-text{border-color:transparent;color:#ccc!important}
+.createcardouter .form-control,.createcardouter .input-group-text{background:transparent;border-width:0 0 1px;border-color:#ddd;border-radius:0;padding:16px 2px 0;font-size:16px;height:40px;color:#333}
 .createcardouter textarea.form-control{height:140px;margin-bottom:15px}
 .createcardouter .select {padding: 0 15px;margin-bottom: 5px;}
 .form-control{height:40px;border-radius:0;border:1px solid #999;box-shadow:none}
 .form-control:focus{box-shadow:none}
 .btn{border-radius:0;border: 0}
-.btn-default{color:#9fa2af;background-color:#eee;}
+.btn-secondary{color:#9fa2af;background-color:#eee;}
 .btn-primary{color:#fff;background-color:#7fb1c8;}
 .btn-danger{color:#fff;background-color:#e59677;}
 .btn-primary:hover{color:#fff;background-color:#5f90a7;}
-.btn.btn-optionbar {padding: 1px 5px;color: #7fb1c8;background-color: #fff;}
-.btn.btn-sm {padding: 1px 5px;}
+.btn.btn-optionbar {padding: 1px 5px;color: #7fb1c8;background-color: #fcfcfc;float: right;}
 .btn.btn-social {background:url( assets/images/social-share-icons.svg); height: 40px; width: 40px;transition:.3s ease all}
 .btn.btn-social:hover{transform: translateY(-5px);transition:.3s ease all}
 .btn.btn-social.facebook {background-position:0 0}
@@ -37,22 +36,13 @@ body{min-height:100%;overflow-x:hidden;background: #ccc}
 .btn.btn-social.sms {background-position:-160px 0}
 .btn.btn-social.mail {background-position:-200px 0}
 .btn.btn-social.share {background-position:-240px 0}
-.buttongroup .btn{margin: 0 1px 4px 0;}
-.buttongroup .btn:last-child{margin: 0 0 4px 0;}
-.input-group-addon {border: 1px solid #999; border-radius: 0;}
-.dropdown-menu{ border: 0;border-radius:0;padding: 0;margin: 0; }
-.dropdown-menu>li>button{padding: 10px; color: #7fb1c8;border: 0;background: #fff;width: 100%;text-align: left}
-.dropdown-menu>li>button:hover{background: #f7f9fa;}
-.dropdown-menu>li>button>.glyphicon{margin-right: 10px}
+.input-group-text {border: 1px solid #999; border-radius: 0;}
 .switch {position: relative; display: inline-block; width: 42px; height: 21px;margin: 0;}
 .switch input {display:none;}
 .slider {position: absolute;cursor: pointer; top: 0;left: 0;right: 0;bottom: 0;background-color: #eee;transition: .4s;border-radius: 34px;}
 .slider:before {position: absolute;content: ""; height: 15px; width: 15px; left: 4px; bottom: 3px; background-color: #fff;transition: .4s;border-radius: 50%;}
 input:checked + .slider {background-color: #a5e199;}
 input:checked + .slider:before {-ms-transform: translateX(19px);transform: translateX(19px);}
-.modal-content{box-shadow:none;border:0;border-radius: 0;}
-.modal-backdrop.in {filter: alpha(opacity=30); opacity: .3;}
-.modal-backdrop{background-color: #7fb1c8;}
 #NewPost .no {background: #7fc8b1; width: 20px; height: 20px; position: absolute;right: -8px;top: -8px;border-radius: 50%;box-shadow: 0 1px 5px rgba(51, 51, 51, 0.5);color: #fff;text-align: center;font-size: 8px;padding: 5px;}
 .bubbles {width: 30px; height: 30px; top:6px;left:14px; z-index: -1;position: absolute;background:rgba(255,255,255,.1);animation:blast .5s ease-in infinite;border-radius: 50%;}
 /*HAMBURGER*/
@@ -70,18 +60,13 @@ label.hamburgermenu input:checked + .menu + ul{opacity:1;display:block}
 label.hamburgermenu ul{z-index:200;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:100%;margin:0;padding:0;list-style:none;display:none}
 label.hamburgermenu a{margin-bottom:10px;display:block;color:#7fb1c8;text-decoration:none;padding:10px;text-align:center;font-size:2em;transition:.2s ease-in-out}
 label.hamburgermenu a:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-decoration:none}
-.menuicon { width: 30px; vertical-align: text-top}
-.pagecontent{ padding: 30px; margin: 10% 0; text-align: center; color: #333; background: #fff; box-shadow: 0 5px 10px rgba(0,0,0,.2)}
-.pagecontent h1 {color: #b7b9c0;font-size: 30px;}
-.pagecontent p {color: #b7b9c0}
 .pad015{padding: 0 15px}
 .mar0 { margin: 0}
 .mar150 { margin: 15px 0}
 .mar300 { margin: 30px 0}
 .marbot10{margin: 0 0 10px 0}
 textarea.form-control{min-height: 80px;width: 100%;overflow-x: hidden;}
-.btn-default.btn-box{padding: 50px 10px; min-width: 125px;  margin: 0 15px 15px 0;background: #eaf1f5;}
-.open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover,.btn-group.open .dropdown-toggle,.btn-primary:active:focus,.btn-default:active:focus {background-image: none;color: #7fb1c8;background-color: #eaf1f5;border-color: #eaf1f5;box-shadow: none}
+.btn-secondary.btn-box{padding: 50px 10px; min-width: 125px;  margin: 0 15px 15px 0;background: #eaf1f5;}
 .ellipsis{text-overflow: ellipsis;white-space: nowrap;width: 500px;overflow: hidden;margin: 0;}
 .cardfooter{text-align:center;color:#ccc;font-size:10px;margin: 5px 0 0;}
 .cardfooter span{color: #e59677;display: inline-block}
@@ -99,8 +84,7 @@ textarea.form-control{min-height: 80px;width: 100%;overflow-x: hidden;}
 .postouter:hover .postcover1{z-index: 1;transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg);transition:.5s ease all;transform-origin: top}
 .postouter:hover .postcard{z-index:3;transform:translateY(-50px);transition:.5s ease all; transition-delay: .3s}
 .stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 80px;margin-bottom: 10px;}
-.stamp .rubberstamp{ margin:0 120px 0 0;padding: 25px 6px; float: right;transform: rotate(-15deg); border: 3px double #9d8bbe; color: #9d8bbe; border-radius:50%;height: 80px;width: 80px; font-size: 10px; font-family: Courier New, Courier, monospace;text-align: center}
-.side-nav li{float: left}
+.stamp .rubberstamp{ margin:0 67px 0 0;padding: 33px 6px; float: right;transform: rotate(-15deg);color: #000; border-radius:50%;height: 80px;width: 80px; font-size: 8px; font-family: Courier New, Courier, monospace;text-align: center}
 .newcard{width: 60px; bottom: 10px; right: 10px; float: right; cursor: pointer}
 .box{ margin: 0 0 20px;padding: 15px;background: #fff;border: 1px solid #eaf1f5;}
 .box .boxheader h1{ font-size: 18px; margin: 0;float: left;color: #7fb1c8;}
@@ -112,6 +96,7 @@ textarea.form-control{min-height: 80px;width: 100%;overflow-x: hidden;}
 .qrcodewrapper img{ width: 160px; margin: 0 auto 15px;}
 .qrcodewrapper p{ font-size: 12px; color: #888 }
 .noselect {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+.cardwraper{position: absolute;top: 0;right: 0;bottom: 0;left: 0;}
 @keyframes beat {
 to{transform:scale(1.1)}
 }
@@ -136,11 +121,6 @@ to{transform:scale(1.1)}
 50% {background-position: 100% 50%}
 100% {background-position: 0% 50%}
 }
-@media (min-width: 1200px) {
-.modal-dialog {width: 780px;margin: 61px auto;}
-.modal-dialog.modal-sm{width: 300px;}
-.modal-dialog.modal-sm { width: 340px; }
-}
 @media (max-width: 1200px) {
 .wrap{margin:100px}
 }
@@ -149,7 +129,7 @@ to{transform:scale(1.1)}
 }
 @media (max-width: 767px) {
 .card{padding: 10px}
-.cardleft{border-right:0 dotted rgba(0,0,0,.2);border-bottom:2px dotted rgba(0,0,0,.2);padding:20px 70px 5px}
+.cardleft{border-right:0 dotted rgba(0,0,0,.2);border-bottom:2px dotted rgba(0,0,0,.2);}
 .cardright{padding:10px}
 .cardleft,.cardright{width:100%}
 .card .cardouter .cardright h1{font-size:22px;margin:0 0 5px}
@@ -157,8 +137,9 @@ to{transform:scale(1.1)}
 .card .cardouter .cardright p{font-size:16px;margin: 0 0 5px;}
 .wrap{margin:100px 60px}
 .stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 50px}
-.stamp .rubberstamp{ margin:0 100px 0 0; padding: 15px 0; height: 50px; width: 50px;font-size: 6px; }
-.modal-dialog {margin: 15px;}
+.stamp .rubberstamp{ margin:0 40px 0 0; padding: 20px 10px; height: 50px; width: 50px;font-size: 4px; }
+
+.imageouter {padding: 0 35px 10px;min-height: 210px;}
 }
 @media (max-width: 480px) {
 body{background: radial-gradient(#fff,#7fb1c8);}
@@ -171,10 +152,12 @@ label.hamburgermenu a{font-size:1.6em;}
 label.hamburgermenu .hamburger{top:30px;right: 20px;}
 }
 @media print {
-.btn-post,.hamburgermenu,.postouter,.btn{display: none;visibility:hidden}
+.btn-post,.hamburgermenu,.postouter,.btn, .cardwraper{display: none;visibility:hidden}
 .card{display: block; border: 4px dashed #000;color: #000}
 .cardright,.cardleft{width: 48%;float: left; padding: 1%; border: 0;}
 .card .cardouter .cardright h1{font-size:40px;margin:0 0 15px}
 .card .cardouter .cardright h2{font-size:30px;margin:0 0 15px}
 .card .cardouter .cardright p{font-size:20px;margin: 0 0 15px;}
+.stamp .rubberstamp {padding: 30px 10px;height: 100px;width: 100px;font-size: 12px;border: 6px double #000;}
+.stamp {height: 100px; }
 }

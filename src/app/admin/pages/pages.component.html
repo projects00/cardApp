@@ -2,7 +2,7 @@
     <div class="box">
         <div class="boxheader">
             <h1>Pages</h1>
-            <button data-toggle="modal" data-target="#NewPage" class="btn btn-primary btn-optionbar pull-right" title="Edit Default"><span class="glyphicon glyphicon-plus"></span> Add New Page</button>
+            <button data-toggle="modal" data-target="#NewPage" class="btn btn-primary btn-optionbar" title="Edit Default">Add New Page</button>
         </div>
         <div class="table-responsive">
         <table class="table table-hover">
@@ -10,8 +10,7 @@
                 <tr>
                     <th>Active/Inactive</th>
                     <th>Page Name</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Options</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,10 +25,8 @@
                     </td>
                     <td>About Us</td>
                     <td>
-                        <span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#EditPage"></span>
-                    </td>
-                    <td>
-                        <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#DeletePage"></span>
+                        <a class="btn btn-primary" data-toggle="modal" data-target="#EditPage">Edit</a>
+                        <a class="btn btn-secondary" data-toggle="modal" data-target="#DeletePage">Delete</a>
                     </td>
                 </tr>
             </tbody>
@@ -41,10 +38,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">New Page</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">New Page</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -57,8 +54,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Publish Page</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -67,10 +64,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">New Card</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">New Card</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -83,8 +80,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save Page</button>
+                <button type="button" class="btn btn-primary">Save Page</button>                
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -93,16 +90,16 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Delete Page?</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">Delete Page?</h4>
             </div>
             <div class="modal-body">
                 Are you sure delete "About us" page permanently?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Yes</button>
             </div>
         </div>

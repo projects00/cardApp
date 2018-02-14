@@ -1,9 +1,9 @@
-<div class="col-md-12">
+<div class="row">
+<div class="col">
     <div class="box">
         <div class="boxheader">
             <h1>Card Themes</h1>
-            <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-optionbar pull-right">
-                <span class="glyphicon glyphicon-plus"></span> Add New Card</Button>
+            <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-optionbar">Add New Card</Button>
         </div>
         <div class="table-responsive">
             <table class="table table-hover">
@@ -28,9 +28,9 @@
                             <p class="ellipsis" title="{{sb.message}}">{{sb.message}}</p>
                         </td>
                         <td>
-                            <button class="btn btn-sm btn-primary" title="View Card" data-toggle="modal" data-target="#ViewCard"><span class="glyphicon glyphicon-picture"></span></button>
-                            <button class="btn btn-sm btn-primary" title="Edit Card" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"><span class="glyphicon glyphicon-pencil"></span></button>
-                            <button class="btn btn-sm btn-danger" title="Delete Card" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"><span class="glyphicon glyphicon-trash"></span></button>
+                            <button class="btn btn-sm btn-primary" title="View Card" data-toggle="modal" data-target="#ViewCard">View</button>
+                            <button class="btn btn-sm btn-primary" title="Edit Card" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard">Edit</button>
+                            <button class="btn btn-sm btn-danger" title="Delete Card" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard">Delete</button>
                             
                         </td>
                     </tr>
@@ -39,15 +39,16 @@
         </div>
     </div>
 </div>
+</div>
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <form [formGroup]="cForm">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header"> <h4 class="modal-title" id="myModalLabel">New Card</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel">New Card</h4>
+                   
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -58,7 +59,7 @@
                         <label for="exampleInputFile">Card Image</label>
                         <input class="form-control" id="avatar" #fileInput (change)="onFileChange($event)" type="file">
                         <div class="imageouter">
-                            <img [src]="imagePath" formControlName="cardImage" class="img-responsive center-block">
+                            <img [src]="imagePath" formControlName="cardImage" class="img-fluid center-block">
                         </div>
                         <p class="help-block">Card main image, Only Square image, Minimum resolution 500px x 500px</p>
                     </div>
@@ -79,8 +80,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" (click)="savecard()" [disabled]="!cForm.valid" class="btn btn-primary">Publish Card</button>
+                        <button type="button" (click)="savecard()" [disabled]="!cForm.valid" class="btn btn-primary">Publish Card</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
                 </div>
             </div>
         </form>
@@ -90,11 +92,11 @@
     <div class="modal-dialog" role="document">
         <form [formGroup]="cardEditForm">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header"><h4 class="modal-title" id="myModalLabel">Edit Card</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel">Edit Card</h4>
+                    
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -105,7 +107,7 @@
                         <label for="exampleInputFile">Card Image</label>
                         <input class="form-control" id="avatar1" #fileInput (change)="onFileChange($event)" type="file">
                         <div class="imageouter">
-                            <img [src]="imagePath" formControlName="ecardImage" class="img-responsive center-block">
+                            <img [src]="imagePath" formControlName="ecardImage" class="img-fluid center-block">
                         </div>
                     </div>
                     <div class="form-group">
@@ -125,8 +127,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="button" (click)="updatecard()" class="btn btn-primary">Update Card</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </form>
@@ -136,17 +138,17 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Delete Card?</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title" id="myModalLabel">Delete Card?</h4>
             </div>
             <div class="modal-body">
                 Are you sure delete "Card Theme Name" card permanently?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" (click)="delete()" class="btn btn-primary">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -160,7 +162,7 @@
                         <div class="cardleft">
                             <p>Card #237846</p>
                             <div class="imageouter">
-                                <img src="assets/images/cardimage/card-img-001.png" class="img-responsive" alt="Card Photo" title="Card Image">
+                                <img src="assets/images/cardimage/card-img-001.png" class="img-fluid" alt="Card Photo" title="Card Image">
                             </div>
                         </div>
                         <div class="cardright">
@@ -168,7 +170,7 @@
                                 <h1 class="cardtext">Hi, User</h1>
                                 <p class="cardtext">{{message}} </p>
                                 <h2 class="cardtext text-right">- Pc</h2>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
