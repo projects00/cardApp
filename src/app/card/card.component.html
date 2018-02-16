@@ -65,10 +65,11 @@
                             <div class="cardinner clearfix">
                                 <div class="cardleft">
                                     <div class="select">
-                                        <select formControlName="viewTheme" placeholder="Select" (change)="onChange()" class="form-control" id="Theme" name="test" ngModel>
-                                            <option value="1">Default Card</option>
-                                            <option value="2">Card - 2</option>
-                                            <option value="3">Card - 3</option>
+
+                                        <select formControlName="viewTheme" placeholder="Select" (change)="onChange()" class="form-control" id="Theme" name="test">
+                                            <option *ngFor="let group of ddoption" [value]="group.value" >
+    {{group.name}}
+    </option>
                                         </select>
                                     </div>
                                     <div class="imageouter">
@@ -79,25 +80,25 @@
                                     <div class="pad015">
                                         <p class="text-right"><small>Post Date/Time: {{dt | date:dtformat}}</small></p>
                                         <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">Hi, </div>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">Hi, </div>
+                                                </div>
+                                                <input formControlName="viewRecipient" class="form-control" type="text" placeholder="Recipient Name" id="Recipient" maxlength="20">
                                             </div>
-                                            <input formControlName="viewRecipient" class="form-control" type="text" placeholder="Recipient Name" id="Recipient" maxlength="20">
                                         </div>
-                                    </div>
                                         <div class="form-group">
                                             <label for="Message" class="d-none">Message</label>
                                             <textarea formControlName="viewMessage" class="form-control" placeholder="Message" id="Message" maxlength="160"></textarea>
                                         </div>
                                         <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text"> - </div>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"> - </div>
+                                                </div>
+                                                <input formControlName="viewName" class="form-control text-right" type="text" placeholder="Your name" id="Name" maxlength="20">
                                             </div>
-                                            <input formControlName="viewName" class="form-control text-right" type="text" placeholder="Your name" id="Name" maxlength="20">
                                         </div>
-                                    </div>
                                         <div class="g-recaptcha marbot10" data-sitekey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></div>
                                         <button type="button" class="btn btn-primary" (click)="clicked()"><i class="lnr lnr-magic-wand"></i> Preview</button>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close"><i class="lnr lnr-cross"></i> Close</button>
@@ -119,7 +120,8 @@
                 <p class="lead"><i class="lnr lnr-earth"></i> Share Card</p>
                 <div class="form-row">
                     <div class="input-group">
-                        <input type="url" class="form-control" id="Unique-url" placeholder="Unique url" value="http://localhost:4200/card/Us8ho93bhoe51jX" readonly>
+                        <input type="url" class="form-control" id="Unique-url" placeholder="Unique url" value="http://localhost:4200/card/Us8ho93bhoe51jX"
+                            readonly>
                         <div class="input-group-prepend">
                             <div class="input-group-text">Copy URL</div>
                         </div>

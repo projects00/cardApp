@@ -27,6 +27,8 @@ export class CardComponent implements OnInit {
   dt: Date = new Date();
   rForm: FormGroup;
   fb1: FormBuilder;
+  selectedGroup:number=1;
+  ddoption:any;
   options = [
     {name: "option1", value:1},
     {name: "option2", value:2},
@@ -64,33 +66,35 @@ export class CardComponent implements OnInit {
     this.message = this.dataservice.message;
      this.theme = this.dataservice.theme;
      this.getDefaultSetting();
+     this.getCardThemes();
   }
 
   onChange(){
     debugger;
-switch (this.rForm.value.viewTheme) {
-    case "1":
-    {
-      this.theme="./assets/images/cardimage/card-img-001.png";
-       this.viewtheme="./assets/images/cardimage/card-img-001.png";
+this.getImage(this.rForm.value.viewTheme, null);
+// switch (this.rForm.value.viewTheme) {
+//     case "1":
+//     {
+//       this.theme="./assets/images/cardimage/card-img-001.png";
+//        this.viewtheme="./assets/images/cardimage/card-img-001.png";
     
-      break;
-    }
-    case "2":
-    {
-      this.theme="./assets/images/cardimage/card-img-002.png";
-       this.viewtheme="./assets/images/cardimage/card-img-002.png";
-      break;
-}
-    case "3":
-    {
-      this.theme="./assets/images/cardimage/card-img-003.png";
-       this.viewtheme="./assets/images/cardimage/card-img-003.png";
-      break;
-    }
+//       break;
+//     }
+//     case "2":
+//     {
+//       this.theme="./assets/images/cardimage/card-img-002.png";
+//        this.viewtheme="./assets/images/cardimage/card-img-002.png";
+//       break;
+// }
+//     case "3":
+//     {
+//       this.theme="./assets/images/cardimage/card-img-003.png";
+//        this.viewtheme="./assets/images/cardimage/card-img-003.png";
+//       break;
+//     }
 
     
-  }
+//   }
 
   }
 
@@ -117,6 +121,25 @@ switch (this.rForm.value.viewTheme) {
     
   }
 
+  
+  getCardThemes() {
+    debugger;
+  this.ddoption=[];
+    this.dataservice.getcardthemes().subscribe(
+      (respose) => {
+        debugger;
+        respose.forEach(element => {
+
+           this.ddoption.push(   {name: element.name, value:element.imageid});
+           });
+
+      },
+      (error) => {
+        console.log(error.json());
+      }
+
+    );
+  }
 
   
   getDefaultSetting() {
