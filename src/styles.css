@@ -1,5 +1,5 @@
 html {background: radial-gradient(#fff,#444);height:100%;}
-body{ min-height:100%;overflow-x:hidden;background:#ccc}
+body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;background:#ccc}
 /*body{font-family: 'Open Sans', sans-serif; min-height:100%;overflow-x:hidden;background: linear-gradient(-45deg,rgba(217, 255, 0, 0.7), rgba(225, 0, 255, 0.7), rgba(0, 174, 255, 0.7), rgba(50, 252, 0, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 30s ease infinite;-moz-animation: Gradient 30s ease infinite;animation: Gradient 30s ease infinite;}*/
 .wrap{position:relative;margin:100px 180px}
 .cardleft,.cardright{width:50%;float:left;padding:5px}
