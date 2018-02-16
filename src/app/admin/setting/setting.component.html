@@ -1,20 +1,20 @@
 <div class="col-md-12">
     <div class="box">
         <div class="boxheader">
-            <h1>Settings</h1>
+            <h1><i class="lnr lnr-cog"></i> Settings</h1>
         </div>
-        <button data-toggle="modal" data-target="#SettingCard" class="btn btn-secondary btn-box" title="Card Settings">Card Setting</button>
-        <button data-toggle="modal" data-target="#SettingPass" class="btn btn-secondary btn-box" title="Card Settings">Password Setting</button>
-        <button data-toggle="modal" data-target="#SettingSEO" class="btn btn-secondary btn-box" title="Card Settings">SEO Setting</button>
-        <button data-toggle="modal" data-target="#SettingAdword" class="btn btn-secondary btn-box" title="Card Settings">Adword Code</button>
-        <button data-toggle="modal" data-target="#SettingTracking" class="btn btn-secondary btn-box" title="Card Settings">Tracking Code</button>
+        <button data-toggle="modal" data-target="#SettingCard" class="btn btn-secondary btn-box" title="Web Settings"><i class="lnr lnr-earth"></i> Web Setting</button>
+        <button data-toggle="modal" data-target="#SettingPass" class="btn btn-secondary btn-box" title="Password Settings"><i class="lnr lnr-lock"></i> Password</button>
+        <button data-toggle="modal" data-target="#SettingSEO" class="btn btn-secondary btn-box" title="SEO Settings"><i class="lnr lnr-heart-pulse"></i> SEO Setting</button>
+        <button data-toggle="modal" data-target="#SettingAdword" class="btn btn-secondary btn-box" title="Adword Settings"><i class="lnr lnr-code"></i> Adword Code</button>
+        <button data-toggle="modal" data-target="#SettingTracking" class="btn btn-secondary btn-box" title="Tracking Settings"><i class="lnr lnr-magnifier"></i> Tracking Code</button>
     </div>
 </div>
 <div class="modal fade" id="SettingCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Site Setting</h4>
+                    <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-earth"></i> Site Setting</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -46,10 +46,10 @@
     </div>
 </div>
 <div class="modal fade" id="SettingPass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Password Setting</h4>
+                <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-lock"></i> Password Setting</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -78,10 +78,10 @@
     </div>
 </div>
 <div class="modal fade" id="SettingSEO" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-slideout" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">SEO Setting</h4>
+                <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-heart-pulse"></i> SEO Setting</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -90,37 +90,37 @@
                 <div class="form-group">
                     <label for="WebsiteDescription">Website Title</label>
                     <input type="text" class="form-control" id="exampleInputPassword1">
-                    <p class="help-block">Defines a title for: the document, in the browser toolbar, the page when it is added to favorites, for
-                        the page in search-engine results.</p>
+                    <small class="form-text text-muted">Defines a title for: the document, in the browser toolbar, the page when it is added to favorites, for
+                        the page in search-engine results.</small>
                 </div>
                 <div class="form-group">
                     <label for="WebsiteDescription">Website Description</label>
                     <textarea class="form-control" id="WebsiteDescription" placeholder="Website description"> </textarea>
-                    <p class="help-block">The meta description tag is a brief and concise summary of your page's content.</p>
+                    <small class="form-text text-muted">The meta description tag is a brief and concise summary of your page's content.</small>
                 </div>
                 <div class="form-group">
                     <label for="WebsiteDescription">Website Keywords</label>
                     <textarea class="form-control" id="WebsiteKeywords" placeholder="Website Keywords"> </textarea>
-                    <p class="help-block">A meta keywords tag provides search engines with a list of keywords that are relevant to a webpage.</p>
+                    <small class="form-text text-muted">A meta keywords tag provides search engines with a list of keywords that are relevant to a webpage.</small>
                 </div>
                 <div class="form-group">
                     <label for="WebsiteDescription">Author</label>
                     <input type="text" class="form-control" id="exampleInputPassword1">
-                    <p class="help-block">This element can be used to identify the author of a page (article, blog, ...).</p>
+                    <small class="form-text text-muted">This element can be used to identify the author of a page (article, blog, ...).</small>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-primary">Save</button> 
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
 </div>
 <div class="modal fade" id="SettingAdword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-slideout" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Adword Code</h4>
+                <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-code"></i> Adword Code</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -136,10 +136,10 @@
     </div>
 </div>
 <div class="modal fade" id="SettingTracking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-slideout" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Tracking Code</h4>
+                <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-magnifier"></i> Tracking Code</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

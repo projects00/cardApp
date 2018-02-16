@@ -180,4 +180,10 @@ switch (this.rForm.value.viewTheme) {
     this.showbtn="block";
   }
 
+  print(){
+    alert('print this');
+  }
+  
+
+
 }

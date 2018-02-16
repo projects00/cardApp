@@ -1,8 +1,8 @@
 <div class="col-md-12">
     <div class="box">
         <div class="boxheader">
-            <h1>Pages</h1>
-            <button data-toggle="modal" data-target="#NewPage" class="btn btn-primary btn-optionbar" title="Edit Default">Add New Page</button>
+            <h1><i class="lnr lnr-file-empty"></i> Pages</h1>
+            <button data-toggle="modal" data-target="#NewPage" class="btn btn-primary btn-optionbar" title="Edit Default"><i class="lnr lnr-plus-circle"></i> Add New Page</button>
         </div>
         <div class="table-responsive">
         <table class="table table-hover">
@@ -25,8 +25,8 @@
                     </td>
                     <td>About Us</td>
                     <td>
-                        <a class="btn btn-primary" data-toggle="modal" data-target="#EditPage">Edit</a>
-                        <a class="btn btn-secondary" data-toggle="modal" data-target="#DeletePage">Delete</a>
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#EditPage"><i class="lnr lnr-pencil"></i></button>
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#DeletePage"><i class="lnr lnr-trash"></i></button>
                     </td>
                 </tr>
             </tbody>
@@ -35,10 +35,10 @@
     </div>
 </div>
 <div class="modal fade" id="NewPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-dialog modal-dialog-slideout modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">New Page</h4>
+                <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-plus-circle"></i> New Page</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -61,10 +61,10 @@
     </div>
 </div>
 <div class="modal fade" id="EditPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-dialog modal-dialog-slideout modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">New Card</h4>
+                <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-plus-pencil"></i>Edit Page</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -90,7 +90,7 @@
     <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Delete Page?</h4>
+                <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-warning"></i>  Delete Page?</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

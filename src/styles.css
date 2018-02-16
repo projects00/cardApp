@@ -14,10 +14,10 @@ body{ min-height:100%;overflow-x:hidden;background:#ccc}
 .card .cardouter .cardright h2{font-size:16px;margin:0 0 10px;color: #888;}
 .card .cardouter .cardright p{font-size:16px; margin: 0 0 25px;color: #e59677;}
 .footer{font-size:12px;text-align:center;color:rgba(0,0,0,0.3)}
-.btn-post{position:fixed;outline:none;cursor: pointer;border-radius:5px;right:40px;bottom:40px;box-shadow:0 6px 15px rgba(0,0,0,0.3);animation:beat .5s infinite alternate;z-index:9;width: 60px;height: 42px;}
+.btn-post{position:fixed;outline:none;cursor: pointer;border-radius:5px;right:40px;bottom:40px;box-shadow:0 6px 15px rgba(0,0,0,0.3);animation: bounce 0.5s;animation-direction: alternate;animation-timing-function: cubic-bezier(.5,0.05,1,.5);animation-iteration-count: infinite;z-index:9;width: 60px;height: 42px;}
 .createcardouter .input-group-text{border-color:transparent;color:#ccc!important}
-.createcardouter .form-control,.createcardouter .input-group-text{background:transparent;border-width:0 0 1px;border-color:#ddd;border-radius:0;padding:16px 2px 0;font-size:16px;height:40px;color:#333}
-.createcardouter textarea.form-control{height:140px;margin-bottom:15px}
+.createcardouter .form-control,.createcardouter .input-group-text{background:transparent;border-width:0 0 1px;border-color:#ddd;border-radius:0;padding:6px 2px 0;font-size:16px;height:30px;color:#333}
+.createcardouter textarea.form-control{height:120px;margin-bottom:15px}
 .createcardouter .select {padding: 0 15px;margin-bottom: 5px;}
 .form-control{height:40px;border-radius:0;border:1px solid #999;box-shadow:none}
 .form-control:focus{box-shadow:none}
@@ -25,10 +25,12 @@ body{ min-height:100%;overflow-x:hidden;background:#ccc}
 .btn-secondary{color:#9fa2af;background-color:#eee;}
 .btn-primary{color:#fff;background-color:#7fb1c8;}
 .btn-danger{color:#fff;background-color:#e59677;}
-.btn-primary:hover{color:#fff;background-color:#5f90a7;}
+.btn-primary:hover{color:#fff;background-color:#43a2ce;}
+.btn-secondary:hover{color:#eee;background-color:#999;}
 .btn.btn-optionbar {padding: 1px 5px;color: #7fb1c8;background-color: #fcfcfc;float: right;}
-.btn.btn-social {background:url( assets/images/social-share-icons.svg); height: 40px; width: 40px;transition:.3s ease all}
-.btn.btn-social:hover{transform: translateY(-5px);transition:.3s ease all}
+.buttongroup .btn{margin-bottom:10px}
+.btn.btn-social {background-image:url( assets/images/social-share-icons.svg)!important;opacity: .6;background-color:#fff ; height: 40px; width: 40px;transition:.3s ease all}
+.btn.btn-social:hover{transform: translateY(-5px);transition:.3s ease all;opacity:1;}
 .btn.btn-social.facebook {background-position:0 0}
 .btn.btn-social.google {background-position:-40px 0}
 .btn.btn-social.whatsapp {background-position:-80px 0}
@@ -36,6 +38,7 @@ body{ min-height:100%;overflow-x:hidden;background:#ccc}
 .btn.btn-social.sms {background-position:-160px 0}
 .btn.btn-social.mail {background-position:-200px 0}
 .btn.btn-social.share {background-position:-240px 0}
+.btn.btn-social.print {background-position:-280px 0}
 .input-group-text {border: 1px solid #999; border-radius: 0;}
 .switch {position: relative; display: inline-block; width: 42px; height: 21px;margin: 0;}
 .switch input {display:none;}
@@ -44,7 +47,7 @@ body{ min-height:100%;overflow-x:hidden;background:#ccc}
 input:checked + .slider {background-color: #a5e199;}
 input:checked + .slider:before {-ms-transform: translateX(19px);transform: translateX(19px);}
 #NewPost .no {background: #7fc8b1; width: 20px; height: 20px; position: absolute;right: -8px;top: -8px;border-radius: 50%;box-shadow: 0 1px 5px rgba(51, 51, 51, 0.5);color: #fff;text-align: center;font-size: 8px;padding: 5px;}
-.bubbles {width: 30px; height: 30px; top:6px;left:14px; z-index: -1;position: absolute;background:rgba(255,255,255,.1);animation:blast .5s ease-in infinite;border-radius: 50%;}
+.bubbles {width: 30px; height: 30px; top:6px;left:14px; z-index: -1;position: absolute;background:rgba(255,255,255,.1);animation:blast 1s ease-in infinite;border-radius: 50%;}
 /*HAMBURGER*/
 label.hamburgermenu .menu{position:absolute;right:0;top:0;z-index:100;width:100px;height:100px;background:rgba(255,255,255,0);border-radius:50% 50% 50% 50%;-webkit-transition:.2s ease-in-out;transition:.2s ease-in-out;-webkit-box-shadow:0 0 0 0 rgba(255,255,255,0),0 0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 0 rgba(255,255,255,0),0 0 0 0 rgba(255,255,255,0);cursor:pointer}
 label.hamburgermenu .hamburger{position:absolute;top:40px;right: 30px;width:30px;height:1px;background:#ece7ea;display:block;-webkit-transform-origin:center;transform-origin:center;-webkit-transition:.5s ease-in-out;transition:.5s ease-in-out}
@@ -66,17 +69,21 @@ label.hamburgermenu a:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-
 .mar300 { margin: 30px 0}
 .marbot10{margin: 0 0 10px 0}
 textarea.form-control{min-height: 80px;width: 100%;overflow-x: hidden;}
-.btn-secondary.btn-box{padding: 50px 10px; min-width: 125px;  margin: 0 15px 15px 0;background: #eaf1f5;}
+.btn-secondary.btn-box{padding: 30px 10px; min-width: 125px;  margin: 0 15px 15px 0;background: #eaf1f5; color: #7fb1c8}
+.btn-secondary.btn-box:hover{background: #f1f5f9;  }
+.btn-secondary.btn-box .lnr {font-size: 30px;display: block;margin-bottom: 10px;}
 .ellipsis{text-overflow: ellipsis;white-space: nowrap;width: 500px;overflow: hidden;margin: 0;}
 .cardfooter{text-align:center;color:#ccc;font-size:10px;margin: 5px 0 0;}
 .cardfooter span{color: #e59677;display: inline-block}
 .cardfooter span:hover{transform: scale(5);animation:beat .5s infinite;transition: .3s linear all;}
 /*POSTCARD ANIMATION*/
+.homelogo{animation-name:bounceIn;animation-duration: 450ms;animation-timing-function: linear;animation-fill-mode: forwards;}
 #PostCard{transform:scale(0);}
-#PostCard.postpopup{animation:postpopupanim 3s 1 alternate;transform:scale(1)}
+#PostCard.postpopup{animation:postpopupanim 3s 1 alternate;transform:scale(1);}
 #PostCard.postpopup.send{animation:postsendanim 3s 1;}
 .postouter{width:158px;height:112px;transform:scale(1);transition:.3s ease all;cursor:pointer;left:calc(50% - 80px);position:absolute;top:30%;background: #edeef0;border-radius: 11px;box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);}
-.postouter .postcardindicator{background:#fa8383;position:absolute;padding:5px;right:-10px;top:-10px;border-radius:50%;height:30px;width:30px;color:#fff;text-align:center;font-size:16px;box-shadow:0 5px 5px rgba(0,0,0,0.2);animation:beat .25s infinite alternate;z-index:5}
+.postouter:hover{animation: none}
+.postouter .postcardindicator{background:#fa8383;position:absolute;padding:3px;right:-10px;top:-10px;border-radius:50%;height:30px;width:30px;color:#fff;text-align:center;font-size:16px;box-shadow:0 5px 5px rgba(0,0,0,0.2);animation:beat .25s infinite alternate;z-index:5}
 .postouter .postcard,.postouter .postcover1,.postouter .postcover2{position:absolute;transform:translateY(0);transition:.5s ease all;width:100%;height:100%;top: 0;left: 0;}
 .postouter .postcover1 { z-index:4;top:0;transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); transform-origin: top;transition-delay: .8s;}
 .postouter .postcover2 {z-index: 3}
@@ -97,20 +104,22 @@ textarea.form-control{min-height: 80px;width: 100%;overflow-x: hidden;}
 .qrcodewrapper p{ font-size: 12px; color: #888 }
 .noselect {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .cardwraper{position: absolute;top: 0;right: 0;bottom: 0;left: 0;}
+.modal-dialog-slideout {min-height: 100%; margin: 0 0 0 auto;background: #fff;}
+.modal.fade .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(100%,0);transform: translate(100%,0);}
+.modal.fade.show .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(0,0);transform: translate(0,0);flex-flow: column;}
+.modal-dialog-slideout .modal-content{border: 0;}
 @keyframes beat {
 to{transform:scale(1.1)}
+}
+@keyframes bounce {
+from{ transform: translate3d(0, 0, 0);}
+to{ transform: translate3d(0, 20px, 0);}
 }
 @keyframes postpopupanim {
 0%{transform:scale(0)translateY(-200px);opacity: 0}
 10%{transform:scale(.2)translateY(-640px);opacity: 1}
 30%{transform:scale(.2) translateY(0)}
 50%{transform:scale(1)translateY(0)}
-}
-@keyframes postsendanim {
-0%{transform:scale(1)translateY(0)}
-10%{transform:scale(.2)translateY(0)}
-30%{transform:scale(.2) translateY(-640px)}
-50%{transform:scale(0)translateY(-100px)}
 }
 @keyframes blast {
 0%{transform:scale(1);opacity:1}
@@ -138,7 +147,7 @@ to{transform:scale(1.1)}
 .wrap{margin:100px 60px}
 .stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 50px}
 .stamp .rubberstamp{ margin:0 40px 0 0; padding: 20px 10px; height: 50px; width: 50px;font-size: 4px; }
-
+.modal-dialog.modal-dialog-slideout {width: 80%}
 .imageouter {padding: 0 35px 10px;min-height: 210px;}
 }
 @media (max-width: 480px) {
@@ -152,12 +161,10 @@ label.hamburgermenu a{font-size:1.6em;}
 label.hamburgermenu .hamburger{top:30px;right: 20px;}
 }
 @media print {
-.btn-post,.hamburgermenu,.postouter,.btn, .cardwraper{display: none;visibility:hidden}
-.card{display: block; border: 4px dashed #000;color: #000}
+.btn-post,.hamburgermenu,.postouter,.btn, .cardwraper, .modal, .modal-backdrop{display: none;visibility:hidden}
+.card{display: block;color: #000}
 .cardright,.cardleft{width: 48%;float: left; padding: 1%; border: 0;}
 .card .cardouter .cardright h1{font-size:40px;margin:0 0 15px}
 .card .cardouter .cardright h2{font-size:30px;margin:0 0 15px}
 .card .cardouter .cardright p{font-size:20px;margin: 0 0 15px;}
-.stamp .rubberstamp {padding: 30px 10px;height: 100px;width: 100px;font-size: 12px;border: 6px double #000;}
-.stamp {height: 100px; }
 }

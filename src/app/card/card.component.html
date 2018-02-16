@@ -20,7 +20,7 @@
                                     <h1 class="cardtext">Hi, {{recipient}}</h1>
                                     <p class="cardtext">{{message}} </p>
                                     <h2 class="cardtext text-right">- {{name}}</h2>
-                                    <button class="btn btn-primary" [ngStyle]="{'display': sharebtn}" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!">Share this card</button>
+                                    <button class="btn btn-primary" [ngStyle]="{'display': sharebtn}" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!"><i class="lnr lnr-heart"></i> Share this card</button>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                     <img src="assets/images/postcover2.svg" class="postcover2" alt="postcard bottom icon" title="Click to View Message">
                 </div>
             </div>
-            <img src="assets/images/logo-home.svg" width="160" alt="PostCardi Logo" title="PostCardi" class="img-fluid d-block mx-auto">
+            <img src="assets/images/logo-home.svg" width="160" alt="PostCardi Logo" title="PostCardi" class="homelogo img-fluid d-block mx-auto">
         </div>
     </div>
 </div>
@@ -44,10 +44,10 @@
         <span class='hamburger'></span>
     </span>
     <ul>
-        <li><a href='#' title="Click to Home"> Home</a></li>
-        <li><a href='#' title="Click to About"> About</a></li>
-        <li><a href='#' title="Click to Donate"> Donate</a></li>
-        <li><a href='#' title="Click to Contact"> Contact</a></li>
+        <li><a href='#' title="Click to Home"><i class="lnr lnr-home"></i> Home</a></li>
+        <li><a href='#' title="Click to About"><i class="lnr lnr-users"></i> About</a></li>
+        <li><a href='#' title="Click to Donate"><i class="lnr lnr-heart"></i> Donate</a></li>
+        <li><a href='#' title="Click to Contact"><i class="lnr lnr-envelope"></i> Contact</a></li>
     </ul>
 </label>
 <div class="btn-post" [ngStyle]="{'display': showbtn}" id="NewPost" data-toggle="modal" data-target="#myModal">
@@ -56,7 +56,7 @@
     <img src="assets/images/postcover.svg" alt="New Card icon" title="Click to Create Card">
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="createcardouter">
                 <div class="card">
@@ -65,7 +65,6 @@
                             <div class="cardinner clearfix">
                                 <div class="cardleft">
                                     <div class="select">
-                                        <label for="Theme" class="hide">Select Card</label>
                                         <select formControlName="viewTheme" placeholder="Select" (change)="onChange()" class="form-control" id="Theme" name="test" ngModel>
                                             <option value="1">Default Card</option>
                                             <option value="2">Card - 2</option>
@@ -100,8 +99,8 @@
                                         </div>
                                     </div>
                                         <div class="g-recaptcha marbot10" data-sitekey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></div>
-                                        <button type="button" class="btn btn-primary" (click)="clicked()">Preview</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Close</button>
+                                        <button type="button" class="btn btn-primary" (click)="clicked()"><i class="lnr lnr-magic-wand"></i> Preview</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close"><i class="lnr lnr-cross"></i> Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -113,29 +112,32 @@
     </div>
 </div>
 <div class="modal fade" id="ShareLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="marbot10">Share Card</h3>
+                <p class="lead"><i class="lnr lnr-earth"></i> Share Card</p>
                 <div class="form-row">
                     <div class="input-group">
                         <input type="url" class="form-control" id="Unique-url" placeholder="Unique url" value="http://localhost:4200/card/Us8ho93bhoe51jX" readonly>
-                        <div class="input-group-addon">Copy URL</div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Copy URL</div>
+                        </div>
                     </div>
                 </div>
                 <div class="qrcodewrapper">
                     <img src="assets/images/qrcode.png" alt="QR Code" title="QR Code">
-                    <p>Use mobile QR scaner to copy card URL.</p>
+                    <p><i class="lnr lnr-tablet"></i> Use mobile QR scaner to copy card URL.</p>
                 </div>
-                <div class="buttongroup">
+                <div class="buttongroup text-center">
                     <button type="button" class="btn btn-social facebook"></button>
                     <button type="button" class="btn btn-social google"></button>
                     <button type="button" class="btn btn-social whatsapp"></button>
                     <button type="button" class="btn btn-social messenger"></button>
                     <button type="button" class="btn btn-social sms"></button>
                     <button type="button" class="btn btn-social mail"></button>
-                    <button type="button" class="btn btn-social share"></button> 
+                    <button type="button" class="btn btn-social share"></button>
+                    <button type="button" class="btn btn-social print" (click)="print()" title="Print this Card"></button>
                 </div>
                 <div class="cardfooter">8652 Shares</div>
             </div>

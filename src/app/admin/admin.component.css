@@ -1,9 +1,11 @@
-#wrapper{padding-left:0;background: #fcfcfc;}
+#wrapper{padding:80px 15px 15px;background: #fcfcfc; color: #888}
 .navbar-brand {font-size: 26px;line-height: 30px;color: #7fb1c8}
-.side-nav>li>a{width:auto;color: #888;font-size: 14px;padding: 20px;cursor: pointer}
+.side-nav>li>a{width:auto;padding: 15px;border-bottom: 1px solid rgba(0, 0, 0, 0.03);}
+.navbar-nav{cursor: pointer;color: #7fb1c8;font-size: 16px;}
 .side-nav li a:hover,.side-nav li a:focus{background-color:#eaf1f5}
 .navbar.fixed-top{background-color: #eaf1f5;}
 .navbar-toggle .icon-bar{ background-color: #fff}
+.nav-link i.lnr {font-size: 24px;margin: 0 10px 0 0;float: left;}
 @media(min-width:768px) {
 .side-nav{position:fixed;top:56px;flex-direction: column;left:200px;width:200px;margin-left:-200px;border:none;border-radius:0;overflow-y:auto;background-color:#f1f5f9;bottom:0;overflow-x:hidden;padding-bottom:40px}
 #wrapper{margin-left: 200px;padding: 80px 15px 15px;}
