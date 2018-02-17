@@ -2,18 +2,21 @@ html {background: radial-gradient(#fff,#444);height:100%;}
 body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;background:#ccc}
 /*body{font-family: 'Open Sans', sans-serif; min-height:100%;overflow-x:hidden;background: linear-gradient(-45deg,rgba(217, 255, 0, 0.7), rgba(225, 0, 255, 0.7), rgba(0, 174, 255, 0.7), rgba(50, 252, 0, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 30s ease infinite;-moz-animation: Gradient 30s ease infinite;animation: Gradient 30s ease infinite;}*/
 .wrap{position:relative;margin:100px 180px}
-.cardleft,.cardright{width:50%;float:left;padding:5px}
-.card .cardright {font-family: 'Open Sans', sans-serif;}
-.cardleft{border-right:2px dotted rgba(0,0,0,.2);}
-.imageouter {padding: 15px;background:#fff url( assets/images/loading.gif) no-repeat center center; min-height:300px; position: relative}
-.cardleft p{color: #999;margin: 0 0 5px;}
-.card{background:#fff url( assets/images/postcard-bg.png);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}
-.cardtext{word-break:break-word}
-.card .cardouter{background:#fff;padding:10px;position:relative}
-.card .cardouter .cardright h1{font-size:30px;margin:0 0 10px;text-transform:capitalize;color: #6899af;}
-.card .cardouter .cardright h2{font-size:16px;margin:0 0 10px;color: #888;}
-.card .cardouter .cardright p{font-size:16px; margin: 0 0 25px;color: #e59677;}
-.footer{font-size:12px;text-align:center;color:rgba(0,0,0,0.3)}
+.pcard{background:#fff url( assets/images/postcard-bg.png);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}
+.pcard .cardleft,.pcard .cardright{width:50%;float:left;padding:5px}
+.pcard .cardright {font-family: 'Open Sans', sans-serif;}
+.pcard .cardleft{border-right:2px dotted rgba(0,0,0,.2);}
+.pcard .imageouter {padding: 15px;background:#fff url( assets/images/loading.gif) no-repeat center center; min-height:300px; position: relative}
+.pcard .cardleft p{color: #999;margin: 0 0 5px;}
+.pcard .cardtext{word-break:break-word}
+.pcard .cardouter{background:#fff;padding:10px;position:relative}
+.pcard .cardouter .cardright h1{font-size:30px;margin:0 0 10px;text-transform:capitalize;color: #6899af;}
+.pcard .cardouter .cardright h2{font-size:16px;margin:0 0 10px;color: #888;}
+.pcard .cardouter .cardright p{font-size:16px; margin: 0 0 25px;color: #e59677;}
+.pcard .cardimgwraper{position: absolute;top: 0;right: 0;bottom: 0;left: 0;}
+.pcard .cardfooter{text-align:center;color:#ccc;font-size:10px;margin: 5px 0 0;}
+.pcard .cardfooter span{color: #e59677;display: inline-block}
+.pcard .cardfooter span:hover{transform: scale(5);animation:beat .5s infinite;transition: .3s linear all;}
 .btn-post{position:fixed;outline:none;cursor: pointer;border-radius:5px;right:40px;bottom:40px;box-shadow:0 6px 15px rgba(0,0,0,0.3);animation: bounce 0.5s;animation-direction: alternate;animation-timing-function: cubic-bezier(.5,0.05,1,.5);animation-iteration-count: infinite;z-index:9;width: 60px;height: 42px;}
 .createcardouter .input-group-text{border-color:transparent;color:#ccc!important}
 .createcardouter .form-control,.createcardouter .input-group-text{background:transparent;border-width:0 0 1px;border-color:#ddd;border-radius:0;padding:6px 2px 0;font-size:16px;height:30px;color:#333}
@@ -21,6 +24,8 @@ body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;bac
 .createcardouter .select {padding: 0 15px;margin-bottom: 5px;}
 .form-control{height:40px;border-radius:0;border:1px solid #999;box-shadow:none}
 .form-control:focus{box-shadow:none}
+a {color: #7fb1c8}
+h1{ font-size: 2rem; margin-bottom: 1.5rem;}
 .btn{border-radius:0;border: 0}
 .btn-secondary{color:#9fa2af;background-color:#eee;}
 .btn-primary{color:#fff;background-color:#7fb1c8;}
@@ -73,9 +78,6 @@ textarea.form-control{min-height: 80px;width: 100%;overflow-x: hidden;}
 .btn-secondary.btn-box:hover{background: #f1f5f9;  }
 .btn-secondary.btn-box .lnr {font-size: 30px;display: block;margin-bottom: 10px;}
 .ellipsis{text-overflow: ellipsis;white-space: nowrap;width: 500px;overflow: hidden;margin: 0;}
-.cardfooter{text-align:center;color:#ccc;font-size:10px;margin: 5px 0 0;}
-.cardfooter span{color: #e59677;display: inline-block}
-.cardfooter span:hover{transform: scale(5);animation:beat .5s infinite;transition: .3s linear all;}
 /*POSTCARD ANIMATION*/
 .homelogo{animation-name:bounceIn;animation-duration: 450ms;animation-timing-function: linear;animation-fill-mode: forwards;}
 #PostCard{transform:scale(0);}
@@ -83,7 +85,7 @@ textarea.form-control{min-height: 80px;width: 100%;overflow-x: hidden;}
 #PostCard.postpopup.send{animation:postsendanim 3s 1;}
 .postouter{width:158px;height:112px;transform:scale(1);transition:.3s ease all;cursor:pointer;left:calc(50% - 80px);position:absolute;top:30%;background: #edeef0;border-radius: 11px;box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);}
 .postouter:hover{animation: none}
-.postouter .postcardindicator{background:#fa8383;position:absolute;padding:3px;right:-10px;top:-10px;border-radius:50%;height:30px;width:30px;color:#fff;text-align:center;font-size:16px;box-shadow:0 5px 5px rgba(0,0,0,0.2);animation:beat .25s infinite alternate;z-index:5}
+.postouter .postcardindicator{background:#fa8383;position:absolute;right:-10px;top:-10px;border-radius:50%;height:30px;width:30px;box-shadow:0 5px 5px rgba(0,0,0,0.2);animation:beat .25s infinite alternate;z-index:5}
 .postouter .postcard,.postouter .postcover1,.postouter .postcover2{position:absolute;transform:translateY(0);transition:.5s ease all;width:100%;height:100%;top: 0;left: 0;}
 .postouter .postcover1 { z-index:4;top:0;transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); transform-origin: top;transition-delay: .8s;}
 .postouter .postcover2 {z-index: 3}
@@ -103,11 +105,14 @@ textarea.form-control{min-height: 80px;width: 100%;overflow-x: hidden;}
 .qrcodewrapper img{ width: 160px; margin: 0 auto 15px;}
 .qrcodewrapper p{ font-size: 12px; color: #888 }
 .noselect {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
-.cardwraper{position: absolute;top: 0;right: 0;bottom: 0;left: 0;}
 .modal-dialog-slideout {min-height: 100%; margin: 0 0 0 auto;background: #fff;}
 .modal.fade .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(100%,0);transform: translate(100%,0);}
 .modal.fade.show .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(0,0);transform: translate(0,0);flex-flow: column;}
 .modal-dialog-slideout .modal-content{border: 0;}
+.modal-backdrop.show {opacity: .1;}
+.pagecontent{padding: 30px;color: #777;}
+.pagecontent .lead{margin-bottom: 3px}
+.pagecontentfooter{font-size: 10px; color: #ccc}
 @keyframes beat {
 to{transform:scale(1.1)}
 }
@@ -137,13 +142,13 @@ to{ transform: translate3d(0, 20px, 0);}
 .wrap{margin:100px 0}
 }
 @media (max-width: 767px) {
-.card{padding: 10px}
-.cardleft{border-right:0 dotted rgba(0,0,0,.2);border-bottom:2px dotted rgba(0,0,0,.2);}
-.cardright{padding:10px}
-.cardleft,.cardright{width:100%}
-.card .cardouter .cardright h1{font-size:22px;margin:0 0 5px}
-.card .cardouter .cardright h2{font-size:20px;margin:0 0 5px}
-.card .cardouter .cardright p{font-size:16px;margin: 0 0 5px;}
+.pcard{padding: 10px}
+.pcard .cardleft{border-right:0 dotted rgba(0,0,0,.2);border-bottom:2px dotted rgba(0,0,0,.2);}
+.pcard .cardright{padding:10px}
+.pcard .cardleft,.pcard .cardright{width:100%}
+.pcard .cardouter .cardright h1{font-size:22px;margin:0 0 5px}
+.pcard .cardouter .cardright h2{font-size:20px;margin:0 0 5px}
+.pcard .cardouter .cardright p{font-size:16px;margin: 0 0 5px;}
 .wrap{margin:100px 60px}
 .stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 50px}
 .stamp .rubberstamp{ margin:0 40px 0 0; padding: 20px 10px; height: 50px; width: 50px;font-size: 4px; }
@@ -162,9 +167,9 @@ label.hamburgermenu .hamburger{top:30px;right: 20px;}
 }
 @media print {
 .btn-post,.hamburgermenu,.postouter,.btn, .cardwraper, .modal, .modal-backdrop{display: none;visibility:hidden}
-.card{display: block;color: #000}
-.cardright,.cardleft{width: 48%;float: left; padding: 1%; border: 0;}
-.card .cardouter .cardright h1{font-size:40px;margin:0 0 15px}
-.card .cardouter .cardright h2{font-size:30px;margin:0 0 15px}
-.card .cardouter .cardright p{font-size:20px;margin: 0 0 15px;}
+.pcard{display: block;color: #000}
+.pcard .cardright,.pcard .cardleft{width: 48%;float: left; padding: 1%; border: 0;}
+.pcard .cardouter .cardright h1{font-size:40px;margin:0 0 15px}
+.pcard .cardouter .cardright h2{font-size:30px;margin:0 0 15px}
+.pcard .cardouter .cardright p{font-size:20px;margin: 0 0 15px;}
 }

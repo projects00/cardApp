@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <div class="wrap">
-                <div class="card" [ngClass]="cardclass" id="PostCard">
+                <div class="pcard" [ngClass]="cardclass" id="PostCard">
                     <div class="cardouter noselect">
                         <div class="cardinner clearfix">
                             <div class="cardleft">
@@ -20,15 +20,18 @@
                                     <h1 class="cardtext">Hi, {{recipient}}</h1>
                                     <p class="cardtext">{{message}} </p>
                                     <h2 class="cardtext text-right">- {{name}}</h2>
-                                    <button class="btn btn-primary" [ngStyle]="{'display': sharebtn}" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!"><i class="lnr lnr-heart"></i> Share this card</button>
+                                    <button class="btn btn-primary" [ngStyle]="{'display': sharebtn}" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!">
+                                        <i class="lnr lnr-heart"></i> Share this card</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="cardfooter">Made with <span>❤</span></div>
+                        <div class="cardfooter">Made with
+                            <span>❤</span>
+                        </div>
                     </div>
                 </div>
                 <div class="postouter" (click)="test()" id="OpenPost">
-                    <div class="postcardindicator" title="You Have One Message">1</div>
+                    <img src="assets/images/postcardindicator.svg" class="postcardindicator" alt="postcard icon" title="You Have One Message">
                     <img src="assets/images/postcard.svg" class="postcard" alt="postcard icon" title="Click to View PostCatd!">
                     <img src="assets/images/postcover1.svg" class="postcover1" alt="postcard top icon" title="Postcard Open">
                     <img src="assets/images/postcover2.svg" class="postcover2" alt="postcard bottom icon" title="Click to View Message">
@@ -47,6 +50,7 @@
         <li><a href='#' title="Click to Home"><i class="lnr lnr-home"></i> Home</a></li>
         <li><a href='#' title="Click to About"><i class="lnr lnr-users"></i> About</a></li>
         <li><a href='#' title="Click to Donate"><i class="lnr lnr-heart"></i> Donate</a></li>
+        <li><a href='#' title="Click to FAQ's"><i class="lnr lnr-question-circle"></i> FAQ's</a></li>
         <li><a href='#' title="Click to Contact"><i class="lnr lnr-envelope"></i> Contact</a></li>
     </ul>
 </label>
@@ -59,17 +63,14 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="createcardouter">
-                <div class="card">
+                <div class="pcard">
                     <div class="cardouter">
                         <form [formGroup]="rForm">
                             <div class="cardinner clearfix">
                                 <div class="cardleft">
                                     <div class="select">
-
                                         <select formControlName="viewTheme" placeholder="Select" (change)="onChange()" class="form-control" id="Theme" name="test">
-                                            <option *ngFor="let group of ddoption" [value]="group.value" >
-    {{group.name}}
-    </option>
+                                            <option *ngFor="let group of ddoption" [value]="group.value">{{group.name}}</option>
                                         </select>
                                     </div>
                                     <div class="imageouter">

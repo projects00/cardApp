@@ -1,43 +1,43 @@
 <div class="row">
-<div class="col">
-    <div class="box">
-        <div class="boxheader">
-            <h1><i class="lnr lnr-magic-wand"></i> Card Themes</h1>
-            <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-optionbar"><i class="lnr lnr-plus-circle"></i> Add New Card</Button>
-        </div>
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Active/Inactive</th>
-                        <th>Card Theme</th>
-                        <th>Message</th>
-                        <th>Options</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let sb of cardtheme;let i =index">
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox" [checked]="sb.isactive">
-                                <span class="slider"></span>
-                            </label>
-                        </td>
-                        <td>{{sb.name}}</td>
-                        <td>
-                            <p class="ellipsis" title="{{sb.message}}">{{sb.message}}</p>
-                        </td>
-                        <td>
-                            <button class="btn btn-sm btn-primary" title="View Card" data-toggle="modal" data-target="#ViewCard"><i class="lnr lnr-magnifier"></i></button>
-                            <button class="btn btn-sm btn-primary" title="Edit Card" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"><i class="lnr lnr-pencil"></i></button>
-                            <button class="btn btn-sm btn-danger" title="Delete Card" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"><i class="lnr lnr-trash"></i> </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="col">
+        <div class="box">
+            <div class="boxheader">
+                <h1><i class="lnr lnr-magic-wand"></i> Card Themes</h1>
+                <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-optionbar"><i class="lnr lnr-plus-circle"></i> Add New Card</Button>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Active/Inactive</th>
+                            <th>Card Theme</th>
+                            <th>Message</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let sb of cardtheme;let i =index">
+                            <td>
+                                <label class="switch">
+                                    <input type="checkbox" [checked]="sb.isactive">
+                                    <span class="slider"></span>
+                                </label>
+                            </td>
+                            <td>{{sb.name}}</td>
+                            <td>
+                                <p class="ellipsis" title="{{sb.message}}">{{sb.message}}</p>
+                            </td>
+                            <td>
+                                <button class="btn btn-sm btn-primary" title="View Card" data-toggle="modal" data-target="#ViewCard"><i class="lnr lnr-magnifier"></i></button>
+                                <button class="btn btn-sm btn-primary" title="Edit Card" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"><i class="lnr lnr-pencil"></i></button>
+                                <button class="btn btn-sm btn-danger" title="Delete Card" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"><i class="lnr lnr-trash"></i> </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 </div>
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog modal-dialog-slideout modal-lg" role="document">
@@ -152,7 +152,7 @@
 <div class="modal fade" id="ViewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <div class="card">
+            <div class="pcard">
                 <div class="cardouter">
                     <div class="cardinner clearfix">
                         <div class="cardleft">
