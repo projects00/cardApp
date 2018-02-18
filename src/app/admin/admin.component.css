@@ -1,5 +1,5 @@
 #wrapper{padding:80px 15px 15px;background: #fcfcfc; color: #888}
-.navbar-brand {font-size: 26px;line-height: 30px;color: #7fb1c8}
+.navbar-brand {font-size: 26px;line-height: 30px;color: #7fb1c8; padding: 0}
 .side-nav>li>a{width:auto;padding: 15px;border-bottom: 1px solid rgba(0, 0, 0, 0.03);}
 .navbar-nav{cursor: pointer;color: #7fb1c8;font-size: 16px;}
 .side-nav li a:hover,.side-nav li a:focus{background-color:#eaf1f5}

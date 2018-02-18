@@ -1,5 +1,5 @@
 html {background: radial-gradient(#fff,#444);height:100%;}
-body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;background:#ccc}
+body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;background:#7fb1c8}
 /*body{font-family: 'Open Sans', sans-serif; min-height:100%;overflow-x:hidden;background: linear-gradient(-45deg,rgba(217, 255, 0, 0.7), rgba(225, 0, 255, 0.7), rgba(0, 174, 255, 0.7), rgba(50, 252, 0, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 30s ease infinite;-moz-animation: Gradient 30s ease infinite;animation: Gradient 30s ease infinite;}*/
 .wrap{position:relative;margin:100px 180px}
 .pcard{background:#fff url( assets/images/postcard-bg.png);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}
@@ -7,7 +7,7 @@ body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;bac
 .pcard .cardright {font-family: 'Open Sans', sans-serif;}
 .pcard .cardleft{border-right:2px dotted rgba(0,0,0,.2);}
 .pcard .imageouter {padding: 15px;background:#fff url( assets/images/loading.gif) no-repeat center center; min-height:300px; position: relative}
-.pcard .cardleft p{color: #999;margin: 0 0 5px;}
+.pcard .cardleft p{color: #999;margin: 0;}
 .pcard .cardtext{word-break:break-word}
 .pcard .cardouter{background:#fff;padding:10px;position:relative}
 .pcard .cardouter .cardright h1{font-size:30px;margin:0 0 10px;text-transform:capitalize;color: #6899af;}
@@ -66,7 +66,7 @@ label.hamburgermenu input:checked + .menu .hamburger:after{-webkit-transform:rot
 label.hamburgermenu input:checked + .menu .hamburger:before{-webkit-transform:rotate(90deg);transform:rotate(90deg);top:0;background:#7fb1c8}
 label.hamburgermenu input:checked + .menu + ul{opacity:1;display:block}
 label.hamburgermenu ul{z-index:200;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:100%;margin:0;padding:0;list-style:none;display:none}
-label.hamburgermenu a{margin-bottom:10px;display:block;color:#7fb1c8;text-decoration:none;padding:10px;text-align:center;font-size:2em;transition:.2s ease-in-out}
+label.hamburgermenu a{margin-bottom:10px;display:block;color:#7fb1c8;text-decoration:none;padding:10px;text-align:center;font-size:1.8em;transition:.2s ease-in-out}
 label.hamburgermenu a:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-decoration:none}
 .pad015{padding: 0 15px}
 .mar0 { margin: 0}
@@ -79,7 +79,6 @@ textarea.form-control{min-height: 80px;width: 100%;overflow-x: hidden;}
 .btn-secondary.btn-box .lnr {font-size: 30px;display: block;margin-bottom: 10px;}
 .ellipsis{text-overflow: ellipsis;white-space: nowrap;width: 500px;overflow: hidden;margin: 0;}
 /*POSTCARD ANIMATION*/
-.homelogo{animation-name:bounceIn;animation-duration: 450ms;animation-timing-function: linear;animation-fill-mode: forwards;}
 #PostCard{transform:scale(0);}
 #PostCard.postpopup{animation:postpopupanim 3s 1 alternate;transform:scale(1);}
 #PostCard.postpopup.send{animation:postsendanim 3s 1;}
@@ -105,20 +104,23 @@ textarea.form-control{min-height: 80px;width: 100%;overflow-x: hidden;}
 .qrcodewrapper img{ width: 160px; margin: 0 auto 15px;}
 .qrcodewrapper p{ font-size: 12px; color: #888 }
 .noselect {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+.modal-content{border: 0}
 .modal-dialog-slideout {min-height: 100%; margin: 0 0 0 auto;background: #fff;}
-.modal.fade .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(100%,0);transform: translate(100%,0);}
+.modal.fade .modal-dialog {-webkit-transform: translate(0,0)scale(.5);transform: translate(0,0)scale(.5);}
+.modal.fade .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(100%,0)scale(1);transform: translate(100%,0)scale(1);}
 .modal.fade.show .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(0,0);transform: translate(0,0);flex-flow: column;}
+.modal.show .modal-dialog {-webkit-transform: translate(0,0)scale(1);transform: translate(0,0)scale(1);}
 .modal-dialog-slideout .modal-content{border: 0;}
-.modal-backdrop.show {opacity: .1;}
 .pagecontent{padding: 30px;color: #777;}
 .pagecontent .lead{margin-bottom: 3px}
 .pagecontentfooter{font-size: 10px; color: #ccc}
+.homelogo{opacity:.4}
 @keyframes beat {
 to{transform:scale(1.1)}
 }
 @keyframes bounce {
 from{ transform: translate3d(0, 0, 0);}
-to{ transform: translate3d(0, 20px, 0);}
+to{ transform: translate3d(0, 25px, 0);}
 }
 @keyframes postpopupanim {
 0%{transform:scale(0)translateY(-200px);opacity: 0}
@@ -138,6 +140,11 @@ to{ transform: translate3d(0, 20px, 0);}
 @media (max-width: 1200px) {
 .wrap{margin:100px}
 }
+@media (min-width: 992px){
+.modal-lg {
+    max-width: 750px;
+}
+}
 @media (max-width: 992px) {
 .wrap{margin:100px 0}
 }
@@ -156,9 +163,8 @@ to{ transform: translate3d(0, 20px, 0);}
 .imageouter {padding: 0 35px 10px;min-height: 210px;}
 }
 @media (max-width: 480px) {
-body{background: radial-gradient(#fff,#7fb1c8);}
 .wrap{margin:60px 0 10px}
-.postouter{width:98px;height:69px;left:calc(50% - 49px);border-radius: 7px;}
+.postouter{width:96px;height:68px;left:calc(50% - 48px);border-radius: 7px;}
 .postouter:hover .postcard{transform:translateY(-30px);}
 .cardleft{padding:0 10px}
 .pad015 { padding: 0;}

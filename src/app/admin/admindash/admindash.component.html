@@ -1,77 +1,77 @@
 <div class="row">
-<div class="col">
-    <div class="box">
-        <div class="boxheader">
-            <h1><i class="lnr lnr-rocket"></i> Create Card:</h1>
+    <div class="col">
+        <div class="box">
+            <div class="boxheader">
+                <h1><i class="lnr lnr-rocket"></i> Create Card:</h1>
+            </div>
+            <p class="lead">Yes</p>
         </div>
-        <p class="lead">Yes</p>
     </div>
-</div>
-<div class="col">
-    <div class="box">
-        <div class="boxheader">
-            <h1><i class="lnr lnr-calendar-full"></i> Card Validity:</h1>
+    <div class="col">
+        <div class="box">
+            <div class="boxheader">
+                <h1><i class="lnr lnr-calendar-full"></i> Card Validity:</h1>
+            </div>
+            <p class="lead">30 Days</p>
         </div>
-        <p class="lead">30 Days</p>
     </div>
-</div>
-<div class="col">
-    <div class="box">
-        <div class="boxheader">
-            <h1><i class="lnr lnr-picture"></i> Total Themes:</h1>
+    <div class="col">
+        <div class="box">
+            <div class="boxheader">
+                <h1><i class="lnr lnr-picture"></i> Total Themes:</h1>
+            </div>
+            <p class="lead">80</p>
         </div>
-        <p class="lead">80</p>
     </div>
-</div>
-<div class="col">
-    <div class="box">
-        <div class="boxheader">
-            <h1><i class="lnr lnr-tag"></i> Active Themes:</h1>
+    <div class="col">
+        <div class="box">
+            <div class="boxheader">
+                <h1><i class="lnr lnr-tag"></i> Active Themes:</h1>
+            </div>
+            <p class="lead">20</p>
         </div>
-        <p class="lead">20</p>
     </div>
-</div>
-<div class="col">
-    <div class="box">
-        <div class="boxheader">
-            <h1><i class="lnr lnr-diamond"></i> Active Cards:</h1>
+    <div class="col">
+        <div class="box">
+            <div class="boxheader">
+                <h1><i class="lnr lnr-diamond"></i> Active Cards:</h1>
+            </div>
+            <p class="lead">50393</p>
         </div>
-        <p class="lead">50393</p>
     </div>
-</div>
 </div>
 <div class="row">
-<div class="col">
-    <div class="box">
-        <div class="boxheader">
-            <h1><i class="lnr lnr-screen"></i> Default Card</h1>
-            <button data-toggle="modal" (click)="editCard()" data-target="#EditDefault" class="btn btn-primary btn-optionbar" title="Edit Default"><i class="lnr lnr-pencil"></i> Edit Default</button>
-        </div>
-        <div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="box">
-                        <img [src]="imagePath" class="img-fluid">
+    <div class="col">
+        <div class="box">
+            <div class="boxheader">
+                <h1><i class="lnr lnr-screen"></i> Default Card</h1>
+                <button data-toggle="modal" (click)="editCard()" data-target="#EditDefault" class="btn btn-primary btn-optionbar" title="Edit Default"><i class="lnr lnr-pencil"></i> Edit Default</button>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="box">
+                            <img [src]="imagePath" class="img-fluid">
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="box">
-                        <p class="lead">{{message}}</p>
-                    </div>
-                    <div class="box">
-                        <small>
-                            <h4>Important Message</h4>
-                            <ul>
-                                <li>Image should be Square and Minimum resolution 500px x 500px</li>
-                                <li>Default message and image will display in front page of the website.</li>
-                            </ul>
-                        </small>
+                    <div class="col-md-8">
+                        <div class="box">
+                            <p class="lead">{{message}}</p>
+                        </div>
+                        <div class="box">
+                            <small>
+                                <h4>Important Message</h4>
+                                <ul>
+                                    <li>Image should be Square and Minimum resolution 500px x 500px</li>
+                                    <li>Default message and image will display in front page of the website.</li>
+                                </ul>
+                            </small>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <div class="modal fade" id="EditDefault" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog modal-dialog-slideout" role="document">
