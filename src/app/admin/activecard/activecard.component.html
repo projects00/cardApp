@@ -1,45 +1,73 @@
 <div class="row">
-<div class="col">
-    <div class="box">
-        <div class="boxheader">
-            <h1><i class="lnr lnr-license"></i> Active Cards</h1>
+    <div class="col">
+        <div class="box">
+            <div class="boxheader">
+                <h1><i class="lnr lnr-license"></i> Active Cards</h1>
+            </div>
+            <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Theme Name</th>
+                        <th>Date/Time</th>
+                        <th>Recipient</th>
+                        <th>Name</th>
+                        <th>Message</th>
+                        <th>Unique URL</th>
+                        <th>Preview</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Theme Name</td>
+                        <td>18-01-2018 16:31:27</td>
+                        <td>Recipient Name</td>
+                        <td>Card user Name</td>
+                        <td><p class="ellipsis" title="Message">Message Message Message Message Message MessageMessage Message Message Message Message Message</p></td>
+                        <td>
+                            <a href="http://www.cardapp.com/cards/apH58Rgubs" target="_blank">http://www.cardapp.com/cards/apH58Rgubs</a>
+                        </td>
+                        <td><button class="btn btn-sm btn-primary" title="View Card" data-toggle="modal" data-target="#ViewCard"><i class="lnr lnr-magnifier"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Theme Name</th>
-                    <th>Date/Time</th>
-                    <th>Recipient</th>
-                    <th>Name</th>
-                    <th>Message</th>
-                    <th>Unique URL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Theme Name</td>
-                    <td>18-01-2018 16:31:27</td>
-                    <td>Recipient Name</td>
-                    <td>Card user Name</td>
-                    <td>Card Message</td>
-                    <td>
-                        <a href="http://www.cardapp.com/cards/38473246284978934" target="_blank">http://www.cardapp.com/cards/38473246284978934</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <br><br>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
+        <br><br>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+        </div>
     </div>
 </div>
+<div class="modal fade" id="ViewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="pcard">
+                <div class="cardouter">
+                    <div class="cardinner clearfix">
+                        <div class="cardleft">
+                            <p>Card #237846</p>
+                            <div class="imageouter">
+                                <img src="assets/images/cardimage/card-img-001.png" class="img-fluid" alt="Card Photo" title="Card Image">
+                            </div>
+                        </div>
+                        <div class="cardright">
+                            <div class="pad015">
+                                <h1 class="cardtext">Hi, User</h1>
+                                <p class="cardtext">{{message}} </p>
+                                <h2 class="cardtext text-right">- Pc</h2>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
