@@ -10,6 +10,7 @@
                     <thead>
                         <tr>
                             <th>Active/Inactive</th>
+                            <th>Active Cards</th>
                             <th>Card Theme</th>
                             <th>Message</th>
                             <th>Options</th>
@@ -23,12 +24,13 @@
                                     <span class="slider"></span>
                                 </label>
                             </td>
+                            <td>150</td>
                             <td>{{sb.name}}</td>
                             <td>
                                 <p class="ellipsis" title="{{sb.message}}">{{sb.message}}</p>
                             </td>
                             <td>
-                                <button class="btn btn-sm btn-primary" title="View Card" data-toggle="modal" data-target="#ViewCard"><i class="lnr lnr-magnifier"></i></button>
+                                <button class="btn btn-sm btn-primary" title="View Card" (click)="editCard(sb)" data-toggle="modal" data-target="#ViewCard"><i class="lnr lnr-magnifier"></i></button>
                                 <button class="btn btn-sm btn-primary" title="Edit Card" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"><i class="lnr lnr-pencil"></i></button>
                                 <button class="btn btn-sm btn-danger" title="Delete Card" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"><i class="lnr lnr-trash"></i> </button>
                             </td>
@@ -163,13 +165,17 @@
                         </div>
                         <div class="cardright">
                             <div class="pad015">
+                                <div class="stamp">
+                                    <div class="rubberstamp">14-02-2018 12:40</div>
+                                </div>
                                 <h1 class="cardtext">Hi, User</h1>
-                                <p class="cardtext">{{message}} </p>
+                                <p class="cardtext">message</p>
                                 <h2 class="cardtext text-right">- Pc</h2>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
+                    <div class="cardfooter">Made with <span>❤</span></div>
                 </div>
             </div>
         </div>

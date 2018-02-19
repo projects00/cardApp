@@ -90,7 +90,7 @@
         <div class="modal-content">
             <form [formGroup]="adminEditForm">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Change default card and message</h4>
+                    <h4 class="modal-title" id="myModalLabel">Edit default image and message</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -139,7 +139,7 @@
                 </div>
                 <div class="form-group">
                     <label class="switch">
-                        <input type="checkbox" [checked]="sb.isactive">
+                        <input type="checkbox" checked [checked]="sb.isactive">
                         <span class="slider"></span>
                     </label>Can user create new cards
                 </div>
