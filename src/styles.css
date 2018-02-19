@@ -45,7 +45,7 @@ h1{ font-size: 2rem; margin-bottom: 1.5rem;}
 .btn.btn-social.share {background-position:-240px 0}
 .btn.btn-social.print {background-position:-280px 0}
 .input-group-text {border: 1px solid #999; border-radius: 0;}
-.switch {position: relative; display: inline-block; width: 42px; height: 21px;margin: 0;}
+.switch {position: relative; display: inline-block; width: 42px; height: 21px;margin: 0 10px 0 0; float: left;}
 .switch input {display:none;}
 .slider {position: absolute;cursor: pointer; top: 0;left: 0;right: 0;bottom: 0;background-color: #eee;transition: .4s;border-radius: 34px;}
 .slider:before {position: absolute;content: ""; height: 15px; width: 15px; left: 4px; bottom: 3px; background-color: #fff;transition: .4s;border-radius: 50%;}
