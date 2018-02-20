@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter,ViewChild } from '@angular/core';
 import { DataService } from '../../data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 declare var $: any;
@@ -12,7 +12,7 @@ import { cardtheme } from '../../model/cardtheme';
 })
 export class CardthemeComponent implements OnInit {
   cardtheme: any;
- 
+ @ViewChild('cForm') form;
   insertid: number;
   file: File;
   imagePath: any;
@@ -64,6 +64,9 @@ export class CardthemeComponent implements OnInit {
         this.dataservice.saveCardTheme(_cardtheme).subscribe(
           (respose) => {
             console.log(respose);
+            this.cForm.reset();
+            this.imagePath="";
+           $("#avatar").value = "";
             this.initilizeFrom();
             $("#NewCard").modal("toggle");
             this.getCardTheme();
