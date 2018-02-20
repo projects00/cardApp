@@ -43,11 +43,11 @@ export class CardComponent implements OnInit {
   dtformat:String=`dd/MM/yyyy HH:mm`;
   constructor(private dataservice: DataService, fb: FormBuilder, private router: Router,private activatedroute :ActivatedRoute) {
   this.ID = activatedroute.snapshot.params['id'];
-  alert(this.ID);
+ // alert(this.ID);
     this.fb1 = fb;
     this.initilizeFrom();
 this.Newid = Guid.create();
-alert("newid:"+this.Newid);
+//alert("newid:"+this.Newid);
 
   }
 
