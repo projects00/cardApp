@@ -29,6 +29,7 @@ export class CardComponent implements OnInit {
   fb1: FormBuilder;
   selectedGroup:number=1;
   ddoption:any;
+  selectedValue:any;
   options = [
     {name: "option1", value:1},
     {name: "option2", value:2},
@@ -71,7 +72,16 @@ export class CardComponent implements OnInit {
 
   onChange(){
     debugger;
-this.getImage(this.rForm.value.viewTheme, null);
+     this.selectedValue =  this.ddoption.filter(
+          book => book.value ===Number(this.rForm.value.viewTheme));
+this.rForm.controls['viewMessage'].setValue( this.selectedValue[0].message);
+if (this.selectedValue[0].imageid==null){
+ this.imagePath = null;
+ this.theme=null;
+}
+else
+this.getImage(this.selectedValue[0].imageid, null);
+
 // switch (this.rForm.value.viewTheme) {
 //     case "1":
 //     {
@@ -130,7 +140,7 @@ this.getImage(this.rForm.value.viewTheme, null);
         debugger;
         respose.forEach(element => {
 
-           this.ddoption.push(   {name: element.name, value:element.imageid});
+           this.ddoption.push(   {name: element.name, value:element.id,message:element.message,imageid:element.imageId});
            });
 
       },
