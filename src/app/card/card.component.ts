@@ -5,6 +5,8 @@ import { DatePipe } from '@angular/common';
 declare var $: any;
 import 'rxjs/Rx';
 import { Router } from '@angular/router';
+import {ActivatedRoute} from "@angular/router";
+import { Guid } from "guid-typescript";
 
 @Component({
   selector: 'app-card',
@@ -12,6 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
+  public Newid: Guid;
   imagePath: any;
   imageid: Number;
   recipient: String;
@@ -30,6 +33,7 @@ export class CardComponent implements OnInit {
   selectedGroup:number=1;
   ddoption:any;
   selectedValue:any;
+  ID:String;
   options = [
     {name: "option1", value:1},
     {name: "option2", value:2},
@@ -37,11 +41,13 @@ export class CardComponent implements OnInit {
   ];
   
   dtformat:String=`dd/MM/yyyy HH:mm`;
-  constructor(private dataservice: DataService, fb: FormBuilder, private router: Router) {
-  
+  constructor(private dataservice: DataService, fb: FormBuilder, private router: Router,private activatedroute :ActivatedRoute) {
+  this.ID = activatedroute.snapshot.params['id'];
+  alert(this.ID);
     this.fb1 = fb;
     this.initilizeFrom();
-
+this.Newid = Guid.create();
+alert("newid:"+this.Newid);
 
   }
 
@@ -118,7 +124,7 @@ this.getImage(this.selectedValue[0].imageid, null);
     this.dataservice.message = this.rForm.value.viewMessage;
     this.dataservice.theme = this.rForm.value.viewTheme;
     $("#myModal").modal("toggle");
-    this.router.navigateByUrl('Card/123');
+    this.router.navigateByUrl('Card/'+this.Newid);
     this.recipient = this.dataservice.recipient;
     this.name = this.dataservice.name;
     this.message = this.dataservice.message;

@@ -52,7 +52,7 @@ import { PagesComponent } from './admin/pages/pages.component';
         component: CardComponent
       },
       {
-        path: 'Card/123',
+        path: 'Card/:id',
         component: CardComponent
       }
     ])
