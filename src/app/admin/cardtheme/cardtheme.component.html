@@ -42,7 +42,7 @@
     </div>
 </div>
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-slideout modal-lg" role="document">
+    <div class="modal-dialog modal-dialog-slideout" role="document">
         <div class="modal-content">
             <div class="modal-header"> <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-plus-circle"></i>  New Card</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -58,7 +58,7 @@
                     <div class="form-group">
                         <label for="exampleInputFile">Card Image</label>
                         <input class="form-control" id="avatar" #fileInput (change)="onFileChange($event)" type="file">
-                        <div class="imageouter">
+                        <div class="mar150">
                             <img [src]="imagePath" formControlName="cardImage" class="img-fluid center-block">
                         </div>
                         <small class="form-text text-muted">Card main image, Only Square image, Minimum resolution 500px x 500px</small>
@@ -88,7 +88,7 @@
     </div>
 </div>
 <div class="modal fade" id="EditCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-slideout modal-lg" role="document">
+    <div class="modal-dialog modal-dialog-slideout" role="document">
         <div class="modal-content">
             <div class="modal-header"><h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-pencil"></i>  Edit Card</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -104,7 +104,7 @@
                     <div class="form-group">
                         <label for="exampleInputFile">Card Image</label>
                         <input class="form-control" id="avatar1" #fileInput (change)="onFileChange($event)" type="file">
-                        <div class="imageouter">
+                        <div class="mar150">
                             <img [src]="imagePath" formControlName="ecardImage" class="img-fluid center-block">
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                 Are you sure delete "Card Theme Name" card permanently?
             </div>
             <div class="modal-footer">
-                <button type="button" (click)="delete()" class="btn btn-primary">Yes</button>
+                <button type="button" (click)="delete()" class="btn btn-danger">Yes</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

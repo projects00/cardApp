@@ -98,8 +98,10 @@
                                                 <input formControlName="viewName" class="form-control text-right" type="text" placeholder="Your name" id="Name" maxlength="20">
                                             </div>
                                         </div>
-                                        <re-captcha (resolved)="resolved($event)"  siteKey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></re-captcha>
-                                          <button type="button" class="btn btn-primary" [disabled]="!rForm.valid" (click)="clicked()"><i class="lnr lnr-magic-wand"></i> Preview</button>
+                                        <div class="marbot10">
+                                            <re-captcha (resolved)="resolved($event)"  siteKey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></re-captcha>
+                                        </div>
+                                        <button type="button" class="btn btn-primary" [disabled]="!rForm.valid" (click)="clicked()"><i class="lnr lnr-magic-wand"></i> Preview</button>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close"><i class="lnr lnr-cross"></i> Close</button>
                                     </div>
                                 </div>

@@ -1,6 +1,5 @@
-html {background: radial-gradient(#fff,#444);height:100%;}
-body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;background:#144a9e}
-/*body{font-family: 'Open Sans', sans-serif; min-height:100%;overflow-x:hidden;background: linear-gradient(-45deg,rgba(217, 255, 0, 0.7), rgba(225, 0, 255, 0.7), rgba(0, 174, 255, 0.7), rgba(50, 252, 0, 0.7));background-size: 400% 400%;-webkit-animation: Gradient 30s ease infinite;-moz-animation: Gradient 30s ease infinite;animation: Gradient 30s ease infinite;}*/
+html {height:100%;}
+body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;animation: colorchange 50s linear infinite;}
 .wrap{position:relative;margin:100px 180px}
 .pcard{background:#fff url( assets/images/postcard-bg.png);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}
 .pcard .cardleft,.pcard .cardright{width:50%;float:left;padding:5px}
@@ -12,8 +11,8 @@ body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;bac
 .pcard .cardtext{word-break:break-word}
 .pcard .cardouter{background:#fff;padding:10px;position:relative}
 .pcard .cardouter .cardright h1{font-size:30px;margin:0 0 10px;text-transform:capitalize;color: #6899af;}
-.pcard .cardouter .cardright h2{font-size:16px;margin:0 0 10px;color: #888;}
-.pcard .cardouter .cardright p{font-size:16px; margin: 0 0 25px;color: #e59677;}
+.pcard .cardouter .cardright h2{font-size:20px;margin:0 0 10px;color: #888;}
+.pcard .cardouter .cardright p{font-size:18px; margin: 0 0 25px;color: #e59677;}
 .pcard .cardimgwraper{position: absolute;top: 0;right: 0;bottom: 0;left: 0;}
 .cardfooter{text-align:center;color:#ccc;font-size:10px;margin: 5px 0 0;}
 .cardfooter span{color: #e59677;display: inline-block}
@@ -45,6 +44,7 @@ h1{ font-size: 2rem; margin-bottom: 1.5rem;}
 .btn.btn-social.mail {background-position:-200px 0}
 .btn.btn-social.share {background-position:-240px 0}
 .btn.btn-social.print {background-position:-280px 0}
+.btn-primary.disabled, .btn-primary:disabled, .btn-secondary.disabled, .btn-secondary:disabled {cursor: not-allowed}
 .input-group-text {border: 1px solid #999; border-radius: 0;}
 .switch {position: relative; display: inline-block; width: 42px; height: 21px;margin: 0 10px 0 0; float: left;}
 .switch input {display:none;}
@@ -133,16 +133,15 @@ to{ transform: translate3d(0, 25px, 0);}
 0%{transform:scale(1);opacity:1}
 100%{transform:scale(5); opacity:0}
 }
-@keyframes Gradient {
-0% {background-position: 0% 50%}
-50% {background-position: 100% 50%}
-100% {background-position: 0% 50%}
+@keyframes colorchange {
+  0%   {background: #2751c7;}
+  25%  {background: #bd26a9;}
+  50%  {background: #20be82;}
+  75%  {background: #c22222;}
+  100% {background: #2751c7;}
 }
 @media (max-width: 1200px) {
 .wrap{margin:100px}
-}
-@media (min-width: 992px){
-
 }
 @media (max-width: 992px) {
 .wrap{margin:100px 0}
@@ -152,14 +151,10 @@ to{ transform: translate3d(0, 25px, 0);}
 .pcard .cardleft{border-right:0 dotted rgba(0,0,0,.2);border-bottom:2px dotted rgba(0,0,0,.2);}
 .pcard .cardright{padding:10px}
 .pcard .cardleft,.pcard .cardright{width:100%}
-.pcard .cardouter .cardright h1{font-size:22px;margin:0 0 5px}
-.pcard .cardouter .cardright h2{font-size:20px;margin:0 0 5px}
-.pcard .cardouter .cardright p{font-size:16px;margin: 0 0 5px;}
 .wrap{margin:100px 60px}
 .stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 50px}
 .stamp .rubberstamp{ margin:0 40px 0 0; padding: 20px 10px; height: 50px; width: 50px;font-size: 4px; }
 .modal-dialog.modal-dialog-slideout {width: 80%}
-.imageouter {padding: 0 35px 10px;min-height: 210px;}
 }
 @media (max-width: 480px) {
 .wrap{margin:60px 0 10px}
@@ -173,9 +168,9 @@ label.hamburgermenu .hamburger{top:30px;right: 20px;}
 }
 @media print {
 .btn-post,.hamburgermenu,.postouter,.btn, .imgsaf, .modal, .modal-backdrop{display: none;visibility:hidden}
-.pcard{display: block;color: #000}
-.pcard .cardright,.pcard .cardleft{width: 48%;float: left; padding: 1%; border: 0;}
+.pcard{display: block;}
+.pcard .cardright,.pcard .cardleft{width: 50%;float: left;}
 .pcard .cardouter .cardright h1{font-size:40px;margin:0 0 15px}
-.pcard .cardouter .cardright h2{font-size:30px;margin:0 0 15px}
-.pcard .cardouter .cardright p{font-size:20px;margin: 0 0 15px;}
+.pcard .cardouter .cardright h2{font-size:28px;margin:0 0 15px}
+.pcard .cardouter .cardright p{font-size:26px;margin: 0 0 15px;}
 }
