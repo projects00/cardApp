@@ -33,6 +33,7 @@ export class CardComponent implements OnInit {
   selectedGroup:number=1;
   ddoption:any;
   selectedValue:any;
+  captcharesponse:String="";
   ID:String;
   options = [
     {name: "option1", value:1},
@@ -56,7 +57,8 @@ this.Newid = Guid.create();
       'viewRecipient': [null, Validators.required],
       'viewName': [null, Validators.required],
       'viewMessage': [null, Validators.required],
-      'viewTheme':["./assets/images/cardimage/card-img-001.png"]
+      'viewTheme':["./assets/images/cardimage/card-img-001.png"],
+      'viewCaptcha':[null, Validators.required]
 
     });
     this.rForm.controls['viewRecipient'].setValue(this.dataservice.recipient);
@@ -66,7 +68,14 @@ this.Newid = Guid.create();
 
   }
  
+   resolved(captchaResponse: string) {
+     debugger;
+     this.captcharesponse = grecaptcha.getResponse();
+     this.rForm.controls['viewCaptcha'].setValue(this.captcharesponse);
+        console.log(`Resolved captcha with response ${captchaResponse}:`);
+    }
 
+ 
   ngOnInit() {
      this.recipient = this.dataservice.recipient;
     this.name = this.dataservice.name;

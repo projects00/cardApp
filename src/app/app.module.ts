@@ -13,6 +13,7 @@ import { SettingComponent } from './admin/setting/setting.component';
 import { ActivecardComponent } from './admin/activecard/activecard.component';
 import { CardthemeComponent } from './admin/cardtheme/cardtheme.component';
 import { PagesComponent } from './admin/pages/pages.component';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PagesComponent } from './admin/pages/pages.component';
     BrowserModule,
     HttpModule,
     ReactiveFormsModule,
+     RecaptchaModule.forRoot(),
     RouterModule.forRoot([
       {
   path: 'app',
