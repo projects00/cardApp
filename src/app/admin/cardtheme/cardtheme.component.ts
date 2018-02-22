@@ -21,7 +21,9 @@ export class CardthemeComponent implements OnInit {
   cardEditForm: FormGroup;
   fb1: FormBuilder;
   dId: Number;
-
+  intro: String;
+  recipient: String;
+  name: String;
   constructor(private dataservice: DataService, fb: FormBuilder, private router: Router) {
 
     this.fb1 = fb;
@@ -193,6 +195,9 @@ export class CardthemeComponent implements OnInit {
     }
   }
   ngOnInit() {
+    this.intro = this.dataservice.intro;
+    this.recipient = this.dataservice.recipient;
+    this.name = this.dataservice.name;
   }
 
 }

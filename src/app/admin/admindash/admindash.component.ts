@@ -22,6 +22,9 @@ export class AdmindashComponent implements OnInit {
   imageid: Number;
   insertid: Number;
   fb1: FormBuilder;
+  intro: String;
+  recipient: String;
+  name: String;
   constructor(private dataservice: DataService, fb: FormBuilder, private router: Router) {
     this.fb1 = fb;
     this.initilizeFrom();
@@ -126,6 +129,9 @@ export class AdmindashComponent implements OnInit {
   }
   ngOnInit() {
     this.getDefaultSetting();
+    this.intro = this.dataservice.intro;
+    this.recipient = this.dataservice.recipient;
+    this.name = this.dataservice.name;
   }
 
 }

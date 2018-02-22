@@ -17,6 +17,7 @@ export class CardComponent implements OnInit {
   public Newid: Guid;
   imagePath: any;
   imageid: Number;
+  intro: String;
   recipient: String;
   name: String;
   message: String;
@@ -77,6 +78,7 @@ this.Newid = Guid.create();
 
  
   ngOnInit() {
+    this.intro = this.dataservice.intro;
      this.recipient = this.dataservice.recipient;
     this.name = this.dataservice.name;
     this.message = this.dataservice.message;

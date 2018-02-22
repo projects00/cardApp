@@ -7,6 +7,7 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class DataService {
+intro:String="Test intro";
 recipient:String="Recipient";
 name:String="Test user name";
 message:String="Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mock ups. Lorem Ipsum is place1";
