@@ -20,8 +20,10 @@
                                     <h1 class="cardtext">Hi, {{recipient}}</h1>
                                     <p class="cardtext">{{message}} </p>
                                     <h2 class="cardtext text-right">- {{name}}</h2>
-                                    <button class="btn btn-primary" [ngStyle]="{'display': sharebtn}" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!">
-                                        <i class="lnr lnr-heart"></i> Share this card</button>
+                                    <div class="showonhower">
+                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!"><i class="lnr lnr-heart"></i> Share</button>
+                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#NewCard" title="Click to Create Your PostCard!"><i class="lnr lnr-magic-wand"></i> New</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -52,12 +54,12 @@
         <li title="Click to Contact"><i class="lnr lnr-envelope"></i> Contact</li>
     </ul>
 </label>
-<div class="btn-post" [ngStyle]="{'display': showbtn}" id="NewPost" data-toggle="modal" data-target="#myModal">
+<div class="btn-post" [ngStyle]="{'display': showbtn}" id="NewPost" data-toggle="modal" data-target="#NewCard">
     <span class="no">N</span>
     <span class="bubbles"></span>
     <img src="assets/images/postcover.svg" alt="New Card icon" title="Click to Create Card">
 </div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+<div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="NewCard" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="createcardouter">

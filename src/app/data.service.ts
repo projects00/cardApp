@@ -13,7 +13,7 @@ name:String="Test user name";
 message:String="Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mock ups. Lorem Ipsum is place1";
 theme:String="./assets/images/cardimage/card-img-001.png"
  dt: Date = new Date();
-public baseApi = 'http://ec2-52-91-21-206.compute-1.amazonaws.com:5000/';
+public baseApi = 'https://gentle-gorge-98542.herokuapp.com/';
  //public baseApi = 'http://localhost:5000/';
  constructor(private http: Http) {
 

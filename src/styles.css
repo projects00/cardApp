@@ -121,6 +121,8 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .pagecontent .lead{margin-bottom: 3px}
 .pagecontentfooter{font-size: 10px; color: #ccc}
 .homelogo{opacity:.4;margin: 20px auto;}
+.showonhower{visibility: hidden; text-align: right}
+.pcard:hover .showonhower{visibility: visible}
 @keyframes beat {
 to{transform:scale(1.1)}
 }

@@ -24,7 +24,6 @@ export class CardComponent implements OnInit {
   today:String;
   cardclass:String="";
   showbtn:String='none';
-  sharebtn:String='none';
   theme: String;
   viewtheme: String="./assets/images/cardimage/card-img-001.png";
   chosenOption:String;
@@ -143,7 +142,6 @@ this.getImage(this.selectedValue[0].imageid, null);
    //this.theme=this.dataservice.theme;
     const d: Date = new Date();
        this.dt =d;
-       this.sharebtn="block";
  
     
   }
