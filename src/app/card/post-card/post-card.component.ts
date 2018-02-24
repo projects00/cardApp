@@ -241,9 +241,14 @@ this.getImage(this.selectedValue[0].imageid, null);
   }
 
   print(){
-    alert('print this');
+    alert('Print this card');
   }
-  
+  copy(){
+    alert('Copy this link');
+  }
+  socialshare(){
+    alert('Shate with social media');
+  }
 
 
 }

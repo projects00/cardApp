@@ -61,15 +61,15 @@ import { PagePrivacypolicyComponent } from './card/page-privacypolicy/page-priva
                 { path: 'terms', component: PageTermsandconditionComponent },
                 { path: 'privacy', component: PagePrivacypolicyComponent }]
               },
-              { path: 'login', component: AdminLoginComponent},
+                { path: 'login', component: AdminLoginComponent},
                 { path: 'admin', component: AdminComponent,   
       children:[
-                {path: 'dash', component: AdmindashComponent},
-                {path: 'setting', component: SettingComponent},
-                {path: 'activecard', component: ActivecardComponent},
-                {path: 'activecard', component: ActivecardComponent},
-                {path: 'cardtheme', component: CardthemeComponent},
-                {path: 'pages', component: PagesComponent} ]}
+                { path: 'dash', component: AdmindashComponent},
+                { path: 'setting', component: SettingComponent},
+                { path: 'activecard', component: ActivecardComponent},
+                { path: 'activecard', component: ActivecardComponent},
+                { path: 'cardtheme', component: CardthemeComponent},
+                { path: 'pages', component: PagesComponent} ]}
                 ]
 },
       {
