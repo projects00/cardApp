@@ -1,169 +1,17 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="wrap">
-                <div class="pcard" [ngClass]="cardclass" id="PostCard">
-                    <div class="cardouter noselect">
-                        <div class="cardinner clearfix">
-                            <div class="cardleft">
-                                <p>{{intro}}</p>
-                                <div class="imageouter">
-                                    <div class="imgsaf"></div>
-                                    <img [src]="viewtheme" class="img-fluid" alt="Card Photo" title="Card Image">
-                                </div>
-                            </div>
-                            <div class="cardright">
-                                <div class="stamp">
-                                    <div class="rubberstamp">{{dt | date:dtformat}}</div>
-                                </div>
-                                <div class="pad015">
-                                    <h1 class="cardtext">Hi, {{recipient}}</h1>
-                                    <p class="cardtext">{{message}} </p>
-                                    <h2 class="cardtext text-right">- {{name}}</h2>
-                                    <div class="showonhower">
-                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!">
-                                            <i class="ti-heart"></i> Share</button>
-                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#NewCard" title="Click to Create Your PostCard!">
-                                            <i class="ti-wand"></i> New</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cardfooter">Made with
-                            <span>❤</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="postouter" (click)="test()" id="OpenPost">
-                    <img src="assets/images/postcardindicator.svg" class="postcardindicator" alt="postcard icon" title="You Have One Message">
-                    <img src="assets/images/postcard.svg" class="postcard" alt="postcard icon" title="Click to View PostCatd!">
-                    <img src="assets/images/postcover1.svg" class="postcover1" alt="postcard top icon" title="Postcard Open">
-                    <img src="assets/images/postcover2.svg" class="postcover2" alt="postcard bottom icon" title="Click to View Message">
-                </div>
-            </div>
-            <img src="assets/images/logo.svg" width="160" alt="PostCardi Logo" title="PostCardi" class="homelogo img-fluid d-block mx-auto">
-        </div>
-    </div>
-</div>
 <label class="hamburgermenu">
     <input type='checkbox'>
     <span class='menu'>
         <span class='hamburger'></span>
     </span>
     <ul>
-        <li title="Click to Home">
-            <i class="ti-home"></i> Home</li>
-        <li title="Click to About">
-            <i class="ti-face-smile"></i> About</li>
-        <li title="Click to Donate">
-            <i class="ti-credit-card"></i> Donate</li>
-        <li title="Click to FAQ's">
-            <i class="ti-help-alt"></i> FAQ's</li>
-        <li title="Click to Contact">
-            <i class="ti-comment"></i> Contact</li>
+        <li title="Click to Home" (click)="page('home')" ><i class="ti-home"></i> Home</li>
+        <li title="Click to About" (click)="page('about')"><i class="ti-face-smile"></i> About</li>
+        <li title="Click to Donate" (click)="page('donate')"><i class="ti-credit-card"></i> Donate</li>
+        <li title="Click to FAQ's" (click)="page('faqs')"><i class="ti-help-alt"></i> FAQ's</li>
+        <li title="Click to Contact" (click)="page('contact')"><i class="ti-comment"></i> Contact</li>
     </ul>
 </label>
-<div class="btn-post" [ngStyle]="{'display': showbtn}" id="NewPost" data-toggle="modal" data-target="#NewCard">
-    <span class="no">N</span>
-    <span class="bubbles"></span>
-    <img src="assets/images/postcover.svg" alt="New Card icon" title="Click to Create Card">
-</div>
-<div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="NewCard" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <div class="createcardouter">
-                <div class="pcard">
-                    <div class="cardouter">
-                        <form [formGroup]="rForm">
-                            <div class="cardinner clearfix">
-                                <div class="cardleft">
-                                    <div class="select">
-                                        <select formControlName="viewTheme" placeholder="Select" (change)="onChange()" class="form-control" id="Theme" name="test">
-                                            <option *ngFor="let group of ddoption" [value]="group.value">{{group.name}}</option>
-                                        </select>
-                                    </div>
-                                    <div class="imageouter">
-                                        <img [src]="theme" class="img-fluid" alt="Card Photo" title="Card Image">
-                                    </div>
-                                </div>
-                                <div class="cardright">
-                                    <div class="pad015">
-                                        <p class="text-right">
-                                            <small>Post Date/Time: {{dt | date:dtformat}}</small>
-                                        </p>
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">Hi, </div>
-                                                </div>
-                                                <input formControlName="viewRecipient" class="form-control" type="text" placeholder="Recipient Name" id="Recipient" maxlength="20">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Message" class="d-none">Message</label>
-                                            <textarea formControlName="viewMessage" class="form-control" placeholder="Message" id="Message" maxlength="160"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"> - </div>
-                                                </div>
-                                                <input formControlName="viewName" class="form-control text-right" type="text" placeholder="Your name" id="Name" maxlength="20">
-                                            </div>
-                                        </div>
-                                        <div class="marbot10">
-                                            <re-captcha (resolved)="resolved($event)" siteKey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></re-captcha>
-                                        </div>
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal" [disabled]="!rForm.valid" (click)="clicked()">
-                                            <i class="ti-id-badge"></i> Preview</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
-                                            <i class="ti-close"></i> Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="ShareLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="text-center">
-                    <h1 class="marbot10">
-                        <i class="ti-face-smile"></i>
-                    </h1>
-                    <p class="lead">Congratulations!</p>
-                    <p><small>Your card link has been created. Please share your card with friends family and the world</small></p>
-                    <p>http://localhost:4200{{href}}</p>
-                    <button class="btn btn-primary" type="button">
-                        <i class="ti-link"></i> Copy your card URL</button>
-                    <div class="qrcodewrapper">
-                        <img src="assets/images/qrcode.png" alt="QR Code" title="QR Code">
-                        <p>Use mobile QR scaner to copy card URL.</p>
-                    </div>
-                </div>
-                <div class="buttongroup text-center">
-                    <button type="button" class="btn btn-social facebook"></button>
-                    <button type="button" class="btn btn-social google"></button>
-                    <button type="button" class="btn btn-social whatsapp"></button>
-                    <button type="button" class="btn btn-social messenger"></button>
-                    <button type="button" class="btn btn-social sms"></button>
-                    <button type="button" class="btn btn-social mail"></button>
-                    <button type="button" class="btn btn-social share"></button>
-                    <button type="button" class="btn btn-social print" (click)="print()" title="Print this Card"></button>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="cardfooter">8652 Shares</div>
-                <div class="cardfooter"><a href="#">Terms and conditions</a> - <a href="#">Privacy policy</a></div>
-            </div>
-        </div>
-    </div>
+<div class="container">
+    <router-outlet></router-outlet>
+    <img src="assets/images/logo.svg" width="160" alt="PostCardi Logo" title="PostCardi" class="homelogo img-fluid d-block mx-auto">
 </div>

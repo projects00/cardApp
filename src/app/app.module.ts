@@ -14,18 +14,32 @@ import { ActivecardComponent } from './admin/activecard/activecard.component';
 import { CardthemeComponent } from './admin/cardtheme/cardtheme.component';
 import { PagesComponent } from './admin/pages/pages.component';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { PostCardComponent } from './card/post-card/post-card.component';
+import { PageAboutComponent } from './card/page-about/page-about.component';
+import { PageDonateComponent } from './card/page-donate/page-donate.component';
+import { PageFaqsComponent } from './card/page-faqs/page-faqs.component';
+import { PageContactComponent } from './card/page-contact/page-contact.component';
+import { PageTermsandconditionComponent } from './card/page-termsandcondition/page-termsandcondition.component';
+import { PagePrivacypolicyComponent } from './card/page-privacypolicy/page-privacypolicy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
+    PostCardComponent,
     AdminLoginComponent,
     AdminComponent,
     AdmindashComponent,
     SettingComponent,
     ActivecardComponent,
     CardthemeComponent,
-    PagesComponent
+    PagesComponent,
+    PageAboutComponent,
+    PageDonateComponent,
+    PageFaqsComponent,
+    PageContactComponent,
+    PageTermsandconditionComponent,
+    PagePrivacypolicyComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +51,17 @@ import { RecaptchaModule } from 'ng-recaptcha';
   path: 'app',
   component: AppComponent,
   children : [
-                { path: 'card', component: CardComponent },
-                { path: 'login', component: AdminLoginComponent},
+                { path: 'card', component: CardComponent,
+      children:[
+                { path: 'home', component: PostCardComponent },
+                { path: 'about', component: PageAboutComponent },
+                { path: 'donate', component: PageDonateComponent },
+                { path: 'faqs', component: PageFaqsComponent },
+                { path: 'contact', component: PageContactComponent },
+                { path: 'terms', component: PageTermsandconditionComponent },
+                { path: 'privacy', component: PagePrivacypolicyComponent }]
+              },
+              { path: 'login', component: AdminLoginComponent},
                 { path: 'admin', component: AdminComponent,   
       children:[
                 {path: 'dash', component: AdmindashComponent},

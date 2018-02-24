@@ -15,7 +15,7 @@ body.admin{background: #fcfcfc;animation: none}
 .pcard .cardouter .cardright h2{font-size:20px;margin:0 0 20px;color: #888;}
 .pcard .cardouter .cardright p{font-size:18px; margin: 0 0 10px;color: #e59677;line-height: 24px;}
 .pcard .cardimgwraper{position: absolute;top: 0;right: 0;bottom: 0;left: 0;}
-.cardfooter{text-align:center;color:#ccc;font-size:10px;margin: 5px 0 0;}
+.cardfooter, .footertxt{text-align:center;color:#ccc;font-size:10px;margin: 5px 0 0;}
 .cardfooter span{color: #e59677;display: inline-block}
 .cardfooter span:hover{transform: scale(5);animation:beat .5s infinite;transition: .3s linear all;}
 .btn-post{position:fixed;outline:none;cursor: pointer;border-radius:5px;right:40px;bottom:40px;box-shadow:0 6px 15px rgba(0,0,0,0.3);animation: bounce 0.5s;animation-direction: alternate;animation-timing-function: cubic-bezier(.5,0.05,1,.5);animation-iteration-count: infinite;z-index:9;width: 60px;height: 42px;}
@@ -124,6 +124,9 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .homelogo{opacity:.4;margin: 20px auto;}
 .showonhower{visibility: hidden; text-align: right}
 .pcard:hover .showonhower{visibility: visible}
+.cardbox{padding: 60px 30px; background: #fff; box-shadow: 0 5px 10px rgba(0,0,0,.1);color: #999; text-align: center; margin: 60px 0}
+.cardbox p.lead{margin-bottom: 5px}
+.cardbox p{margin-bottom: 25px;}
 @keyframes beat {
 to{transform:scale(1.1)}
 }
