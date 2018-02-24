@@ -2,61 +2,115 @@
     <div class="box">
         <div class="boxheader">
             <h1><i class="ti-files"></i> Pages</h1>
-            <button data-toggle="modal" data-target="#NewPage" class="btn btn-primary btn-optionbar" title="Edit Default"><i class="ti-file"></i> Add New Page</button>
         </div>
         <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Active/Inactive</th>
-                    <th>Page Name</th>
-                    <th>Options</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="">
-                            <label class="switch">
-                                <input type="checkbox" [checked]="sb.isactive">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </td>
-                    <td>About Us</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#EditPage"><i class="ti-pencil-alt"></i></button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#DeletePage"><i class="ti-trash"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    </div>
-</div>
-<div class="modal fade" id="NewPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-slideout modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel"><i class="ti-file"></i> New Page</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Page Title</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Page Title">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail2">Page Contents</label>
-                    <textarea class="form-control" id="exampleInputEmail2" placeholder="Contets"> </textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary"><i class="ti-cloud-up"></i> Publish Page</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-close"></i> Close</button>
-            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Active/Inactive</th>
+                        <th>Page Name</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="">
+                                <label class="switch">
+                                    <input type="checkbox" [checked]="sb.isactive">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </td>
+                        <td>About Us</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#EditPage">
+                                <i class="ti-pencil-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="">
+                                <label class="switch">
+                                    <input type="checkbox" [checked]="sb.isactive">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </td>
+                        <td>Donate</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#EditPage">
+                                <i class="ti-pencil-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="">
+                                <label class="switch">
+                                    <input type="checkbox" [checked]="sb.isactive">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </td>
+                        <td>Faq's</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#EditPage">
+                                <i class="ti-pencil-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="">
+                                <label class="switch">
+                                    <input type="checkbox" [checked]="sb.isactive">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </td>
+                        <td>Contact Us</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#EditPage">
+                                <i class="ti-pencil-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="">
+                                <label class="switch">
+                                    <input type="checkbox" [checked]="sb.isactive">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </td>
+                        <td>Terms and conditions</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#EditPage">
+                                <i class="ti-pencil-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="">
+                                <label class="switch">
+                                    <input type="checkbox" [checked]="sb.isactive">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </td>
+                        <td>Privacy policy</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#EditPage">
+                                <i class="ti-pencil-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
@@ -64,7 +118,8 @@
     <div class="modal-dialog modal-dialog-slideout modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel"><i class="ti-pencil-alt"></i> Edit Page</h4>
+                <h4 class="modal-title" id="myModalLabel">
+                    <i class="ti-pencil-alt"></i> Edit Page</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -80,8 +135,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary"><i class="ti-save"></i> Save Page</button>                
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-close"></i> Close</button>
+                <button type="button" class="btn btn-primary">
+                    <i class="ti-save"></i> Save Page</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    <i class="ti-close"></i> Close</button>
             </div>
         </div>
     </div>
@@ -90,7 +147,8 @@
     <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel"><i class="ti-trash"></i>  Delete Page?</h4>
+                <h4 class="modal-title" id="myModalLabel">
+                    <i class="ti-trash"></i> Delete Page?</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -99,8 +157,10 @@
                 Are you sure delete "About us" page permanently?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-close"></i> Close</button>
-                <button type="button" class="btn btn-danger"><i class="ti-check"></i> Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    <i class="ti-close"></i> Close</button>
+                <button type="button" class="btn btn-danger">
+                    <i class="ti-check"></i> Yes</button>
             </div>
         </div>
     </div>

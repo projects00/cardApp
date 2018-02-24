@@ -8,8 +8,8 @@ import 'rxjs/Rx';
 @Injectable()
 export class DataService {
 intro:String="Test intro";
-recipient:String="Recipient";
-name:String="Test user name";
+recipient:String="User";
+name:String="Card Team";
 message:String="The data server is down or busy please try again later. If the problem still exists please report to the administrator. Sorry for the inconvenience caused. :(";
 theme:String="./assets/images/cardimage/card-img-001.png"
  dt: Date = new Date();
