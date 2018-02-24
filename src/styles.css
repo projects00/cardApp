@@ -11,9 +11,9 @@ body.admin{background: #fcfcfc;animation: none}
 .pcard .cardleft p{color: #999;margin: 0;font-size: 12px;}
 .pcard .cardtext{word-break:break-word}
 .pcard .cardouter{background:#fff;padding:10px;position:relative}
-.pcard .cardouter .cardright h1{font-size:30px;margin:0 0 10px;text-transform:capitalize;color: #6899af;}
-.pcard .cardouter .cardright h2{font-size:20px;margin:0 0 10px;color: #888;}
-.pcard .cardouter .cardright p{font-size:18px; margin: 0 0 25px;color: #e59677;}
+.pcard .cardouter .cardright h1{font-size:28px;margin:0 0 10px;text-transform:capitalize;color: #6899af;}
+.pcard .cardouter .cardright h2{font-size:20px;margin:0 0 20px;color: #888;}
+.pcard .cardouter .cardright p{font-size:18px; margin: 0 0 10px;color: #e59677;line-height: 24px;}
 .pcard .cardimgwraper{position: absolute;top: 0;right: 0;bottom: 0;left: 0;}
 .cardfooter{text-align:center;color:#ccc;font-size:10px;margin: 5px 0 0;}
 .cardfooter span{color: #e59677;display: inline-block}
@@ -70,6 +70,7 @@ label.hamburgermenu input:checked + .menu + ul{opacity:1;display:block}
 label.hamburgermenu ul{z-index:200;position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:100%;margin:0;padding:0;list-style:none;display:none}
 label.hamburgermenu li{margin-bottom:10px;cursor: pointer;display:block;color:#7fb1c8;text-decoration:none;padding:10px;text-align:center;font-size:1.8em;transition:.2s ease-in-out}
 label.hamburgermenu li:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-decoration:none}
+label.hamburgermenu li i{margin: 0 10px}
 .pad015{padding: 0 15px}
 .mar0 { margin: 0}
 .mar150 { margin: 15px 0}
@@ -78,7 +79,7 @@ label.hamburgermenu li:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text
 textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .btn-secondary.btn-box{padding: 30px 10px; min-width: 125px;  margin: 0 15px 15px 0;background: #eaf1f5; color: #7fb1c8}
 .btn-secondary.btn-box:hover{background: #f1f5f9;  }
-.btn-secondary.btn-box .lnr {font-size: 30px;display: block;margin-bottom: 10px;}
+.btn-secondary.btn-box i {font-size: 30px;display: block;margin-bottom: 10px;}
 .ellipsis{text-overflow: ellipsis;white-space: nowrap;width: 200px;overflow: hidden;margin: 0;}
 /*POSTCARD ANIMATION*/
 #PostCard{transform:scale(0);}
@@ -103,8 +104,8 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {border-top: 1px solid #f7f9fa;}
 .table-hover>tbody>tr:hover {background-color: #f7f9fa;}
 .qrcodewrapper{text-align: center; margin: 25px 0}
-.qrcodewrapper img{ width: 160px; margin: 0 auto 15px;}
-.qrcodewrapper p{ font-size: 12px; color: #888 }
+.qrcodewrapper img{ width: 120px; margin: 0 auto 15px;}
+.qrcodewrapper p{ font-size: 10px; color: #ccc }
 .noselect {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .modal-content{border: 0}
 .modal.fade .modal-dialog {-webkit-transform: translate(0,0)scale(.5);transform: translate(0,0)scale(.5);}
@@ -150,10 +151,14 @@ to{ transform: translate3d(0, 25px, 0);}
 @media (max-width: 1200px) {
 .wrap{margin:100px}
 }
+@media (min-width: 992px){
+.modal-lg {max-width: 750px;}
+}
 @media (max-width: 992px) {
 .wrap{margin:100px 0}
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+.modal-lg {max-width: 680px;}
 .pcard{padding: 10px}
 .pcard .cardleft{border-right:0 dotted rgba(0,0,0,.2);border-bottom:2px dotted rgba(0,0,0,.2);}
 .pcard .cardright{padding:10px}
@@ -163,15 +168,18 @@ to{ transform: translate3d(0, 25px, 0);}
 .stamp .rubberstamp{ margin:0 40px 0 0; padding: 20px 10px; height: 50px; width: 50px;font-size: 4px; }
 .modal-dialog.modal-dialog-slideout {width: 80%}
 }
-@media (max-width: 480px) {
-.wrap{margin:60px 0 10px}
+@media (max-width: 576px) {
+.wrap{margin:60px 20px}
 .postouter{width:96px;height:68px;left:calc(50% - 48px);border-radius: 7px;}
 .postouter:hover .postcard{transform:translateY(-30px);}
 .cardleft{padding:0 10px}
 .pad015 { padding: 0;}
 label.hamburgermenu a{font-size:1.6em;}
 label.hamburgermenu .hamburger{top:30px;right: 20px;}
-.pcard .imageouter{min-height: unset}
+.pcard .imageouter{min-height: unset; padding: 10px 40px;}
+.pcard .cardouter .cardright h1{font-size:24px;}
+.pcard .cardouter .cardright h2{font-size:16px;}
+.pcard .cardouter .cardright p{font-size:16px;line-height: 20px;}
 }
 @media print {
 .btn-post,.hamburgermenu,.postouter,.btn, .imgsaf, .modal, .modal-backdrop{display: none;visibility:hidden}
@@ -179,5 +187,5 @@ label.hamburgermenu .hamburger{top:30px;right: 20px;}
 .pcard .cardright,.pcard .cardleft{width: 50%;float: left;}
 .pcard .cardouter .cardright h1{font-size:40px;margin:0 0 15px}
 .pcard .cardouter .cardright h2{font-size:28px;margin:0 0 15px}
-.pcard .cardouter .cardright p{font-size:26px;margin: 0 0 15px;}
+.pcard .cardouter .cardright p{font-size:26px;margin: 0 0 15px;line-height: 30px}
 }

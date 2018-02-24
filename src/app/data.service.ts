@@ -10,7 +10,7 @@ export class DataService {
 intro:String="Test intro";
 recipient:String="Recipient";
 name:String="Test user name";
-message:String="Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mock ups. Lorem Ipsum is place1";
+message:String="The data server is down or busy please try again later. If the problem still exists please report to the administrator. Sorry for the inconvenience caused. :(";
 theme:String="./assets/images/cardimage/card-img-001.png"
  dt: Date = new Date();
 public baseApi = 'https://gentle-gorge-98542.herokuapp.com/';

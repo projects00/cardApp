@@ -2,8 +2,8 @@
     <div class="col">
         <div class="box">
             <div class="boxheader">
-                <h1><i class="lnr lnr-magic-wand"></i> Card Themes</h1>
-                <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-optionbar"><i class="lnr lnr-plus-circle"></i> Add New Card</Button>
+                <h1><i class="ti-palette"></i> Card Themes</h1>
+                <Button (click)="reset()" data-toggle="modal" data-target="#NewCard" class="btn btn-primary btn-optionbar"><i class="ti-plus"></i> Add New Card</Button>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -30,9 +30,9 @@
                                 <p class="ellipsis" title="{{sb.message}}">{{sb.message}}</p>
                             </td>
                             <td>
-                                <button class="btn btn-sm btn-primary" title="View Card" (click)="editCard(sb)" data-toggle="modal" data-target="#ViewCard"><i class="lnr lnr-magnifier"></i></button>
-                                <button class="btn btn-sm btn-primary" title="Edit Card" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"><i class="lnr lnr-pencil"></i></button>
-                                <button class="btn btn-sm btn-danger" title="Delete Card" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"><i class="lnr lnr-trash"></i> </button>
+                                <button class="btn btn-sm btn-primary" title="View Card" (click)="editCard(sb)" data-toggle="modal" data-target="#ViewCard"><i class="ti-id-badge"></i></button>
+                                <button class="btn btn-sm btn-primary" title="Edit Card" (click)="editCard(sb)" data-toggle="modal" data-target="#EditCard"><i class="ti-pencil-alt"></i></button>
+                                <button class="btn btn-sm btn-danger" title="Delete Card" data-toggle="modal" (click)="deleteCard(sb)" data-target="#DeleteCard"><i class="ti-trash"></i> </button>
                             </td>
                         </tr>
                     </tbody>
@@ -44,7 +44,7 @@
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog modal-dialog-slideout" role="document">
         <div class="modal-content">
-            <div class="modal-header"> <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-plus-circle"></i>  New Card</h4>
+            <div class="modal-header"> <h4 class="modal-title" id="myModalLabel"><i class="ti-id-badge"></i>  New Card</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -81,8 +81,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" (click)="savecard()" [disabled]="!cForm.valid" class="btn btn-primary">Publish Card</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" (click)="savecard()" [disabled]="!cForm.valid" class="btn btn-primary"><i class="ti-cloud-up"></i> Publish Card</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-close"></i> Close</button>
             </div>
         </div>
     </div>
@@ -90,7 +90,7 @@
 <div class="modal fade" id="EditCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog modal-dialog-slideout" role="document">
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-pencil"></i>  Edit Card</h4>
+            <div class="modal-header"><h4 class="modal-title" id="myModalLabel"><i class="ti-pencil-alt"></i>  Edit Card</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -126,8 +126,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" (click)="updatecard()" class="btn btn-primary">Update Card</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" (click)="updatecard()" class="btn btn-primary"><i class="ti-save"></i> Update Card</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-close"></i> Close</button>
             </div>
         </div>
     </div>
@@ -136,7 +136,7 @@
     <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-warning"></i>  Delete Card?</h4>
+                <h4 class="modal-title" id="myModalLabel"><i class="ti-save"></i>   Delete Card?</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -145,8 +145,8 @@
                 Are you sure delete "Card Theme Name" card permanently?
             </div>
             <div class="modal-footer">
-                <button type="button" (click)="delete()" class="btn btn-danger">Yes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" (click)="delete()" class="btn btn-danger"><i class="ti-save"></i> Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-close"></i> Close</button>
             </div>
         </div>
     </div>
@@ -171,7 +171,7 @@
                                 <h1 class="cardtext">Hi, {{recipient}}</h1>
                                 <p class="cardtext">message</p>
                                 <h2 class="cardtext text-right">- {{name}}</h2>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-close"></i> Close</button>
                             </div>
                         </div>
                     </div>

@@ -35,6 +35,10 @@ export class CardComponent implements OnInit {
   selectedValue:any;
   captcharesponse:String="";
   ID:String;
+  public href: string = "";
+
+  
+
   options = [
     {name: "option1", value:1},
     {name: "option2", value:2},
@@ -84,6 +88,8 @@ this.Newid = Guid.create();
      this.theme = this.dataservice.theme;
      this.getDefaultSetting();
      this.getCardThemes();
+     this.href = this.router.url;
+
   }
 
   onChange(){

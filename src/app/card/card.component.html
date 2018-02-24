@@ -21,13 +21,17 @@
                                     <p class="cardtext">{{message}} </p>
                                     <h2 class="cardtext text-right">- {{name}}</h2>
                                     <div class="showonhower">
-                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!"><i class="lnr lnr-heart"></i> Share</button>
-                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#NewCard" title="Click to Create Your PostCard!"><i class="lnr lnr-magic-wand"></i> New</button>
+                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!">
+                                            <i class="ti-heart"></i> Share</button>
+                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#NewCard" title="Click to Create Your PostCard!">
+                                            <i class="ti-wand"></i> New</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="cardfooter">Made with <span>❤</span></div>
+                        <div class="cardfooter">Made with
+                            <span>❤</span>
+                        </div>
                     </div>
                 </div>
                 <div class="postouter" (click)="test()" id="OpenPost">
@@ -47,11 +51,16 @@
         <span class='hamburger'></span>
     </span>
     <ul>
-        <li title="Click to Home"><i class="lnr lnr-home"></i> Home</li>
-        <li title="Click to About"><i class="lnr lnr-users"></i> About</li>
-        <li title="Click to Donate"><i class="lnr lnr-heart"></i> Donate</li>
-        <li title="Click to FAQ's"><i class="lnr lnr-question-circle"></i> FAQ's</li>
-        <li title="Click to Contact"><i class="lnr lnr-envelope"></i> Contact</li>
+        <li title="Click to Home">
+            <i class="ti-home"></i> Home</li>
+        <li title="Click to About">
+            <i class="ti-face-smile"></i> About</li>
+        <li title="Click to Donate">
+            <i class="ti-credit-card"></i> Donate</li>
+        <li title="Click to FAQ's">
+            <i class="ti-help-alt"></i> FAQ's</li>
+        <li title="Click to Contact">
+            <i class="ti-comment"></i> Contact</li>
     </ul>
 </label>
 <div class="btn-post" [ngStyle]="{'display': showbtn}" id="NewPost" data-toggle="modal" data-target="#NewCard">
@@ -79,7 +88,9 @@
                                 </div>
                                 <div class="cardright">
                                     <div class="pad015">
-                                        <p class="text-right"><small>Post Date/Time: {{dt | date:dtformat}}</small></p>
+                                        <p class="text-right">
+                                            <small>Post Date/Time: {{dt | date:dtformat}}</small>
+                                        </p>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
@@ -101,10 +112,12 @@
                                             </div>
                                         </div>
                                         <div class="marbot10">
-                                            <re-captcha (resolved)="resolved($event)"  siteKey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></re-captcha>
+                                            <re-captcha (resolved)="resolved($event)" siteKey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></re-captcha>
                                         </div>
-                                        <button type="button" class="btn btn-primary" [disabled]="!rForm.valid" (click)="clicked()"><i class="lnr lnr-magic-wand"></i> Preview</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close"><i class="lnr lnr-cross"></i> Close</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal" [disabled]="!rForm.valid" (click)="clicked()">
+                                            <i class="ti-id-badge"></i> Preview</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
+                                            <i class="ti-close"></i> Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -119,20 +132,22 @@
     <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <p class="lead"><i class="lnr lnr-earth"></i> Share Card</p>
-                <div class="form-row">
-                    <div class="input-group">
-                        <input type="url" class="form-control" id="Unique-url" placeholder="Unique url" value="http://localhost:4200/card/Us8ho93bhoe51jX"
-                            readonly>
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Copy URL</div>
-                        </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="text-center">
+                    <h1 class="marbot10">
+                        <i class="ti-face-smile"></i>
+                    </h1>
+                    <p class="lead">Congratulations!</p>
+                    <p><small>Your card link has been created. Please share your card with friends family and the world</small></p>
+                    <p>http://localhost:4200{{href}}</p>
+                    <button class="btn btn-primary" type="button">
+                        <i class="ti-layers"></i> Copy your card URL</button>
+                    <div class="qrcodewrapper">
+                        <img src="assets/images/qrcode.png" alt="QR Code" title="QR Code">
+                        <p>Use mobile QR scaner to copy card URL.</p>
                     </div>
-                </div>
-                <div class="qrcodewrapper">
-                    <img src="assets/images/qrcode.png" alt="QR Code" title="QR Code">
-                    <p><i class="lnr lnr-tablet"></i> Use mobile QR scaner to copy card URL.</p>
                 </div>
                 <div class="buttongroup text-center">
                     <button type="button" class="btn btn-social facebook"></button>
@@ -144,7 +159,10 @@
                     <button type="button" class="btn btn-social share"></button>
                     <button type="button" class="btn btn-social print" (click)="print()" title="Print this Card"></button>
                 </div>
+            </div>
+            <div class="modal-footer">
                 <div class="cardfooter">8652 Shares</div>
+                <div class="cardfooter"><a href="#">Terms and conditions</a> - <a href="#">Privacy policy</a></div>
             </div>
         </div>
     </div>

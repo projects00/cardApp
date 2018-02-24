@@ -5,7 +5,7 @@
 .side-nav li a:hover,.side-nav li a:focus{background-color:#eaf1f5}
 .navbar.fixed-top{background-color: #eaf1f5;}
 .navbar-toggle .icon-bar{ background-color: #fff}
-.nav-link i.lnr {font-size: 20px;margin: 0 10px 0 0;float: left;}
+.nav-link i {font-size: 20px;margin: 0 10px 0 0;float: left;}
 @media(min-width:768px) {
 .side-nav{position:fixed;top:56px;flex-direction: column;left:200px;width:200px;margin-left:-200px;border:none;border-radius:0;overflow-y:auto;background-color:#f1f5f9;bottom:0;overflow-x:hidden;padding-bottom:40px}
 #wrapper{margin-left: 200px;padding: 80px 15px 15px;}

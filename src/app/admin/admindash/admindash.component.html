@@ -2,23 +2,15 @@
     <div class="col">
         <div class="box">
             <div class="boxheader">
-                <h1><i class="lnr lnr-rocket"></i> Create Card:</h1>
+                <h1><i class="ti-heart"></i> Live Cards:</h1>
             </div>
-            <p class="lead">Yes</p>
+            <p class="lead">50393</p>
         </div>
     </div>
     <div class="col">
         <div class="box">
             <div class="boxheader">
-                <h1><i class="lnr lnr-calendar-full"></i> Card Validity:</h1>
-            </div>
-            <p class="lead">30 Days</p>
-        </div>
-    </div>
-    <div class="col">
-        <div class="box">
-            <div class="boxheader">
-                <h1><i class="lnr lnr-picture"></i> Total Themes:</h1>
+                <h1><i class="ti-gallery"></i> Total Themes:</h1>
             </div>
             <p class="lead">80</p>
         </div>
@@ -26,7 +18,7 @@
     <div class="col">
         <div class="box">
             <div class="boxheader">
-                <h1><i class="lnr lnr-tag"></i> Active Themes:</h1>
+                <h1><i class="ti-id-badge"></i> Active Themes:</h1>
             </div>
             <p class="lead">20</p>
         </div>
@@ -34,9 +26,17 @@
     <div class="col">
         <div class="box">
             <div class="boxheader">
-                <h1><i class="lnr lnr-diamond"></i> Active Cards:</h1>
+                <h1><i class="ti-flag"></i> Create Card:</h1>
             </div>
-            <p class="lead">50393</p>
+            <p class="lead">Yes</p>
+        </div>
+    </div>
+    <div class="col">
+        <div class="box">
+            <div class="boxheader">
+                <h1><i class="ti-alarm-clock"></i> Card Validity:</h1>
+            </div>
+            <p class="lead">30 Days</p>
         </div>
     </div>
 </div>
@@ -44,13 +44,13 @@
     <div class="col">
         <div class="box">
             <div class="boxheader">
-                <h1><i class="lnr lnr-screen"></i> Card</h1>
+                <h1><i class="ti-palette"></i> Card</h1>
             </div>
             <div>
-                <button data-toggle="modal" data-target="#ViewCard" class="btn btn-secondary btn-box" title="Card Preview"><i class="lnr lnr-home"></i> Home Card</button>
-                <button data-toggle="modal" (click)="editCard()" data-target="#EditDefault" class="btn btn-secondary btn-box" title="Edit Defaults"><i class="lnr lnr-license"></i> Edit Defaults</button>
-                <button data-toggle="modal" data-target="#CardSettings" class="btn btn-secondary btn-box" title="Card Settings"><i class="lnr lnr-envelope"></i> Card Settings</button>
-                <button data-toggle="modal" data-target="#Instructions" class="btn btn-secondary btn-box" title="Instructions"><i class="lnr lnr-warning"></i> Instructions</button>
+                <button data-toggle="modal" data-target="#ViewCard" class="btn btn-secondary btn-box" title="Card Preview"><i class="ti-id-badge"></i> Home Card</button>
+                <button data-toggle="modal" (click)="editCard()" data-target="#EditDefault" class="btn btn-secondary btn-box" title="Edit Defaults"><i class="ti-ruler-pencil"></i> Edit Defaults</button>
+                <button data-toggle="modal" data-target="#CardSettings" class="btn btn-secondary btn-box" title="Card Settings"><i class="ti-panel"></i> Card Settings</button>
+                <button data-toggle="modal" data-target="#Instructions" class="btn btn-secondary btn-box" title="Instructions"><i class="ti-info-alt"></i> Instructions</button>
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@
                                 <h1 class="cardtext">Hi, {{recipient}}</h1>
                                 <p class="cardtext">{{message}}</p>
                                 <h2 class="cardtext text-right">- {{name}}</h2>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-close"></i> Close</button>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
         <div class="modal-content">
             <form [formGroup]="adminEditForm">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Edit default image and message</h4>
+                    <h4 class="modal-title" id="myModalLabel"><i class="ti-ruler-pencil"></i> Edit default image and message</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -122,8 +122,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" (click)="updateCard()" [disabled]="!adminEditForm.valid" class="btn btn-primary">Update</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" (click)="updateCard()" [disabled]="!adminEditForm.valid" class="btn btn-primary"><i class="ti-cloud-up"></i> Update</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-close"></i> Close</button>
                 </div>
             </form>
         </div>
@@ -133,7 +133,7 @@
     <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel"><i class="lnr lnr-envelope"></i> Card Setting</h4>
+                    <h4 class="modal-title" id="myModalLabel"><i class="ti-panel"></i> Card Setting</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -157,8 +157,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary"><i class="ti-save"></i> Save</button> 
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-close"></i> Cancel</button>
             </div>
         </div>
     </div>
@@ -168,7 +168,7 @@
         <div class="modal-content">
             <form [formGroup]="adminEditForm">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Instructions</h4>
+                    <h4 class="modal-title" id="myModalLabel"><i class="ti-info-alt"></i> Instructions</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -185,7 +185,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="ti-check"></i> OK</button>
                 </div>
             </form>
         </div>
