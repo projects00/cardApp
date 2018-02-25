@@ -25,7 +25,7 @@ export class PostCardComponent implements OnInit {
   cardclass:String="";
   showbtn:String='none';
   theme: String;
-  viewtheme: String="./assets/images/cardimage/card-img-001.png";
+  viewtheme: String="./assets/images/card-data-error.png";
   chosenOption:String;
   dt: Date = new Date();
   rForm: FormGroup;
@@ -63,7 +63,7 @@ this.Newid = Guid.create();
       'viewRecipient': [null, Validators.required],
       'viewName': [null, Validators.required],
       'viewMessage': [null, Validators.required],
-      'viewTheme':["./assets/images/cardimage/card-img-001.png"],
+      'viewTheme':["./assets/images/card-data-error.png"],
       'viewCaptcha':[null, Validators.required]
 
     });
@@ -146,7 +146,7 @@ this.getImage(this.selectedValue[0].imageid, null);
     this.dataservice.message = this.rForm.value.viewMessage;
     this.dataservice.theme = this.rForm.value.viewTheme;
     $("#myModal").modal("toggle");
-    this.router.navigateByUrl('Card/'+this.Newid);
+    //this.router.navigateByUrl('Card/'+this.Newid);
     this.recipient = this.dataservice.recipient;
     this.name = this.dataservice.name;
     this.message = this.dataservice.message;

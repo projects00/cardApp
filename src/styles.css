@@ -1,8 +1,8 @@
 html {height:100%;}
 body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;animation: colorchange 50s linear infinite;}
 body.admin{background: #fcfcfc;animation: none}
-.wrap{position:relative;margin:100px 180px}
-.pcard{background:#fff url( assets/images/postcard-bg.png);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}
+.wrap{position:relative;margin:80px 180px}
+.pcard{background:#fff url( assets/images/postcard-bg.svg);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}
 .pcard .cardleft,.pcard .cardright{width:50%;float:left;padding:5px}
 .pcard .cardright {font-family: 'Open Sans', sans-serif;}
 .pcard .cardleft{border-right:2px dotted rgba(0,0,0,.2);}
@@ -15,6 +15,7 @@ body.admin{background: #fcfcfc;animation: none}
 .pcard .cardouter .cardright h2{font-size:20px;margin:0 0 20px;color: #888;}
 .pcard .cardouter .cardright p{font-size:18px; margin: 0 0 10px;color: #e59677;line-height: 24px;}
 .pcard .cardimgwraper{position: absolute;top: 0;right: 0;bottom: 0;left: 0;}
+.footerpage {text-align:center;color:rgba(255, 255, 255,.3);font-size:10px;margin: 5px 0 30px;}
 .cardfooter, .footertxt{text-align:center;color:#ccc;font-size:10px;margin: 5px 0 0;}
 .cardfooter span{color: #e59677;display: inline-block}
 .cardfooter span:hover{transform: scale(5);animation:beat .5s infinite;transition: .3s linear all;}
@@ -27,6 +28,8 @@ body.admin{background: #fcfcfc;animation: none}
 .form-control:focus{box-shadow:none}
 a {color: #7fb1c8}
 h1{ font-size: 2rem; margin-bottom: 1.5rem;}
+h2{ font-size: 1.4rem; margin-bottom: 1.5rem;}
+p{font-size: 14px}
 .btn{border-radius:0;border: 0}
 .btn-secondary{color:#9fa2af;background-color:#eee;}
 .btn-primary{color:#fff;background-color:#7fb1c8;}
@@ -167,7 +170,7 @@ to{ transform: translate3d(0, 25px, 0);}
 .pcard .cardright{padding:10px}
 .pcard .cardleft,.pcard .cardright{width:100%}
 .wrap{margin:100px 60px}
-.stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 50px}
+.stamp { height: 50px}
 .stamp .rubberstamp{ margin:0 40px 0 0; padding: 20px 10px; height: 50px; width: 50px;font-size: 4px; }
 .modal-dialog.modal-dialog-slideout {width: 80%}
 }
@@ -191,6 +194,6 @@ label.hamburgermenu .hamburger{top:30px;right: 20px;}
 .pcard .cardouter .cardright h1{font-size:40px;margin:0 0 15px}
 .pcard .cardouter .cardright h2{font-size:28px;margin:0 0 15px}
 .pcard .cardouter .cardright p{font-size:26px;margin: 0 0 15px;line-height: 30px}
-.stamp { background: url( assets/images/stamp.svg) no-repeat right center; height: 100px}
+.stamp { height: 100px}
 .stamp .rubberstamp{ margin:0 80px 0 0; padding: 40px 22px; height: 100px; width: 100px;font-size: 8px; }
 }

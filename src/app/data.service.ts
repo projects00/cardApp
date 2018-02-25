@@ -11,8 +11,15 @@ intro:String="Test intro";
 recipient:String="User";
 name:String="Card Team";
 message:String="The data server is down or busy please try again later. If the problem still exists please report to the administrator. Sorry for the inconvenience caused. :(";
-theme:String="./assets/images/cardimage/card-img-001.png"
- dt: Date = new Date();
+theme:String="./assets/images/card-data-error.png"
+dt: Date = new Date();
+//Common Data
+webslag:string="webslag";
+webtitle:string="webtitle";
+webdesc:string="webdesc";
+webkey:string="webkey";
+webauthor:string="webauthor";
+
 public baseApi = 'https://gentle-gorge-98542.herokuapp.com/';
  //public baseApi = 'http://localhost:5000/';
  constructor(private http: Http) {
