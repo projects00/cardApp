@@ -1,8 +1,8 @@
-html {height:100%;}
-body{ font-family: 'Open Sans', sans-serif;min-height:100%;overflow-x:hidden;animation: colorchange 50s linear infinite;}
+.loading{text-align:center; margin-top:100px; color:#fff; font-size:30px}
+body{ font-family: 'Open Sans', sans-serif;overflow-x:hidden;animation: colorchange 50s linear infinite;color: #666}
 body.admin{background: #fcfcfc;animation: none}
 .wrap{position:relative;margin:80px 180px}
-.pcard{background:#fff url( assets/images/postcard-bg.svg);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.2);z-index:9;position:relative}
+.pcard{background:#fff url( assets/images/postcard-bg.svg);padding:10px;box-shadow:0 10px 20px rgba(0,0,0,0.2);z-index:9;position:relative}
 .pcard .cardleft,.pcard .cardright{width:50%;float:left;padding:5px}
 .pcard .cardright {font-family: 'Open Sans', sans-serif;}
 .pcard .cardleft{border-right:2px dotted rgba(0,0,0,.2);}
@@ -56,7 +56,7 @@ p{font-size: 14px}
 .slider:before {position: absolute;content: ""; height: 15px; width: 15px; left: 4px; bottom: 3px; background-color: #fff;transition: .4s;border-radius: 50%;}
 input:checked + .slider {background-color: #a5e199;}
 input:checked + .slider:before {-ms-transform: translateX(19px);transform: translateX(19px);}
-#NewPost .no {background: #7fb1c8; width: 20px; height: 20px; position: absolute;right: -8px;top: -8px;border-radius: 50%;box-shadow: 0 1px 5px rgba(51, 51, 51, 0.5);color: #fff;text-align: center;font-size: 8px;padding: 5px;}
+#ProVTrigger .no {background: #7fb1c8; width: 20px; height: 20px; position: absolute;right: -8px;top: -8px;border-radius: 50%;box-shadow: 0 1px 5px rgba(51, 51, 51, 0.5);color: #fff;text-align: center;font-size: 8px;padding: 5px;}
 .bubbles {width: 30px; height: 30px; top:6px;left:14px; z-index: -1;position: absolute;background:rgba(255,255,255,.1);animation:blast 1s ease-in infinite;border-radius: 50%;}
 /*HAMBURGER*/
 label.hamburgermenu .menu{position:absolute;right:0;top:0;z-index:100;width:100px;height:100px;background:rgba(255,255,255,0);border-radius:50% 50% 50% 50%;-webkit-transition:.2s ease-in-out;transition:.2s ease-in-out;-webkit-box-shadow:0 0 0 0 rgba(255,255,255,0),0 0 0 0 rgba(255,255,255,0);box-shadow:0 0 0 0 rgba(255,255,255,0),0 0 0 0 rgba(255,255,255,0);cursor:pointer}
@@ -75,6 +75,7 @@ label.hamburgermenu li{margin-bottom:10px;cursor: pointer;display:block;color:#7
 label.hamburgermenu li:hover{background:rgba(127,177,200,0.3);color:#7fb1c8;text-decoration:none}
 label.hamburgermenu li i{margin: 0 10px}
 .pad015{padding: 0 15px}
+.pad30 {padding: 30px}
 .mar0 { margin: 0}
 .mar150 { margin: 15px 0}
 .mar300 { margin: 30px 0}
@@ -110,7 +111,7 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .qrcodewrapper img{ width: 120px; margin: 0 auto 15px;}
 .qrcodewrapper p{ font-size: 10px; color: #ccc }
 .noselect {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
-.modal-content{border: 0}
+.modal-content{border: 0;border-radius: 0;}
 .modal.fade .modal-dialog {-webkit-transform: translate(0,0)scale(.5);transform: translate(0,0)scale(.5);}
 .modal-dialog-slideout {min-height: 100%; margin: 0 0 0 auto;background: #fff;}
 .modal.fade .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(100%,0)scale(1);transform: translate(100%,0)scale(1);}

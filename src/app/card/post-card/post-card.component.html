@@ -20,9 +20,9 @@
                                 <p class="cardtext">{{message}} </p>
                                 <h2 class="cardtext text-right">- {{name}}</h2>
                                 <div class="showonhower">
-                                    <button class="btn btn-secondary" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCard!">
+                                    <button class="btn btn-secondary" data-toggle="modal" data-target="#ShareLink" title="Click to Share Your PostCardi">
                                         <i class="ti-heart"></i> Share</button>
-                                    <button class="btn btn-secondary" data-toggle="modal" data-target="#NewCard" title="Click to Create Your PostCard!">
+                                    <button class="btn btn-secondary" data-toggle="modal" data-target="#NewCard" title="Click to Create Your PostCardi">
                                         <i class="ti-wand"></i> New</button>
                                 </div>
                             </div>
@@ -42,8 +42,8 @@
         </div>
     </div>
 </div>
-<div class="btn-post" [ngStyle]="{'display': showbtn}" id="NewPost" data-toggle="modal" data-target="#NewCard">
-    <span class="no">N</span>
+<div class="btn-post" [ngStyle]="{'display': showbtn}" id="ProVTrigger" data-toggle="modal" data-target="#ProVersion">
+    <span class="no">Pro</span>
     <span class="bubbles"></span>
     <img src="assets/images/postcover.svg" alt="New Card icon" title="Click to Create Card">
 </div>
@@ -107,6 +107,17 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="ProVersion" tabindex="-1" role="dialog" aria-labelledby="ProVersion" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="pad30 text-center">
+                <p class="lead">Coming Soon!</p>
+                <p>PostCardi Pro version coming soon with the custom image, extended characters, extended validity period and much more functionalities.</p>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close"><i class="ti-check"></i> OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="ShareLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
         <div class="modal-content">
@@ -120,7 +131,7 @@
                     </h1>
                     <p class="lead">Congratulations!</p>
                     <p>
-                        <small>Your postcard link has been created. Share your postcard with friends family and the world.</small>
+                        <small>Now your can Share this postcard with friends family and the world.</small>
                     </p>
                     <p>http://localhost:4200{{href}}</p>
                     <button (click)="copy()" class="btn btn-primary btn-block" type="button">
