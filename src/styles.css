@@ -108,7 +108,7 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {border-top: 1px solid #f7f9fa;}
 .table-hover>tbody>tr:hover {background-color: #f7f9fa;}
 .qrcodewrapper{text-align: center; margin: 25px 0}
-.qrcodewrapper img{ width: 132px; margin: 0 auto 15px;}
+.qrcodewrapper img{ width: 132px;}
 .qrcodewrapper p{ font-size: 10px; color: #ccc }
 .noselect {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .modal-content{border: 0;border-radius: 0;}
@@ -126,8 +126,8 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .pagecontent .lead{margin-bottom: 3px}
 .pagecontentfooter{font-size: 10px; color: #ccc}
 .homelogo{opacity:.4;margin: 20px auto;}
-.showonhower{visibility: hidden; text-align: right}
-.pcard:hover .showonhower{visibility: visible}
+.showonhower{opacity: 0; text-align: right; transition: .5s ease all}
+.pcard:hover .showonhower{opacity: 1; transition: .3s ease all}
 .cardbox{padding: 60px 30px; background: #fff; box-shadow: 0 5px 10px rgba(0,0,0,.1);color: #999; text-align: center; margin: 60px 0}
 .cardbox p.lead{margin-bottom: 5px}
 .cardbox p{margin-bottom: 25px;}

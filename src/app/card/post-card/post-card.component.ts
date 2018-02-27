@@ -37,22 +37,22 @@ export class PostCardComponent implements OnInit {
   ID:String;
   public href: string = "";
   qrelementType : 'url';
-  qrvalue : string = 'Your QR Code Working!';
+  qrvalue : string = 'http://localhost:4200/';
 
-  options = [
-    {name: "option1", value:1},
-    {name: "option2", value:2},
-     {name: "option3", value:3}
-  ];
+  // options = [
+  //   {name: "option1", value:1},
+  //   {name: "option2", value:2},
+  //   {name: "option3", value:3}
+  // ];
   
   dtformat:String=`dd/MM/yyyy HH:mm`;
   constructor(private dataservice: DataService, fb: FormBuilder, private router: Router,private activatedroute :ActivatedRoute) {
   this.ID = activatedroute.snapshot.params['id'];
- // alert(this.ID);
+    // alert(this.ID);
     this.fb1 = fb;
     this.initilizeFrom();
-this.Newid = Guid.create();
-//alert("newid:"+this.Newid);
+    this.Newid = Guid.create();
+    //alert("newid:"+this.Newid);
 
   }
 
