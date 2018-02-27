@@ -36,8 +36,8 @@ export class PostCardComponent implements OnInit {
   captcharesponse:String="";
   ID:String;
   public href: string = "";
-
-  
+  qrelementType : 'url';
+  qrvalue : string = 'Your QR Code Working!';
 
   options = [
     {name: "option1", value:1},
@@ -57,7 +57,6 @@ this.Newid = Guid.create();
   }
 
 
-
   initilizeFrom() {
     this.rForm = this.fb1.group({
       'viewRecipient': [null, Validators.required],
@@ -75,22 +74,22 @@ this.Newid = Guid.create();
   }
  
    resolved(captchaResponse: string) {
-     debugger;
-     this.captcharesponse = grecaptcha.getResponse();
-     this.rForm.controls['viewCaptcha'].setValue(this.captcharesponse);
-        console.log(`Resolved captcha with response ${captchaResponse}:`);
+    debugger;
+    this.captcharesponse = grecaptcha.getResponse();
+    this.rForm.controls['viewCaptcha'].setValue(this.captcharesponse);
+    console.log(`Resolved captcha with response ${captchaResponse}:`);
     }
 
  
   ngOnInit() {
     this.intro = this.dataservice.intro;
-     this.recipient = this.dataservice.recipient;
+    this.recipient = this.dataservice.recipient;
     this.name = this.dataservice.name;
     this.message = this.dataservice.message;
-     this.theme = this.dataservice.theme;
-     this.getDefaultSetting();
-     this.getCardThemes();
-     this.href = this.router.url;
+    this.theme = this.dataservice.theme;
+    this.getDefaultSetting();
+    this.getCardThemes();
+    this.href = this.router.url;
 
   }
 
@@ -100,12 +99,12 @@ this.Newid = Guid.create();
 
   onChange(){
     debugger;
-     this.selectedValue =  this.ddoption.filter(
-          book => book.value ===Number(this.rForm.value.viewTheme));
-this.rForm.controls['viewMessage'].setValue( this.selectedValue[0].message);
-if (this.selectedValue[0].imageid==null){
- this.imagePath = null;
- this.theme=null;
+    this.selectedValue =  this.ddoption.filter(
+    book => book.value ===Number(this.rForm.value.viewTheme));
+    this.rForm.controls['viewMessage'].setValue( this.selectedValue[0].message);
+    if (this.selectedValue[0].imageid==null){
+    this.imagePath = null;
+    this.theme=null;
 }
 else
 this.getImage(this.selectedValue[0].imageid, null);
@@ -140,7 +139,7 @@ this.getImage(this.selectedValue[0].imageid, null);
 
   clicked() {
     debugger;
-   // this.theme=this.rForm.value.viewTheme;
+    // this.theme=this.rForm.value.viewTheme;
     this.dataservice.recipient = this.rForm.value.viewRecipient;
     this.dataservice.name = this.rForm.value.viewName;
     this.dataservice.message = this.rForm.value.viewMessage;
@@ -150,17 +149,15 @@ this.getImage(this.selectedValue[0].imageid, null);
     this.recipient = this.dataservice.recipient;
     this.name = this.dataservice.name;
     this.message = this.dataservice.message;
-      this.viewtheme=this.theme;
-   //this.theme=this.dataservice.theme;
+    this.viewtheme=this.theme;
+    //this.theme=this.dataservice.theme;
     const d: Date = new Date();
-       this.dt =d;
- 
-    
+    this.dt =d;
   }
 
   
   getCardThemes() {
-    debugger;
+  debugger;
   this.ddoption=[];
     this.dataservice.getcardthemes().subscribe(
       (respose) => {
@@ -177,7 +174,6 @@ this.getImage(this.selectedValue[0].imageid, null);
 
     );
   }
-
   
   getDefaultSetting() {
 
@@ -185,13 +181,10 @@ this.getImage(this.selectedValue[0].imageid, null);
       (respose) => {
         debugger;
         respose.forEach(element => {
-
           this.message = element.message;
           this.imageid = element.imageid;
           this.getImage(element.imageid, null);
           this.rForm.controls['viewMessage'].setValue(this.message);
-
-
         });
 
       },
@@ -241,14 +234,13 @@ this.getImage(this.selectedValue[0].imageid, null);
   }
 
   print(){
-    alert('Print this card');
+    window.print()
   }
-  copy(){
+  copyToClipboard(){
     alert('Copy this link');
   }
   socialshare(){
     alert('Shate with social media');
   }
-
 
 }

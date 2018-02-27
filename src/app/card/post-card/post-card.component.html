@@ -42,7 +42,7 @@
         </div>
     </div>
 </div>
-<div class="btn-post" [ngStyle]="{'display': showbtn}" id="ProVTrigger" data-toggle="modal" data-target="#ProVersion">
+<div class="btn-post" [ngStyle]="{'display': showbtn}" id="ProVTrigger" data-toggle="modal" data-target="#NewCard">
     <span class="no">Pro</span>
     <span class="bubbles"></span>
     <img src="assets/images/postcover.svg" alt="New Card icon" title="Click to Create Card">
@@ -107,7 +107,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="ProVersion" tabindex="-1" role="dialog" aria-labelledby="ProVersion" data-backdrop="static">
+<!-- <div class="modal fade" id="ProVersion" tabindex="-1" role="dialog" aria-labelledby="ProVersion" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
             <div class="pad30 text-center">
@@ -117,13 +117,13 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="modal fade" id="ShareLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span class="ti-close"></span>
                 </button>
                 <div class="text-center">
                     <h1 class="marbot10">
@@ -134,10 +134,10 @@
                         <small>Now your can Share this postcard with friends family and the world.</small>
                     </p>
                     <p>http://localhost:4200{{href}}</p>
-                    <button (click)="copy()" class="btn btn-primary btn-block" type="button">
+                    <button (click)="copyToClipboard()" ngxClipboard  [cbContent]="textToCopy" class="btn btn-primary btn-block" type="button">
                         <i class="ti-link"></i> Copy your card URL</button>
                     <div class="qrcodewrapper">
-                        <img src="assets/images/qrcode.png" alt="QR Code" title="QR Code">
+                        <ngx-qrcode [qrc-element-type]="qrelementType" [qrc-value] = "qrvalue"></ngx-qrcode>
                         <p>Use mobile QR scaner to copy card URL.</p>
                     </div>
                 </div>

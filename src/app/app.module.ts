@@ -21,6 +21,8 @@ import { PageFaqsComponent } from './card/page-faqs/page-faqs.component';
 import { PageContactComponent } from './card/page-contact/page-contact.component';
 import { PageTermsandconditionComponent } from './card/page-termsandcondition/page-termsandcondition.component';
 import { PagePrivacypolicyComponent } from './card/page-privacypolicy/page-privacypolicy.component';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { PagePrivacypolicyComponent } from './card/page-privacypolicy/page-priva
     BrowserModule,
     HttpModule,
     ReactiveFormsModule,
+    NgxQRCodeModule,
+    ClipboardModule,
      RecaptchaModule.forRoot(),
     RouterModule.forRoot([
       {

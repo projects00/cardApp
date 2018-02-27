@@ -108,7 +108,7 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {border-top: 1px solid #f7f9fa;}
 .table-hover>tbody>tr:hover {background-color: #f7f9fa;}
 .qrcodewrapper{text-align: center; margin: 25px 0}
-.qrcodewrapper img{ width: 120px; margin: 0 auto 15px;}
+.qrcodewrapper img{ width: 132px; margin: 0 auto 15px;}
 .qrcodewrapper p{ font-size: 10px; color: #ccc }
 .noselect {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .modal-content{border: 0;border-radius: 0;}
@@ -189,7 +189,7 @@ label.hamburgermenu .hamburger{top:30px;right: 20px;}
 .pcard .cardouter .cardright p{font-size:16px;line-height: 20px;}
 }
 @media print {
-.btn-post,.hamburgermenu,.postouter,.btn, .imgsaf, .modal, .modal-backdrop{display: none;visibility:hidden}
+.btn-post,.hamburgermenu,.postouter,.btn, .imgsaf, .modal, .modal-backdrop, .noprint{display: none;visibility:hidden}
 .pcard{display: block;}
 .pcard .cardright,.pcard .cardleft{width: 50%;float: left;}
 .pcard .cardouter .cardright h1{font-size:40px;margin:0 0 15px}
