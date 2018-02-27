@@ -201,7 +201,7 @@ this.getImage(this.selectedValue[0].imageid, null);
       if (slide == null) {
         this.imagePath = reader.result;
         this.theme= this.imagePath;
-        this.viewtheme= this.imagePath;
+     //   this.viewtheme= this.imagePath;
       }
       else
         slide.image = reader.result;
