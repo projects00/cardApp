@@ -8,6 +8,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class DataService {
 intro:String="Test intro";
+newID:String;
 recipient:String="User";
 name:String="Card Team";
 message:String="The data server is down or busy please try again later. If the problem still exists please report to the administrator. Sorry for the inconvenience caused. :(";

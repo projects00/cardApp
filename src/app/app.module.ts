@@ -81,7 +81,7 @@ import { ClipboardModule } from 'ngx-clipboard';
         component: CardComponent
       },
       {
-        path: 'Card/:id',
+        path: ':id',
         component: CardComponent
       }
     ])

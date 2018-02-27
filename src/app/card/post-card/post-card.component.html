@@ -133,7 +133,7 @@
                     <p>
                         <small>Now your can Share this postcard with friends family and the world.</small>
                     </p>
-                    <p>http://localhost:4200{{href}}</p>
+                    <p>{{qrvalue}}</p>
                     <button (click)="copyToClipboard()" ngxClipboard  [cbContent]="textToCopy" class="btn btn-primary btn-block" type="button">
                         <i class="ti-link"></i> Copy your card URL</button>
                     <div class="qrcodewrapper">

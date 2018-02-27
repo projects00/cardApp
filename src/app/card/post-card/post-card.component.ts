@@ -145,6 +145,8 @@ this.getImage(this.selectedValue[0].imageid, null);
     this.dataservice.message = this.rForm.value.viewMessage;
     this.dataservice.theme = this.rForm.value.viewTheme;
     $("#myModal").modal("toggle");
+    this.dataservice.newID=this.Newid.toString();
+     this.qrvalue  = 'http://localhost:4200/'+this.Newid.toString();
     //this.router.navigateByUrl('Card/'+this.Newid);
     this.recipient = this.dataservice.recipient;
     this.name = this.dataservice.name;
