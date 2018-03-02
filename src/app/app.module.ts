@@ -22,7 +22,6 @@ import { PageContactComponent } from './card/page-contact/page-contact.component
 import { PageTermsandconditionComponent } from './card/page-termsandcondition/page-termsandcondition.component';
 import { PagePrivacypolicyComponent } from './card/page-privacypolicy/page-privacypolicy.component';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
-import { ClipboardModule } from 'ngx-clipboard';
 import { PageNotfoundComponent } from './card/page-notfound/page-notfound.component';
 
 @NgModule({
@@ -50,8 +49,7 @@ import { PageNotfoundComponent } from './card/page-notfound/page-notfound.compon
     HttpModule,
     ReactiveFormsModule,
     NgxQRCodeModule,
-    ClipboardModule,
-     RecaptchaModule.forRoot(),
+    RecaptchaModule.forRoot(),
     RouterModule.forRoot([
       {
   path: 'app',

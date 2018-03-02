@@ -38,6 +38,8 @@ export class PostCardComponent implements OnInit {
   public href: string = "";
   qrelementType : 'url';
   qrvalue : string = 'http://localhost:4200/';
+  sharemsg:String='none';
+  suggestmsg:string='block';
 
   // options = [
   //   {name: "option1", value:1},
@@ -155,6 +157,8 @@ this.getImage(this.selectedValue[0].imageid, null);
     //this.theme=this.dataservice.theme;
     const d: Date = new Date();
     this.dt =d;
+    this.sharemsg="block";
+    this.suggestmsg="none";
   }
 
   

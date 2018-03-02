@@ -8,7 +8,7 @@
                             <p>{{intro}}</p>
                             <div class="imageouter">
                                 <div class="imgsaf"></div>
-                                <img [src]="viewtheme" class="img-fluid" alt="Card Photo" title="Card Image">
+                                <img [src]="viewtheme" class="img-fluid cardimg" alt="Card Photo" title="Card Image">
                             </div>
                         </div>
                         <div class="cardright">
@@ -43,7 +43,7 @@
     </div>
 </div>
 <div class="btn-post" [ngStyle]="{'display': showbtn}" id="ProVTrigger" data-toggle="modal" data-target="#NewCard">
-    <span class="no">Pro</span>
+    <span class="no">N</span>
     <span class="bubbles"></span>
     <img src="assets/images/postcover.svg" alt="New Card icon" title="Click to Create Card">
 </div>
@@ -62,7 +62,7 @@
                                         </select>
                                     </div>
                                     <div class="imageouter">
-                                        <img [src]="theme" class="img-fluid" alt="Card Photo" title="Card Image">
+                                        <img [src]="theme" class="img-fluid cardimg" alt="Card Photo" title="Card Image">
                                     </div>
                                 </div>
                                 <div class="cardright">
@@ -121,35 +121,50 @@
 <div class="modal fade" id="ShareLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
     <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-header">
+                <h4>Share</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span class="ti-close"></span>
                 </button>
+            </div>
+            <div class="modal-body">
                 <div class="text-center">
-                    <h1 class="marbot10">
-                        <i class="ti-face-smile"></i>
-                    </h1>
-                    <p class="lead">Congratulations!</p>
-                    <p>
-                        <small>Now your can Share this postcard with friends family and the world.</small>
-                    </p>
-                    <p>{{qrvalue}}</p>
-                    <button (click)="copyToClipboard()" ngxClipboard  [cbContent]="textToCopy" class="btn btn-primary btn-block" type="button">
-                        <i class="ti-link"></i> Copy your card URL</button>
-                    <div class="qrcodewrapper">
-                        <ngx-qrcode [qrc-element-type]="qrelementType" [qrc-value] = "qrvalue"></ngx-qrcode>
-                        <p>Use mobile QR scaner to copy card URL.</p>
+                    <div class="sharesegment">
+                        <div [ngStyle]="{'display': suggestmsg}">
+                            <h5>Suggest to Friends!</h5>
+                        </div>
+                        <div [ngStyle]="{'display': sharemsg}">
+                            <h5>Congratulations!</h5>
+                            <p>Now your can share this postcard with friends family and the world.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="buttongroup text-center">
-                    <button (click)="socialshare()" type="button" class="btn btn-social facebook"></button>
-                    <button (click)="socialshare()" type="button" class="btn btn-social google"></button>
-                    <button (click)="socialshare()" type="button" class="btn btn-social whatsapp"></button>
-                    <button (click)="socialshare()" type="button" class="btn btn-social messenger"></button>
-                    <button (click)="socialshare()" type="button" class="btn btn-social sms"></button>
-                    <button (click)="socialshare()" type="button" class="btn btn-social mail"></button>
-                    <button (click)="socialshare()" type="button" class="btn btn-social share"></button>
-                    <button (click)="print()" type="button" class="btn btn-social print" title="Print this Card"></button>
+                    <div class="sharesegment">
+                        <ngx-qrcode [qrc-element-type]="qrelementType" [qrc-value]="qrvalue"></ngx-qrcode>
+                        <p><span class="ti-mobile"></span> Use mobile QR scaner to copy URL</p>
+                    </div>
+                    <div class="sharesegment">
+                        <div class="clicktocopy clearfix" (click)="copyToClipboard()">
+                            <span class="text-left float-left">{{qrvalue}}</span>
+                            <span class="ti-cut float-right"></span>
+                        </div>
+                        <p><span class="ti-cut"></span> Click to copy URL</p>
+                    </div>
+                    <div class="sharesegment">
+                        <div class="buttongroup text-center">
+                            <button type="button" class="btn btn-social facebook"></button>
+                            <button type="button" class="btn btn-social google"></button>
+                            <button type="button" class="btn btn-social whatsapp"></button>
+                            <button type="button" class="btn btn-social messenger"></button>
+                            <button type="button" class="btn btn-social sms"></button>
+                            <button type="button" class="btn btn-social mail"></button>
+                            <button type="button" class="btn btn-social share"></button>
+                            <button (click)="print()" type="button" class="btn btn-social print" title="Print this Card"></button>
+                        </div>
+                    </div>
+                    <div class="sharesegment">
+                        <p [ngStyle]="{'display': suggestmsg}">Thank you for sharing PostCardi.com. Also you can share custom cards with your friends!</p>
+                        <p [ngStyle]="{'display': sharemsg}">Thank you for using PostCardi.com. Your card will expired in 30 Days</p>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
