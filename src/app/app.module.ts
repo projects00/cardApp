@@ -23,6 +23,7 @@ import { PageTermsandconditionComponent } from './card/page-termsandcondition/pa
 import { PagePrivacypolicyComponent } from './card/page-privacypolicy/page-privacypolicy.component';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ClipboardModule } from 'ngx-clipboard';
+import { PageNotfoundComponent } from './card/page-notfound/page-notfound.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ClipboardModule } from 'ngx-clipboard';
     PageFaqsComponent,
     PageContactComponent,
     PageTermsandconditionComponent,
-    PagePrivacypolicyComponent
+    PagePrivacypolicyComponent,
+    PageNotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ import { ClipboardModule } from 'ngx-clipboard';
                 { path: 'faqs', component: PageFaqsComponent },
                 { path: 'contact', component: PageContactComponent },
                 { path: 'terms', component: PageTermsandconditionComponent },
-                { path: 'privacy', component: PagePrivacypolicyComponent }]
+                { path: 'privacy', component: PagePrivacypolicyComponent },
+                { path: 'notfound', component: PageNotfoundComponent }]
               },
                 { path: 'login', component: AdminLoginComponent},
                 { path: 'admin', component: AdminComponent,   
