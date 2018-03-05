@@ -35,6 +35,11 @@ public baseApi = 'https://gentle-gorge-98542.herokuapp.com/';
     return this.http.post(this.baseApi + "add/cardtheme",  cardimage ).map(response => response.json());
   }
 
+   saveActiveCardTheme(cardimage) {
+   debugger;
+ 
+    return this.http.post(this.baseApi + "add/activecard",  cardimage ).map(response => response.json());
+  }
  getCardTheme() {
     return this.http.get(this.baseApi + "get/cardtheme" ).map(response => response.json());
   }

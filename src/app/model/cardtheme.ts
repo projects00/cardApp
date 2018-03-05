@@ -1,10 +1,11 @@
 export class cardtheme {
   public id: Number;
-  public name: string;
-  public message: string;
+  public name: String;
+  public message: String;
   public imageId: number;
   public isactive:number;
-  public cardcss: string;
+  public cardcss: String;
   public image: any;
+  public activeurl:String;
   
 }

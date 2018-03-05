@@ -7,6 +7,7 @@ import 'rxjs/Rx';
 import { Router } from '@angular/router';
 import {ActivatedRoute} from "@angular/router";
 import { Guid } from "guid-typescript";
+import { cardtheme } from '../../model/cardtheme';
 
 @Component({
   selector: 'app-post-card',
@@ -130,9 +131,29 @@ this.getImage(this.selectedValue[0].imageid, null);
     this.dt =d;
     this.sharemsg="block";
     this.suggestmsg="none";
+    this.saveActiveCard();
+
+    
   }
 
+    saveActiveCard() {
+    debugger;
   
+       this.selectedValue[0].imageid;
+        const _cardtheme = new cardtheme();
+        _cardtheme.name =this.dataservice.name;
+        _cardtheme.message =  this.dataservice.message;
+          _cardtheme.imageId =  this.selectedValue[0].imageid;;
+          _cardtheme.activeurl= this.shareurl;
+          _cardtheme.cardcss=this.dataservice.recipient;
+        this.dataservice.saveActiveCardTheme(_cardtheme).subscribe(
+          (respose) => {
+            console.log(respose);
+               
+          });
+     
+  }
+
   getCardThemes() {
   debugger;
   this.ddoption=[];
