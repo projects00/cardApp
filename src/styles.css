@@ -1,8 +1,8 @@
 .loading{text-align:center; margin-top:100px; color:#fff; font-size:30px}
-body{ font-family: 'Open Sans', sans-serif;overflow-x:hidden;animation: colorchange 50s linear infinite;color: #666}
+ body{ font-family: 'Open Sans', sans-serif;overflow-x:hidden;/*animation: colorchange 50s linear infinite;*/color: #666;background: #444} 
 body.admin{background: #fcfcfc;animation: none}
 .wrap{position:relative;margin:80px 180px}
-.pcard{background:repeating-linear-gradient(-45deg,#7fb1c8,#7fb1c8 15px,#fff 15px,#fff 30px,#e59677 30px,#e59677 45px,#fff 45px,#fff 60px);padding:10px;box-shadow:0 20px 30px rgba(0,0,0,0.4);z-index:9;position:relative;border-radius: 15px}
+.pcard{/*background:repeating-linear-gradient(-45deg,#7fb1c8,#7fb1c8 15px,#fff 15px,#fff 30px,#e59677 30px,#e59677 45px,#fff 45px,#fff 60px);box-shadow:0 20px 30px rgba(0,0,0,0.4);*/padding:10px;z-index:9;position:relative;border-radius: 15px}
 .pcard .cardleft,.pcard .cardright{width:50%;float:left;padding:5px}
 .pcard .cardright {font-family: 'Open Sans', sans-serif;}
 .pcard .cardleft{border-right:2px dotted rgba(0,0,0,.2);}
@@ -29,27 +29,35 @@ body.admin{background: #fcfcfc;animation: none}
 .form-control{height:40px;border-radius:0;border:1px solid #999;box-shadow:none}
 .form-control:focus{box-shadow:none}
 a {color: #7fb1c8}
+.click{cursor: pointer}
 h1{ font-size: 2rem; margin-bottom: 1.5rem;}
 h2{ font-size: 1.4rem; margin-bottom: 1.5rem;}
+h3,h4{ font-size: 1.2rem; margin-bottom: 1.2rem;}
 p{font-size: 14px}
-.btn{border-radius:20px;border: 0}
+.btn{border-radius:20px;border: 0;font-size: 13px; padding: 8px 16px;}
 .btn-secondary{color:#9fa2af;background-color:#eee;}
 .btn-primary{color:#fff;background-color:#7fb1c8;}
 .btn-danger{color:#fff;background-color:#e59677;}
 .btn-primary:hover{color:#fff;background-color:#43a2ce;}
 .btn-secondary:hover{color:#eee;background-color:#999;}
 .btn.btn-optionbar {padding: 1px 5px;color: #7fb1c8;background-color: #fcfcfc;float: right;}
-.buttongroup .btn{margin:10px}
-.btn.btn-social {background-image:url( assets/images/social-share-icons.svg)!important;background-color:#fff ; height: 40px; width: 40px;transition:.3s ease all}
-.btn.btn-social:hover{transform: translateY(-5px);transition:.3s ease all;opacity:1;}
-.btn.btn-social.facebook {background-position:0 0}
-.btn.btn-social.google {background-position:-40px 0}
-.btn.btn-social.whatsapp {background-position:-80px 0}
-.btn.btn-social.twitter {background-position:-120px 0}
-.btn.btn-social.sms {background-position:-160px 0}
-.btn.btn-social.mail {background-position:-200px 0}
-.btn.btn-social.share {background-position:-240px 0}
-.btn.btn-social.print {background-position:-280px 0}
+.btn-social-grp button {background-color:#fff ; border: 0;background: transparent;cursor: pointer}
+.btn-social-grp button:hover {opacity: .7}
+.btn-social-grp .fa {background-image:url( assets/images/social-share-icons.svg)!important; height: 40px; width: 40px;display: block;transition:.3s ease all}
+.btn-social-grp .fa.fa-facebook {background-position:0 0}
+.btn-social-grp .fa.fa-twitter {background-position:-40px 0}
+.btn-social-grp .fa.fa-linkedin {background-position:-80px 0}
+.btn-social-grp .fa.fa-pinterest-p {background-position:-120px 0}
+.btn-social-grp .fa.fa-google-plus {background-position:-160px 0}
+.btn-social-grp .fa.fa-stumbleupon {background-position:-200px 0}
+.btn-social-grp .fa.fa-reddit-alien {background-position:-240px 0}
+.btn-social-grp .fa.fa-whatsapp {background-position:-280px 0}
+.btn-social-grp .fa.fa-tumblr {background-position:-320px 0}
+.btn-social-grp .fa.fa-vk {background-position:-360px 0}
+.btn-social-grp .fa.fa-send {background-position:-400px 0}
+.btn-social-grp .fa.fa-envelope {background-position:-440px 0}
+.btn-social-grp .fa.fa-link {background-position:-480px 0}
+.btn-social-grp .fa.fa-print {background-position:-520px 0}
 .btn-primary.disabled, .btn-primary:disabled, .btn-secondary.disabled, .btn-secondary:disabled {cursor: not-allowed}
 .input-group-text {border: 1px solid #999; border-radius: 0;}
 .switch {position: relative; width: 42px; height: 21px;margin: 0 10px 0 0; float: left;}
@@ -83,8 +91,8 @@ label.hamburgermenu li i{margin: 0 10px}
 .mar300 { margin: 30px 0}
 .marbot10{margin: 0 0 10px 0}
 textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
-.btn-secondary.btn-box{padding: 30px 10px; min-width: 125px;  margin: 0 0 5px 0;background: #eaf1f5; color: #7fb1c8}
-.btn-secondary.btn-box:hover{background: #f1f5f9;  }
+.btn-secondary.btn-box{padding: 30px 10px; min-width: 125px;  margin: 0 0 5px 0;background: #eaf1f5;}
+.btn-secondary.btn-box:hover{background: #7fb1c8;  }
 .btn-secondary.btn-box i {font-size: 30px;display: block;margin-bottom: 10px;}
 .ellipsis{text-overflow: ellipsis;white-space: nowrap;width: 200px;overflow: hidden;margin: 0;}
 /*POSTCARD ANIMATION*/
@@ -103,15 +111,16 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .stamp .rubberstamp{ margin:0 67px 0 0;padding: 33px 6px; float: right;transform: rotate(-15deg);color: #000; border-radius:50%;height: 80px;width: 80px; font-size: 8px; font-family: Courier New, Courier, monospace;text-align: center}
 .newcard{width: 60px; bottom: 10px; right: 10px; float: right; cursor: pointer}
 .box{ margin: 0 0 20px;padding: 15px;background: #fff;box-shadow: 0 1px 3px rgba(0,0,0,.2);}
-.box .boxheader h1{ font-size: 18px; margin: 0;float: left;color: #7fb1c8;}
+.loginbox{padding: 15px;background:rgba(0,0,0,.1);color: #eee}
+.box .boxheader h1{ font-size: 18px; margin: 0;float: left;color: #999;}
 .box .boxheader {padding: 0 0 10px;margin-bottom: 10px; border-bottom: 1px solid #eee;height: 30px;}
 .required{color: #fa8383; font-size: 20px}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {border-top: 1px solid #f7f9fa;}
 .table-hover>tbody>tr:hover {background-color: #f7f9fa;}
-.sharesegment{text-align: center; margin: 5px 0 25px 0}
+.sharesegment{text-align: center; margin: 0 0 20px 0}
 .sharesegment p{ font-size: 10px; color: #888 }
-.sharesegment .clicktocopy{ border: 2px dashed #7fb1c8;margin-bottom: 15px; border-radius: 10px; font-size: 13px; color: #7fb1c8;padding: 10px;cursor: pointer;}
-.sharesegment .clicktocopy:hover{border: 2px dashed #20be82; color: #20be82}
+.clicktocopy{ border: 2px dashed #7fb1c8;margin-bottom: 15px; border-radius: 10px; font-size: 13px; color: #7fb1c8;padding: 10px;cursor: pointer}
+.clicktocopy:hover{border: 2px dashed #20be82; color: #20be82}
 .noselect {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .modal-content{border: 0;border-radius: 15px;}
 .modal.fade .modal-dialog {-webkit-transform: translate(0,0)scale(.5);transform: translate(0,0)scale(.5);}
@@ -129,10 +138,13 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .pagecontentfooter{font-size: 10px; color: #ccc}
 .homelogo{opacity:.4;margin: 20px auto;}
 .showonhower{opacity: 0; text-align: right; transition: 3s ease all}
+.showonhower .btn{margin-left: 10px}
 .pcard:hover .showonhower{opacity: 1; transition: .3s ease all}
 .cardbox{padding: 60px 30px; background: #fff; box-shadow: 0 5px 10px rgba(0,0,0,.1);color: #999; text-align: center; margin: 60px 0;box-shadow: 15px;border-radius: 15px}
 .cardbox p.lead{margin-bottom: 5px}
 .cardbox p{margin-bottom: 25px;}
+.list-simple {margin: 0 0 15px 0;padding: 0 0 15px 15px;border-bottom: 1px solid #eee;}
+.list-simple li{font-size: 13px;margin: 0 0 10px 0;}
 @keyframes beat {
 to{transform:scale(1.1)}
 }
@@ -203,6 +215,7 @@ label.hamburgermenu .hamburger{top:30px;right: 20px;}
 @media print {
 .btn-post,.hamburgermenu,.postouter,.btn, .imgsaf, .modal, .modal-backdrop, .noprint{display: none;visibility:hidden}
 .pcard{display: block;}
+.pcard .cardouter { padding: 25px;}
 .pcard .cardright,.pcard .cardleft{width: 50%;float: left;}
 .pcard .cardouter .cardright h1{font-size:40px;margin:0 0 15px}
 .pcard .cardouter .cardright h2{font-size:28px;margin:0 0 15px}

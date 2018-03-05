@@ -21,6 +21,12 @@ export class AdminComponent implements OnInit {
     this.router.navigateByUrl('app/card/'+menu);
     }
   ngOnInit() {
+    let body = document.getElementsByTagName('body')[0];
+    body.classList.add('admin');
+  }
+  ngOnDestroy() {
+    let body = document.getElementsByTagName('body')[0];
+    body.classList.remove("admin");
   }
 
 }

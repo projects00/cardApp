@@ -1,20 +1,22 @@
-<label class="hamburgermenu">
-    <input type='checkbox'>
-    <span class='menu'>
-        <span class='hamburger'></span>
-    </span>
-    <ul>
-        <li title="Click to Home" (click)="page('home')" ><i class="ti-home"></i> Home</li>
-        <li title="Click to About" (click)="page('about')"><i class="ti-face-smile"></i> About</li>
-        <li title="Click to FAQ's" (click)="page('faqs')"><i class="ti-help-alt"></i> FAQ's</li>
-        <li title="Click to Donate" (click)="page('donate')"><i class="ti-heart"></i> Donate</li>
-        <li title="Click to Contact" (click)="page('contact')"><i class="ti-comment"></i> Contact</li>
-    </ul>
-</label>
-<div class="container">
-    <router-outlet></router-outlet>
-    <img (click)="page('home')" src="assets/images/logo.svg" width="160" alt="PostCardi Logo" title="PostCardi" class="homelogo img-fluid d-block mx-auto">
-    <div class="footerpage">
-        &copy; PostCardi.com<span class="noprint"> - 2018 - <span (click)="page('terms')" data-dismiss="modal">Terms and conditions</span> - <span (click)="page('privacy')" data-dismiss="modal">Privacy policy</span> - <span (click)="page('notfound')">404</span></span>
+<div class="pagewrapper">
+    <label class="hamburgermenu">
+        <input type='checkbox'>
+        <span class='menu'>
+            <span class='hamburger'></span>
+        </span>
+        <ul>
+            <li title="Click to Home" (click)="page('home')" ><i class="ti-home"></i> Home</li>
+            <li title="Click to About" (click)="page('about')"><i class="ti-face-smile"></i> About</li>
+            <li title="Click to FAQ's" (click)="page('faqs')"><i class="ti-help-alt"></i> FAQ's</li>
+            <li title="Click to Donate" (click)="page('donate')"><i class="ti-heart"></i> Donate</li>
+            <li title="Click to Contact" (click)="page('contact')"><i class="ti-comment"></i> Contact</li>
+        </ul>
+    </label>
+    <div class="container">
+        <router-outlet></router-outlet>
+        <img (click)="page('home')" src="assets/images/logo.svg" width="160" alt="PostCardi Logo" title="PostCardi" class="homelogo click img-fluid d-block mx-auto">
+        <div class="footerpage">
+            &copy; PostCardi.com<span class="noprint"> - 2018 - <span (click)="page('terms')" class="click" data-dismiss="modal">Terms and conditions</span> - <span class="click" (click)="page('privacy')" data-dismiss="modal">Privacy policy</span> - <span class="click" (click)="page('notfound')">404</span> - <span class="click" (click)="logout('login')">Login</span></span>
+        </div>
     </div>
 </div>

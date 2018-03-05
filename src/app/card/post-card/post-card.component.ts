@@ -37,15 +37,10 @@ export class PostCardComponent implements OnInit {
   ID:String;
   public href: string = "";
   qrelementType : 'url';
-  qrvalue : string = 'http://localhost:4200/';
+  shareurl : string = 'http://localhost:4200/';
+
   sharemsg:String='none';
   suggestmsg:string='block';
-
-  // options = [
-  //   {name: "option1", value:1},
-  //   {name: "option2", value:2},
-  //   {name: "option3", value:3}
-  // ];
   
   dtformat:String=`dd/MM/yyyy HH:mm`;
   constructor(private dataservice: DataService, fb: FormBuilder, private router: Router,private activatedroute :ActivatedRoute) {
@@ -111,30 +106,6 @@ export class PostCardComponent implements OnInit {
 else
 this.getImage(this.selectedValue[0].imageid, null);
 
-// switch (this.rForm.value.viewTheme) {
-//     case "1":
-//     {
-//       this.theme="./assets/images/cardimage/card-img-001.png";
-//        this.viewtheme="./assets/images/cardimage/card-img-001.png";
-    
-//       break;
-//     }
-//     case "2":
-//     {
-//       this.theme="./assets/images/cardimage/card-img-002.png";
-//        this.viewtheme="./assets/images/cardimage/card-img-002.png";
-//       break;
-// }
-//     case "3":
-//     {
-//       this.theme="./assets/images/cardimage/card-img-003.png";
-//        this.viewtheme="./assets/images/cardimage/card-img-003.png";
-//       break;
-//     }
-
-    
-//   }
-
   }
 
  
@@ -148,7 +119,7 @@ this.getImage(this.selectedValue[0].imageid, null);
     this.dataservice.theme = this.rForm.value.viewTheme;
     $("#myModal").modal("toggle");
     this.dataservice.newID=this.Newid.toString().substring(0,10);
-     this.qrvalue  = 'http://localhost:4200/'+this.Newid.toString().substring(0,10);
+     this.shareurl  = 'http://localhost:4200/'+this.Newid.toString().substring(0,10);
     //this.router.navigateByUrl('Card/'+this.Newid);
     this.recipient = this.dataservice.recipient;
     this.name = this.dataservice.name;
@@ -207,7 +178,7 @@ this.getImage(this.selectedValue[0].imageid, null);
       if (slide == null) {
         this.imagePath = reader.result;
         this.theme= this.imagePath;
-     //   this.viewtheme= this.imagePath;
+        this.viewtheme= this.imagePath;
       }
       else
         slide.image = reader.result;
@@ -238,15 +209,4 @@ this.getImage(this.selectedValue[0].imageid, null);
     this.cardclass="postpopup";
     this.showbtn="block";
   }
-
-  print(){
-    window.print()
-  }
-  copyToClipboard(){
-    alert('Copy this link');
-  }
-  socialshare(){
-    alert('Shate with social media');
-  }
-
 }

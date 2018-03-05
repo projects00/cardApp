@@ -15,6 +15,9 @@ export class CardComponent implements OnInit {
   page(menu){
     this.router.navigateByUrl('app/card/'+menu);
     }
+  logout(menu){
+    this.router.navigateByUrl('app/'+menu);
+  }
   ngOnInit() {
   }
 

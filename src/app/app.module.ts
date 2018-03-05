@@ -23,6 +23,8 @@ import { PageTermsandconditionComponent } from './card/page-termsandcondition/pa
 import { PagePrivacypolicyComponent } from './card/page-privacypolicy/page-privacypolicy.component';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { PageNotfoundComponent } from './card/page-notfound/page-notfound.component';
+import { ShareButtonsModule} from "ngx-sharebuttons";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,14 +44,16 @@ import { PageNotfoundComponent } from './card/page-notfound/page-notfound.compon
     PageContactComponent,
     PageTermsandconditionComponent,
     PagePrivacypolicyComponent,
-    PageNotfoundComponent
+    PageNotfoundComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
     NgxQRCodeModule,
     RecaptchaModule.forRoot(),
+    ShareButtonsModule.forRoot(),
     RouterModule.forRoot([
       {
   path: 'app',
@@ -84,10 +88,12 @@ import { PageNotfoundComponent } from './card/page-notfound/page-notfound.compon
       {
         path: ':id',
         component: CardComponent
-      }
+      },
+      { path: '', component: CardComponent},
+
     ])
   ],
-  providers: [DataService],
+  providers: [DataService,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -32,6 +32,7 @@
                         <span>❤</span>
                     </div>
                 </div>
+                <!-- <div [ngStyle]="{'display': sharemsg}">NEW MESSAGE</div> -->
             </div>
             <div class="postouter" (click)="test()" id="OpenPost">
                 <img src="assets/images/postcardindicator.svg" class="postcardindicator" alt="postcard icon" title="You Have One Message">
@@ -48,7 +49,7 @@
     <img src="assets/images/postcover.svg" alt="New Card icon" title="Click to Create Card">
 </div>
 <div class="modal fade" id="NewCard" tabindex="-1" role="dialog" aria-labelledby="NewCard" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="createcardouter">
                 <div class="pcard">
@@ -93,10 +94,10 @@
                                         <div class="marbot10">
                                             <re-captcha (resolved)="resolved($event)" siteKey="6LfwYkQUAAAAAK6ZtmNmEIyIMEmz2BAHhwSdm1m5"></re-captcha>
                                         </div>
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal" [disabled]="!rForm.valid" (click)="clicked()">
-                                            <i class="ti-id-badge"></i> Preview</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
-                                            <i class="ti-close"></i> Close</button>
+                                        <div class="text-right">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" [disabled]="!rForm.valid" (click)="clicked()"><i class="ti-id-badge"></i> Preview</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i> Close</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -139,26 +140,30 @@
                         </div>
                     </div>
                     <div class="sharesegment">
-                        <ngx-qrcode [qrc-element-type]="qrelementType" [qrc-value]="qrvalue"></ngx-qrcode>
+                        <ngx-qrcode [qrc-element-type]="qrelementType" [qrc-value]="shareurl"></ngx-qrcode>
                         <p><span class="ti-mobile"></span> Use mobile QR scaner to copy URL</p>
                     </div>
                     <div class="sharesegment">
                         <div class="clicktocopy clearfix" (click)="copyToClipboard()">
-                            <span class="text-left float-left">{{qrvalue}}</span>
+                            <span class="text-left float-left">{{shareurl}}</span>
                             <span class="ti-cut float-right"></span>
                         </div>
                         <p><span class="ti-cut"></span> Click to copy URL</p>
                     </div>
                     <div class="sharesegment">
-                        <div class="buttongroup text-center">
-                            <button type="button" class="btn btn-social facebook"></button>
-                            <button type="button" class="btn btn-social google"></button>
-                            <button type="button" class="btn btn-social whatsapp"></button>
-                            <button type="button" class="btn btn-social messenger"></button>
-                            <button type="button" class="btn btn-social sms"></button>
-                            <button type="button" class="btn btn-social mail"></button>
-                            <button type="button" class="btn btn-social share"></button>
-                            <button (click)="print()" type="button" class="btn btn-social print" title="Print this Card"></button>
+                        <div class="btn-social-grp">
+                            <share-button [url]="shareurl" [button]="'facebook'"></share-button>
+                            <share-button [url]="shareurl" [button]="'google'"></share-button>
+                            <share-button [url]="shareurl" [button]="'twitter'"></share-button>
+                            <share-button [url]="shareurl" [button]="'whatsapp'"></share-button>
+                            <share-button [url]="shareurl" [button]="'telegram'"></share-button>
+                            <share-button [url]="shareurl" [button]="'vk'"></share-button>
+                            <share-button [url]="shareurl" [button]="'linkedin'"></share-button>
+                            <share-button [url]="shareurl" [button]="'pinterest'"></share-button>
+                            <share-button [url]="shareurl" [button]="'reddit'"></share-button>
+                            <share-button [url]="shareurl" [button]="'tumblr'"></share-button>
+                            <share-button [url]="shareurl" [button]="'email'"></share-button>
+                            <share-button [url]="shareurl" [button]="'print'"></share-button>
                         </div>
                     </div>
                     <div class="sharesegment">
