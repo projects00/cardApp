@@ -146,7 +146,7 @@
                     <div class="sharesegment">
                         <div class="clicktocopy clearfix" (click)="copyToClipboard()">
                             <span class="text-left float-left">{{shareurl}}</span>
-                            <span class="ti-cut float-right"></span>
+                            <share-button [url]="shareurl" [button]="'copy'"></share-button>
                         </div>
                         <p><span class="ti-cut"></span> Click to copy URL</p>
                     </div>
@@ -163,6 +163,7 @@
                             <share-button [url]="shareurl" [button]="'reddit'"></share-button>
                             <share-button [url]="shareurl" [button]="'tumblr'"></share-button>
                             <share-button [url]="shareurl" [button]="'email'"></share-button>
+                            <!--<share-button [url]="shareurl" [button]="'copy'"></share-button>-->
                             <share-button [url]="shareurl" [button]="'print'"></share-button>
                         </div>
                     </div>
@@ -174,7 +175,7 @@
             </div>
             <div class="modal-footer">
                 <div class="footertxt">
-                    <div>8652 Shares</div>
+                    <div>8652 Cards Created</div>
                 </div>
             </div>
         </div>
