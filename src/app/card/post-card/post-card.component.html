@@ -123,34 +123,40 @@
     <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4>Share</h4>
+                <div [ngStyle]="{'display': suggestmsg}">
+                    <h4>Suggest to Friends!</h4>
+                </div>
+                <div [ngStyle]="{'display': sharemsg}">
+                    <h4>Congratulations!</h4>
+                </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span class="ti-close"></span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body pad0">
                 <div class="text-center">
-                    <div class="sharesegment">
+                    <div class="sharesegment bg-infomsg">
                         <div [ngStyle]="{'display': suggestmsg}">
-                            <h5>Suggest to Friends!</h5>
+                            <p>Thank you for suggest PostCardi to friends!</p>
                         </div>
                         <div [ngStyle]="{'display': sharemsg}">
-                            <h5>Congratulations!</h5>
                             <p>Now your can share this postcard with friends family and the world.</p>
                         </div>
+                        <h6 class="mar0">{{shareurl}}</h6>
+                    </div>                    
+                    <div class="sharesegment">
+                        <p><span class="ti-mobile"></span> Use mobile QR camera scanner to copy URL</p>
+                        <ngx-qrcode [qrc-element-type]="qrelementType" [qrc-value]="shareurl"></ngx-qrcode>    
                     </div>
                     <div class="sharesegment">
-                        <ngx-qrcode [qrc-element-type]="qrelementType" [qrc-value]="shareurl"></ngx-qrcode>
-                        <p><span class="ti-mobile"></span> Use mobile QR scaner to copy URL</p>
-                    </div>
-                    <div class="sharesegment">
+                        <p><span class="ti-cut"></span> Click to copy URL</p>
                         <div class="clicktocopy clearfix" (click)="copyToClipboard()">
                             <span class="text-left float-left">{{shareurl}}</span>
                             <share-button [url]="shareurl" [button]="'copy'"></share-button>
                         </div>
-                        <p><span class="ti-cut"></span> Click to copy URL</p>
                     </div>
                     <div class="sharesegment">
+                        <p><span class="ti-share"></span> Share with social medias</p>
                         <div class="btn-social-grp">
                             <share-button [url]="shareurl" [button]="'facebook'"></share-button>
                             <share-button [url]="shareurl" [button]="'google'"></share-button>

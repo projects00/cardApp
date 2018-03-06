@@ -61,6 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
   children : [
                 { path: 'card', component: CardComponent,
       children:[
+                { path: '', component: PostCardComponent },
                 { path: 'home', component: PostCardComponent },
                 { path: 'about', component: PageAboutComponent },
                 { path: 'donate', component: PageDonateComponent },
@@ -68,11 +69,12 @@ import { HttpClientModule } from '@angular/common/http';
                 { path: 'contact', component: PageContactComponent },
                 { path: 'terms', component: PageTermsandconditionComponent },
                 { path: 'privacy', component: PagePrivacypolicyComponent },
-                { path: 'notfound', component: PageNotfoundComponent }]
+                { path: '404', component: PageNotfoundComponent }]
               },
                 { path: 'login', component: AdminLoginComponent},
                 { path: 'admin', component: AdminComponent,   
       children:[
+                { path: '', component: AdmindashComponent},
                 { path: 'dash', component: AdmindashComponent},
                 { path: 'setting', component: SettingComponent},
                 { path: 'activecard', component: ActivecardComponent},
@@ -80,17 +82,9 @@ import { HttpClientModule } from '@angular/common/http';
                 { path: 'cardtheme', component: CardthemeComponent},
                 { path: 'pages', component: PagesComponent} ]}
                 ]
-},
-      {
-        path: 'Card',
-        component: CardComponent
-      },
-      {
-        path: ':id',
-        component: CardComponent
-      },
-      { path: '', component: CardComponent},
-
+              },
+              { path: '', component: CardComponent, children:[{path: '', component: PostCardComponent }]},
+              { path: 'card:id', component: CardComponent},
     ])
   ],
   providers: [DataService,HttpClientModule],

@@ -7,7 +7,11 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   
-    constructor(private router:Router) { }
+    constructor(private router:Router) {
+      this.router.errorHandler = (error: any) => {
+        this.router.navigate(['app/card/404']); // or redirect to default route
+      }
+    }
 
     ngOnInit() {
   //  this.router.navigateByUrl("app/card");

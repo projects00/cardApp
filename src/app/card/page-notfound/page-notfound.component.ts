@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {ActivatedRoute} from "@angular/router";
+
 @Component({
   selector: 'app-page-notfound',
   templateUrl: './page-notfound.component.html',
@@ -8,13 +8,12 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PageNotfoundComponent implements OnInit {
 
-  constructor(private router: Router,private activatedroute :ActivatedRoute)  { }
+  constructor(private router: Router)  { }
 
+  page(menu){
+    this.router.navigateByUrl('/');
+    }
   ngOnInit() {
   }
-
-  page(home){
-    this.router.navigateByUrl('app/card/'+home);
-    }
 
 }
