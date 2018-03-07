@@ -84,7 +84,7 @@ import { HttpClientModule } from '@angular/common/http';
                 ]
               },
               { path: '', component: CardComponent, children:[{path: '', component: PostCardComponent }]},
-              { path: 'card:id', component: CardComponent},
+              { path: '', component: CardComponent, children:[{path: ':id', component: PostCardComponent }]},
     ])
   ],
   providers: [DataService,HttpClientModule],
