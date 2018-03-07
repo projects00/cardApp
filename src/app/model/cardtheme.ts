@@ -7,5 +7,6 @@ export class cardtheme {
   public cardcss: String;
   public image: any;
   public activeurl:String;
+  public cardCss:String;
   
 }

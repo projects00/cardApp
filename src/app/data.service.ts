@@ -55,6 +55,12 @@ getcardthemes()
      return this.http.get(this.baseApi + "get/cardthemes" ).map(response => response.json());
 
 }
+
+getActiveCards()
+{
+     return this.http.get(this.baseApi + "get/activecard" ).map(response => response.json());
+
+}
   getImage(id) {
     return this.http.get(this.baseApi + "get/img/" + id, { responseType: ResponseContentType.Blob })
       .map((res: Response) => res.blob());

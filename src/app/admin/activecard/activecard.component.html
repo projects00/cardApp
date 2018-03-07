@@ -18,14 +18,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Theme Name</td>
+                    <tr *ngFor="let sb of cardtheme;let i =index">
+                        <td>{{sb.name}}</td>
                         <td>18-01-2018 16:31:27</td>
-                        <td>Recipient Name</td>
-                        <td>Card user Name</td>
-                        <td><p class="ellipsis" title="Message">Message Message Message Message Message MessageMessage Message Message Message Message Message</p></td>
+                        <td>{{sb.cardCss}}</td>
+                        <td>{{sb.name}}</td>
+                        <td><p class="ellipsis" title="Message">{{sb.message}}</p></td>
                         <td>
-                            <a href="http://www.cardapp.com/cards/apH58Rgubs" target="_blank">http://www.cardapp.com/cards/apH58Rgubs</a>
+                            <a href="http://www.cardapp.com/cards/apH58Rgubs" target="_blank">{{sb.activeurl}}</a>
                         </td>
                         <td><button class="btn btn-sm btn-primary" title="View Card" data-toggle="modal" data-target="#ViewCard"><i class="ti-id-badge"></i></button></td>
                     </tr>
