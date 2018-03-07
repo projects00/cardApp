@@ -58,7 +58,8 @@
                             <div class="cardinner clearfix">
                                 <div class="cardleft">
                                     <div class="select">
-                                        <select formControlName="viewTheme" placeholder="Select" (change)="onChange()" class="form-control" id="Theme" name="test">
+                                        <small>Select Theme</small>
+                                        <select formControlName="viewTheme" (change)="onChange()" class="form-control" id="Theme" name="test">
                                             <option *ngFor="let group of ddoption" [value]="group.value">{{group.name}}</option>
                                         </select>
                                     </div>
@@ -156,7 +157,7 @@
                         </div>
                     </div>
                     <div class="sharesegment">
-                        <p><span class="ti-share"></span> Share with social medias</p>
+                        <p><span class="ti-share"></span> Share with social media</p>
                         <div class="btn-social-grp">
                             <share-button [url]="shareurl" [button]="'facebook'"></share-button>
                             <share-button [url]="shareurl" [button]="'google'"></share-button>

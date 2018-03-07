@@ -12,9 +12,6 @@ export class CardComponent implements OnInit {
   constructor(private router: Router) {}
 
 
-  page(menu){
-    this.router.navigateByUrl('app/card/'+menu);
-    }
   logout(menu){
     this.router.navigateByUrl('app/'+menu);
   }

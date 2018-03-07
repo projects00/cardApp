@@ -11,9 +11,6 @@ export class AdminComponent implements OnInit {
   constructor(private router: Router) {}
 
 
-  navigation(menu){
-    this.router.navigateByUrl('app/admin/'+menu);
-  }
   logout(menu){
     this.router.navigateByUrl('app/'+menu);
   }
