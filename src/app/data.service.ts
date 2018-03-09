@@ -50,6 +50,11 @@ getdefaultSetting()
 
 }
 
+getCardunique(uniqueid)
+{
+     return this.http.get(this.baseApi + "get/activecard/"+uniqueid ).map(response => response.json());
+
+}
 getcardthemes()
 {
      return this.http.get(this.baseApi + "get/cardthemes" ).map(response => response.json());

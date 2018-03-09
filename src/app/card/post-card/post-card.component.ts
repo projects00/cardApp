@@ -85,10 +85,15 @@ export class PostCardComponent implements OnInit {
     this.name = this.dataservice.name;
     this.message = this.dataservice.message;
     this.theme = this.dataservice.theme;
-    this.getDefaultSetting();
+    
     this.getCardThemes();
     this.href = this.router.url;
-
+    if (this.ID){
+ this.getCardunique();
+    }else
+    {
+this.getDefaultSetting();
+    }
   }
 
   page(menu){
@@ -176,6 +181,26 @@ this.getImage(this.selectedValue[0].imageid, null);
   getDefaultSetting() {
 
     this.dataservice.getdefaultSetting().subscribe(
+      (respose) => {
+        debugger;
+        respose.forEach(element => {
+          this.message = element.message;
+          this.imageid = element.imageid;
+          this.getImage(element.imageid, null);
+          this.rForm.controls['viewMessage'].setValue(this.message);
+        });
+
+      },
+      (error) => {
+        console.log(error.json());
+      }
+
+    );
+  }
+
+   getCardunique() {
+
+    this.dataservice.getCardunique(this.ID).subscribe(
       (respose) => {
         debugger;
         respose.forEach(element => {
