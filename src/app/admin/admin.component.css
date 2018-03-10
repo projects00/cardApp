@@ -3,7 +3,6 @@
 .side-nav>li>a{width:auto;padding: 15px;border-top: 1px solid rgba(0, 0, 0, 0.05);}
 .navbar-nav{cursor: pointer;color: #7fb1c8;font-size: 16px;}
 .side-nav li a:hover,.side-nav li a:focus{background-color:#f9f9f9}
-.side-nav li.active a{background-color:#fcfcfc}
 .navbar.fixed-top{background-color: #fff; box-shadow: 0 2px 3px rgba(0,0,0,.1);}
 .navbar-toggle .icon-bar{ background-color: #fff}
 .nav-link i {font-size: 20px;margin: 0 10px 0 0;float: left;}

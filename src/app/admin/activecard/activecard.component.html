@@ -8,7 +8,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Card Name</th>
+                        <th>Theme Name</th>
                         <th>Date/Time</th>
                         <th>Recipient</th>
                         <th>Name</th>
@@ -20,10 +20,10 @@
                 <tbody>
                     <tr *ngFor="let sb of cardtheme;let i =index">
                         <td>{{sb.name}}</td>
-                        <td>18-01-2018 16:31</td>
+                        <td>18-01-2018 16:31:27</td>
                         <td>{{sb.cardCss}}</td>
                         <td>{{sb.name}}</td>
-                        <td><p class="ellipsis" title="{{sb.message}}">{{sb.message}}</p></td>
+                        <td><p class="ellipsis" title="Message">{{sb.message}}</p></td>
                         <td>
                             <a [href]="sb.activeurl" target="_blank">{{sb.activeurl}}</a>
                         </td>

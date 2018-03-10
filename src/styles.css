@@ -121,7 +121,7 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .table-hover>tbody>tr:hover {background-color: #f7f9fa;}
 .sharesegment{ padding: 10px; margin: 10px 10px 0}
 .sharesegment p{ font-size: 10px; color: #888; margin-bottom: 5px }
-.bg-infomsg{background: #cef0ff}
+.bg-infomsg{background: #e5eef2}
 .clicktocopy{padding: 10px;position: relative; font-size: 11px}
 .clicktocopy share-button button{position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0); border: 2px dashed #f1f1f1;top:0;left: 0; cursor: pointer;color: #7fb1c8 }
 .clicktocopy share-button button:hover{border: 2px dashed #7fb1c8;color: #7fb1c8;}
@@ -132,7 +132,6 @@ textarea.form-control{min-height: 100px;width: 100%;overflow-x: hidden;}
 .modal-content{border: 0;border-radius: 15px;}
 .modal.fade .modal-dialog {-webkit-transform: translate(0,0)scale(.5);transform: translate(0,0)scale(.5);}
 .modal-dialog-slideout {min-height: 100%; margin: 0 0 0 auto;background: #fff;}
-.modal-dialog-slideout .modal-footer {padding: 10px 15px;}
 .modal.fade .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(100%,0)scale(1);transform: translate(100%,0)scale(1);}
 .modal.fade.show .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(0,0);transform: translate(0,0);display: flex;align-items: stretch;-webkit-box-align: stretch;height: 100%;}
 .modal.fade.show .modal-dialog.modal-dialog-slideout form{display: flex;align-items: stretch;-webkit-box-align: stretch;height: 100%;flex-direction: column;}
