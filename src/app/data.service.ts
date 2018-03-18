@@ -21,7 +21,7 @@ webdesc:string="webdesc";
 webkey:string="webkey";
 webauthor:string="webauthor";
 
-public baseApi = 'https://gentle-gorge-98542.herokuapp.com/';
+public baseApi = 'https://cardapiapp.herokuapp.com/';
  //public baseApi = 'http://localhost:5000/';
  constructor(private http: Http) {
 
@@ -77,8 +77,9 @@ getActiveCards()
 
   }
 
-     updatDashImage(message,imageid){
-       return this.http.put(this.baseApi + "updatedash/dashimage", {message:message,imageid:imageid}).map(response => response.json());
+     updatDashImage(message,imageid,toname,fromname,intotext){
+       debugger;
+       return this.http.put(this.baseApi + "updatedash/dashimage", {message:message,imageid:imageid,toname:toname,fromname:fromname,intotext:intotext}).map(response => response.json());
 
   }
   deleteCardTheme(id){

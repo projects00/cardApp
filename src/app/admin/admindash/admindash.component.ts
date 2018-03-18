@@ -14,6 +14,11 @@ import { Router } from '@angular/router';
 export class AdmindashComponent implements OnInit {
   editImage: any;
   editmessage: String;
+  edittoname: String;
+  editfromname: String;
+  toname: String;
+  fromname: String;
+  intotext: String;
   imagePath: any;
   file: File;
   editImageId: string;
@@ -32,7 +37,10 @@ export class AdmindashComponent implements OnInit {
 
   initilizeFrom() {
     this.adminEditForm = this.fb1.group({
-      'emessage': [null, Validators.required]
+      'emessage': [null, Validators.required],
+      'etoname': [null, Validators.required],
+      'efromname': [null, Validators.required],
+      'eintotext': [null, Validators.required]
     });
 
 
@@ -47,6 +55,16 @@ export class AdmindashComponent implements OnInit {
 
           this.message = element.message;
           this.imageid = element.imageid;
+          this.toname = element.toname;
+          this.fromname = element.fromname;
+          this.intotext = element.intotext;
+          this.editImageId = this.imageid.toString();
+         this.adminEditForm.controls['emessage'].setValue(element.message);
+          this.adminEditForm.controls['etoname'].setValue(element.toName);
+          this.adminEditForm.controls['efromname'].setValue(element.fromName);
+          this.adminEditForm.controls['eintotext'].setValue(element.intoText);
+
+
           this.getImage(element.imageid, null);
 
 
@@ -105,10 +123,12 @@ export class AdmindashComponent implements OnInit {
   }
 
   editCard() {
+    this.getDefaultSetting();
     this.editImage = this.imagePath;
-    this.editmessage = this.message;
-    this.editImageId = this.imageid.toString();
-    this.adminEditForm.controls['emessage'].setValue(this.message);
+    //this.editmessage = this.message;
+
+
+
     this.getImage(this.editImageId, null);
   }
 
@@ -118,7 +138,7 @@ export class AdmindashComponent implements OnInit {
       (respose) => {
         this.insertid = respose.result.insertId;
 
-        this.dataservice.updatDashImage(this.adminEditForm.value.emessage, this.insertid).subscribe(
+        this.dataservice.updatDashImage(this.adminEditForm.value.emessage, this.insertid, this.adminEditForm.value.etoname, this.adminEditForm.value.efromname, this.adminEditForm.value.eintotext).subscribe(
           (respose) => {
             this.initilizeFrom();
             $("#EditDefault").modal("toggle");
